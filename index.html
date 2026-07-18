@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W sweet | متجر الشوكولاتة الفاخرة</title>
+    <!-- FontAwesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- جوجل فونت للخطوط العربية الفخمة -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Marcellus&family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #c5a880; /* لون ذهبي فاخر */
+            --bg-dark: #120e0b; /* بني غامق جداً قريب للأسود */
+            --card-bg: #1c1612; /* بني متناسق للبطاقات */
+            --text-light: #f5f0eb;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* تأثير الخلفية المتحركة للشوكولاتة */
+        #chocolate-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* الهيدر واللوقو */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(to bottom, rgba(18,14,11,1) 60%, rgba(18,14,11,0));
+        }
+
+        .logo-container img {
+            max-width: 180px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+            padding: 5px;
+            box-shadow: 0 0 20px rgba(197, 168, 128, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .store-title {
+            font-family: 'Marcellus', 'Amiri', serif;
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-top: 15px;
+            letter-spacing: 2px;
+        }
+
+        /* تنبيه المناسبات */
+        .notice-banner {
+            background: linear-gradient(45deg, #8a6f48, #4a3b24);
+            color: #fff;
+            text-align: center;
+            padding: 12px 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid var(--primary-color);
+        }
+
+        /* أزرار السوشيال ميديا */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .social-btn {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border: 1px solid rgba(197, 168, 128, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: var(--primary-color);
+            color: var(--bg-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(197, 168, 128, 0.4);
+        }
+
+        /* الحشوات */
+        .fillings-box {
+            max-width: 1000px;
+            margin: 0 auto 40px auto;
+            background: rgba(28, 22, 18, 0.8);
+            border-right: 4px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 4px;
+        }
+        .fillings-box h3 { color: var(--primary-color); margin-bottom: 10px; }
+        .fillings-box p { font-size: 0.95rem; color: #ccc; line-height: 1.6; }
+
+        /* شبكة المنتجات (المنيو) */
+        .menu-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(197, 168, 128, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        /* بديل لصور المنيو الحقيقية، تستبدل بـ src حقتك لاحقاً */
+        .product-img {
+            width: 100%;
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .product-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* التحكم بالكمية */
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .qty-btn {
+            background: #2d241e;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .qty-btn:hover {
+            background: var(--primary-color);
+            color: var(--bg-dark);
+        }
+
+        .qty-val {
+            font-size: 1.2rem;
+            font-weight: bold;
+            width: 30px;
+        }
+
+        /* السلة العائمة */
+        .cart-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(28, 22, 18, 0.95);
+            border-top: 2px solid var(--primary-color);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            transform: translateY(100px);
+            transition: transform 0.3s ease;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 -5px 25px rgba(0,0,0,0.6);
+        }
+
+        .cart-bar.active {
+            transform: translateY(0);
+        }
+
+        .cart-info {
+            font-size: 1.1rem;
+        }
+
+        .cart-total {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .order-btn {
+            background: #25D366; /* لون الواتساب المميز */
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: background 0.3s, transform 0.2s;
+            text-decoration: none;
+        }
+
+        .order-btn:hover {
+            background: #20ba5a;
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 120px 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* شاشات الجوال */
+        @media (max-width: 600px) {
+            .cart-bar {
+                border-radius: 0;
+            }
+            .store-title { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الكانفاس الخاص بالخلفية المتحركة -->
+    <canvas id="chocolate-canvas"></canvas>
+
+    <header>
+        <div class="logo-container">
+            <!-- ملاحظة: يمكنك رفع صورتك للوقو وضع رابطها هنا مكان المربع المندمج -->
+            <img src="https://i.ibb.co/680pYfM/image-2.png" alt="W sweet Logo">
+        </div>
+        <h1 class="store-title">W sweet</h1>
+        
+        <!-- قنوات السوشيال ميديا الحسابات تيك وانستا وواتساب -->
+        <div class="social-links">
+            <a href="https://wa.me/966XXXXXXXXX" target="_blank" class="social-btn" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com/YOUR_USERNAME" target="_blank" class="social-btn" title="انستقرام"><i class="fab fa-instagram"></i></a>
+            <a href="https://tiktok.com/@YOUR_USERNAME" target="_blank" class="social-btn" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+        </div>
+
+        <!-- تنبيه المناسبات واضح وبارز جداً -->
+        <div class="notice-banner">
+            <i class="fas fa-calendar-alt"></i> تنبيه هام: لجميع المناسبات (تخرج - مواليد - زواجات)، يرجى تقديم الطلب قبل الموعد بأسبوع كامل.
+        </div>
+    </header>
+
+    <!-- صندوق حشوات البليجكي المميزة -->
+    <section class="fillings-box">
+        <h3><i class="fas fa-cookie-bite"></i> حشوات البلجيكي منوعة ومميزة:</h3>
+        <p>توفي كراميل - توفي قهوة - بيكان مع القطع - بيستاشيو كرانشي - ليمون كرانشي - توت كرانشي - مستكه - تشيز توت - شوكولاته بالبندق - كنافه مع الكندر - كنافه مع البستاشيو.</p>
+    </section>
+
+    <!-- قسم المنيو والمنتجات -->
+    <main class="menu-container">
+        
+        <!-- منتج 1 -->
+        <div class="product-card" data-id="1" data-name="كيلو البلجيكي" data-price="200">
+            <!-- يمكنك وضع روابط صورك الحقيقية هنا في الـ background-image -->
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1548907040-4d42b52145ca?q=80&w=500');"></div>
+            <div class="product-info">
+                <h2 class="product-title">كيلو البلجيكي</h2>
+                <div class="product-price">200 ريال</div>
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty-val">0</span>
+                    <button class="qty-btn plus">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- منتج 2 -->
+        <div class="product-card" data-id="2" data-name="طباعة على الشوكولاته" data-price="4">
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1587132137056-bfbf0166836e?q=80&w=500');"></div>
+            <div class="product-info">
+                <h2 class="product-title">طباعة على الشوكولاته</h2>
+                <div class="product-price">4 ريال <small style="font-size:0.7rem; color:#aaa;">/ للقطعة</small></div>
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty-val">0</span>
+                    <button class="qty-btn plus">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- منتج 3 -->
+        <div class="product-card" data-id="3" data-name="كرانشي" data-price="3">
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=500');"></div>
+            <div class="product-info">
+                <h2 class="product-title">كرانشي</h2>
+                <div class="product-price">3 ريال <small style="font-size:0.7rem; color:#aaa;">/ للقطعة</small></div>
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty-val">0</span>
+                    <button class="qty-btn plus">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- منتج 4 -->
+        <div class="product-card" data-id="4" data-name="شوكولاته البار (حسب المقاس)" data-price="15">
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1511381939415-e44015466834?q=80&w=500');"></div>
+            <div class="product-info">
+                <h2 class="product-title">شوكولاته البار</h2>
+                <div class="product-price">12 - 20 ريال <small style="font-size:0.8rem; color:var(--primary-color);">(محسوب بـ 15 كمعدل)</small></div>
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty-val">0</span>
+                    <button class="qty-btn plus">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- منتج 5 غني عن التعريف للمناسبات -->
+        <div class="product-card" data-id="5" data-name="صواني المناسبات والاعياد" data-price="0" data-custom="true">
+            <div class="product-img" style="background-image: url('https://images.unsplash.com/photo-1526081347589-7fa3cb41b4b2?q=80&w=500');"></div>
+            <div class="product-info">
+                <h2 class="product-title">صواني المناسبات واليوم الوطني</h2>
+                <div class="product-price" style="font-size: 1rem;">حسب المقاس والتنسيق</div>
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty-val">0</span>
+                    <button class="qty-btn plus">+</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- شريط السلة العائم بالأسفل الذي يظهر عند اختيار كمية -->
+    <div class="cart-bar" id="cartBar">
+        <div class="cart-info">
+            <span>المنتجات المختارة: </span> <span id="cartCount">0</span> | 
+            <span>الإجمالي: </span> <span class="cart-total" id="cartTotal">0 ريال</span>
+        </div>
+        <button class="order-btn" onclick="sendOrderToWhatsApp()">
+            <i class="fab fa-whatsapp" style="font-size: 1.4rem;"></i>
+            إرسال الطلب عبر الواتساب
+        </button>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 W sweet. جميع الحقوق محفوظة لمتجرك الفخم.</p>
+    </footer>
+
+    <script>
+        // --- أولاً: كود الخلفية الفخمة المتحركة (جزيئات الشوكولاتة الناعمة المنسدلة) ---
+        const canvas = document.getElementById('chocolate-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let particles = [];
+        const colors = ['#3e2723', '#4e342e', '#5d4037', '#795548', '#c5a880']; // درجات الشوكولاتة والذهبي
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        class ChocolateParticle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height - canvas.height;
+                this.size = Math.random() * 4 + 1;
+                this.speed = Math.random() * 1 + 0.5;
+                this.color = colors[Math.floor(Math.random() * colors.length)];
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.y += this.speed;
+                if (this.y > canvas.height) {
+                    this.y = -10;
+                    this.x = Math.random() * canvas.width;
+                }
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.globalAlpha = this.opacity;
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < 40; i++) {
+                particles.push(new ChocolateParticle());
+            }
+        }
+        initParticles();
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+
+        // --- ثانياً: نظام السلة والتحكم بالكميات والربط بالواتساب ---
+        const whatsappNumber = "9665XXXXXXXX"; // ضع رقم الواتساب الخاص بك هنا (بدون أصفار ومبتدئ بـ مفتاح الدولة 966)
+        let cart = {};
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            const id = card.getAttribute('data-id');
+            const name = card.getAttribute('data-name');
+            const price = parseFloat(card.getAttribute('data-price'));
+            const isCustom = card.getAttribute('data-custom') === 'true';
+
+            const minusBtn = card.querySelector('.minus');
+            const plusBtn = card.querySelector('.plus');
+            const qtyVal = card.querySelector('.qty-val');
+
+            plusBtn.addEventListener('click', () => {
+                if (!cart[id]) {
+                    cart[id] = { name: name, price: price, qty: 0, isCustom: isCustom };
+                }
+                cart[id].qty++;
+                qtyVal.innerText = cart[id].qty;
+                updateCart();
+            });
+
+            minusBtn.addEventListener('click', () => {
+                if (cart[id] && cart[id].qty > 0) {
+                    cart[id].qty--;
+                    qtyVal.innerText = cart[id].qty;
+                    if (cart[id].qty === 0) {
+                        delete cart[id];
+                    }
+                    updateCart();
+                }
+            });
+        });
+
+        function updateCart() {
+            let total = 0;
+            let count = 0;
+
+            for (let id in cart) {
+                count += cart[id].qty;
+                total += cart[id].qty * cart[id].price;
+            }
+
+            const cartBar = document.getElementById('cartBar');
+            const cartCount = document.getElementById('cartCount');
+            const cartTotal = document.getElementById('cartTotal');
+
+            cartCount.innerText = count;
+            cartTotal.innerText = total + " ريال " + (cartHasCustom() ? "(+ سعر الصواني)" : "");
+
+            if (count > 0) {
+                cartBar.classList.add('active');
+            } else {
+                cartBar.classList.remove('active');
+            }
+        }
+
+        function cartHasCustom() {
+            for (let id in cart) {
+                if (cart[id].isCustom) return true;
+            }
+            return false;
+        }
+
+        // تحويل السلة لرسالة نصية مرتبة وتوجيه العميل للواتساب مباشرة
+        function sendOrderToWhatsApp() {
+            let message = "مرحباً متجر W sweet ✨\n";
+            message += "أود تقديم طلب جديد من الموقع بالبيانات التالية:\n\n";
+            message += "📥 *الطلبات:*\n";
+
+            let total = 0;
+            for (let id in cart) {
+                let item = cart[id];
+                if (item.isCustom) {
+                    message += `- *${item.name}* (العدد: ${item.qty}) -> [سيتم تحديد السعر عند التنسيق]\n`;
+                } else {
+                    let itemTotal = item.qty * item.price;
+                    total += itemTotal;
+                    message += `- *${item.name}* (العدد: ${item.qty}) -> ${itemTotal} ريال\n`;
+                }
+            }
+
+            message += `\n💰 *الإجمالي النهائي:* ${total} ريال\n`;
+            message += `\n📢 _ملاحظة: إذا كان الطلب لمناسبة، فنحن نعلم أنه يجب التنسيق قبلها بأسبوع._`;
+
+            // تشفير الرسالة لتناسب الرابط
+            let encodedMessage = encodeURIComponent(message);
+            let whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+            // فتح الواتساب فوراً
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
