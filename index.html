@@ -386,7 +386,7 @@
             accent-color: var(--primary-gold);
         }
 
-        /* القوائم المنسدلة للأحجام */
+        /* القوائم المنسدلة للأحجام والمقاسات */
         .premium-select {
             width: 100%;
             background: var(--dark-choco);
@@ -646,34 +646,64 @@
                 </div>
             </div>
 
-            <!-- المنتج 3: بار بستاشيو الكنافة الترند (رابط حقيقي) -->
-            <div class="menu-card" id="card-bar">
+            <!-- المنتج 3: بار بستاشيو الكنافة - صغير -->
+            <div class="menu-card" id="card-bar-small">
                 <div class="image-crop-box">
-                    <img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527854845896294470/23FDE1D7-871C-47AF-BD0E-845B44D10EB4.png?ex=6a5c2d35&is=6a5adbb5&hm=79d323f2cac94aa4595a5b19d8f976209f64108e8cf3df7ce185a614d5f5c6d4&" alt="بار شوكولاتة بستاشيو الكنافة">
+                    <img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527854845896294470/23FDE1D7-871C-47AF-BD0E-845B44D10EB4.png?ex=6a5c2d35&is=6a5adbb5&hm=79d323f2cac94aa4595a5b19d8f976209f64108e8cf3df7ce185a614d5f5c6d4&" alt="بار شوكولاتة بستاشيو الكنافة صغير">
                 </div>
                 <div class="card-details">
                     <div>
-                        <h3 class="card-title">بار بستاشيو الكنافة</h3>
-                        <div class="card-price" id="bar-price-text">15 ريال</div>
-                        
-                        <div class="option-panel">
-                            <div class="option-title"><i class="fas fa-arrows-alt-v"></i> اختر المقاس المفضل:</div>
-                            <select class="premium-select" id="bar-size-select" onchange="adjustBarSizePrice()">
-                                <option value="12" data-label="صغير">صغير (ميني بار) - 12 ريال</option>
-                                <option value="15" data-label="وسط" selected>وسط (حجم قياسي) - 15 ريال</option>
-                                <option value="20" data-label="كبير">كبير (حجم عائلي) - 20 ريال</option>
-                            </select>
-                        </div>
+                        <h3 class="card-title">بار بستاشيو الكنافة (صغير)</h3>
+                        <div class="card-price">12 ريال <span style="font-size:0.8rem; color:#aaa;">/ ميني بار</span></div>
+                        <p style="font-size: 0.85rem; color:#b09f92; line-height:1.5;">بار بستاشيو مقرمش وغني بحشوة الكنافة الرائعة بحجم ميني مميز للضيافة الفردية.</p>
                     </div>
                     <div class="qty-wrapper">
-                        <button class="qty-action" onclick="updateItemQty('bar', -1)">-</button>
-                        <span class="qty-number" id="qty-bar">0</span>
-                        <button class="qty-action" onclick="updateItemQty('bar', 1)">+</button>
+                        <button class="qty-action" onclick="updateItemQty('bar_small', -1)">-</button>
+                        <span class="qty-number" id="qty-bar-small">0</span>
+                        <button class="qty-action" onclick="updateItemQty('bar_small', 1)">+</button>
                     </div>
                 </div>
             </div>
 
-            <!-- المنتج 4: بسكوت الكابتشينو الفاخر (رابط حقيقي) -->
+            <!-- المنتج 4: بار بستاشيو الكنافة - وسط -->
+            <div class="menu-card" id="card-bar-medium">
+                <div class="image-crop-box">
+                    <img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527854845896294470/23FDE1D7-871C-47AF-BD0E-845B44D10EB4.png?ex=6a5c2d35&is=6a5adbb5&hm=79d323f2cac94aa4595a5b19d8f976209f64108e8cf3df7ce185a614d5f5c6d4&" alt="بار شوكولاتة بستاشيو الكنافة وسط">
+                </div>
+                <div class="card-details">
+                    <div>
+                        <h3 class="card-title">بار بستاشيو الكنافة (وسط)</h3>
+                        <div class="card-price">15 ريال <span style="font-size:0.8rem; color:#aaa;">/ حجم قياسي</span></div>
+                        <p style="font-size: 0.85rem; color:#b09f92; line-height:1.5;">بار بستاشيو الكنافة الشهير بالحجم القياسي المتوازن والمليء بالقرمشة الغنية.</p>
+                    </div>
+                    <div class="qty-wrapper">
+                        <button class="qty-action" onclick="updateItemQty('bar_medium', -1)">-</button>
+                        <span class="qty-number" id="qty-bar-medium">0</span>
+                        <button class="qty-action" onclick="updateItemQty('bar_medium', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- المنتج 5: بار بستاشيو الكنافة - كبير -->
+            <div class="menu-card" id="card-bar-large">
+                <div class="image-crop-box">
+                    <img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527854845896294470/23FDE1D7-871C-47AF-BD0E-845B44D10EB4.png?ex=6a5c2d35&is=6a5adbb5&hm=79d323f2cac94aa4595a5b19d8f976209f64108e8cf3df7ce185a614d5f5c6d4&" alt="بار شوكولاتة بستاشيو الكنافة كبير">
+                </div>
+                <div class="card-details">
+                    <div>
+                        <h3 class="card-title">بار بستاشيو الكنافة (كبير)</h3>
+                        <div class="card-price">20 ريال <span style="font-size:0.8rem; color:#aaa;">/ حجم عائلي</span></div>
+                        <p style="font-size: 0.85rem; color:#b09f92; line-height:1.5;">الحجم العائلي الفاخر والأكبر من بار بستاشيو الكنافة لمتعة ومشاركة مضاعفة.</p>
+                    </div>
+                    <div class="qty-wrapper">
+                        <button class="qty-action" onclick="updateItemQty('bar_large', -1)">-</button>
+                        <span class="qty-number" id="qty-bar-large">0</span>
+                        <button class="qty-action" onclick="updateItemQty('bar_large', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- المنتج 6: بسكوت الكابتشينو الفاخر (رابط حقيقي) -->
             <div class="menu-card" id="card-biscuit">
                 <div class="image-crop-box">
                     <img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527851800101781674/CA5BCD78-A493-4BAA-80F0-0387DCD09C0A.png?ex=6a5c2a5f&is=6a5ad8df&hm=2ca2d83e80df6a7ea412d2f93df2cf1e5d116124dbc0838289e3e26b92110947&" alt="بسكوت الكابتشينو الفخم">
@@ -692,7 +722,7 @@
                 </div>
             </div>
 
-            <!-- المنتج 5: توزيعات مواليد فخمة (رابط حقيقي) -->
+            <!-- المنتج 7: توزيعات مواليد فخمة (رابط حقيقي) -->
             <div class="menu-card" id="card-newborn">
                 <div class="image-crop-box">
                     <img src="https://media.discordapp.net/attachments/1525890867452186795/1527852449984020550/E3A6674F-1F78-419D-859F-E7C8E1F92FD0.png?ex=6a5c2afa&is=6a5ad97a&hm=4c3bbe1e8e05a899e03e178c201fc36d6a938d21d137244d24e469e8adb7c4ba&=&format=webp&quality=lossless&width=1032&height=860" alt="توزيعات مواليد مميزة">
@@ -711,26 +741,71 @@
                 </div>
             </div>
 
-            <!-- المنتج 6: شرائط سكر فاخرة للمشروبات (رابط حقيقي) -->
-            <div class="menu-card" id="card-sugar">
+            <!-- المنتج 8: شرائط سكر للمشروبات -->
+            <div class="menu-card" id="card-sugar-drinks">
                 <div class="image-crop-box">
                     <img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527853975439802368/IMG_5514.png?ex=6a5c2c65&is=6a5adae5&hm=b6d543c57362fd81e9d2f9d9e2867ff93085695c60da44d1822c2e8c23687490&" alt="شرائط سكر للمشروبات">
                 </div>
                 <div class="card-details">
                     <div>
                         <h3 class="card-title">شرائط سكر فاخرة للمشروبات</h3>
-                        <div class="card-price">5 ريال <span style="font-size:0.8rem; color:#aaa;">/ للشريط</span></div>
-                        <p style="font-size: 0.85rem; color:#b09f92; line-height:1.5;">لمسة استثنائية لتقديم الشاي والقهوة والمشربات لضيوفكم، تذوب بنعومة ومطبوعة بعبارات ترحيب راقية.</p>
+                        <div class="card-price">40 ريال <span style="font-size:0.8rem; color:#aaa;">/ علبة 20 حبة</span></div>
+                        <p style="font-size: 0.85rem; color:#b09f92; line-height:1.5;">لمسة استثنائية لتقديم الشاي والقهوة لضيوفكم، تذوب بنعومة ومطبوعة بعبارات ترحيب راقية.</p>
                     </div>
                     <div class="qty-wrapper">
-                        <button class="qty-action" onclick="updateItemQty('sugar', -1)">-</button>
-                        <span class="qty-number" id="qty-sugar">0</span>
-                        <button class="qty-action" onclick="updateItemQty('sugar', 1)">+</button>
+                        <button class="qty-action" onclick="updateItemQty('sugar_drinks', -1)">-</button>
+                        <span class="qty-number" id="qty-sugar-drinks">0</span>
+                        <button class="qty-action" onclick="updateItemQty('sugar_drinks', 1)">+</button>
                     </div>
                 </div>
             </div>
 
-            <!-- المنتج 7: صواني المناسبات للتنسيق (رابط حقيقي) -->
+            <!-- المنتج 9: شرائط سكر للصواني -->
+            <div class="menu-card" id="card-sugar-trays">
+                <div class="image-crop-box">
+                    <img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527853975439802368/IMG_5514.png?ex=6a5c2c65&is=6a5adae5&hm=b6d543c57362fd81e9d2f9d9e2867ff93085695c60da44d1822c2e8c23687490&" alt="شرائط سكر للصواني">
+                </div>
+                <div class="card-details">
+                    <div>
+                        <h3 class="card-title">شرائط سكر فاخرة للصواني</h3>
+                        <div class="card-price">10 ريال <span style="font-size:0.8rem; color:#aaa;">/ للشريط</span></div>
+                        <p style="font-size: 0.85rem; color:#b09f92; line-height:1.5;">شرائط سكر منسقة خصيصاً لتزيين صواني الضيافة والمناسبات الفخمة بعبارات راقية.</p>
+                    </div>
+                    <div class="qty-wrapper">
+                        <button class="qty-action" onclick="updateItemQty('sugar_trays', -1)">-</button>
+                        <span class="qty-number" id="qty-sugar-trays">0</span>
+                        <button class="qty-action" onclick="updateItemQty('sugar_trays', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- المنتج 10: لوقو دائري -->
+            <div class="menu-card" id="card-circular-logo">
+                <div class="image-crop-box">
+                    <img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527853975041478747/IMG_5516.png?ex=6a5c2c65&is=6a5adae5&hm=9322c32e3da206a40b07f49f96fe55ab62a92ed6732d62879e1477cdd4dbc2f7&" alt="لوقو دائري مخصص">
+                </div>
+                <div class="card-details">
+                    <div>
+                        <h3 class="card-title">لوقو دائري مخصص</h3>
+                        <div class="card-price" id="logo-price-text">15 ريال</div>
+                        
+                        <div class="option-panel">
+                            <div class="option-title"><i class="fas fa-expand-arrows-alt"></i> اختر المقاس:</div>
+                            <select class="premium-select" id="logo-size-select" onchange="adjustLogoSizePrice()">
+                                <option value="15" data-label="مقاس 9-10" selected>مقاس 9-10 - 15 ريال</option>
+                                <option value="20" data-label="مقاس 13-14-15">مقاس 13-14-15 - 20 ريال</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="qty-wrapper">
+                        <button class="qty-action" onclick="updateItemQty('circular_logo', -1)">-</button>
+                        <span class="qty-number" id="qty-circular-logo">0</span>
+                        <button class="qty-action" onclick="updateItemQty('circular_logo', 1)">+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- المنتج 11: صواني المناسبات للتنسيق (رابط حقيقي) -->
             <div class="menu-card" id="card-event-trays">
                 <div class="image-crop-box">
                     <img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527854419729846342/AC7C82B3-A1A5-43BB-921B-3A7A3A5FB7AD.png?ex=6a5c2ccf&is=6a5adb4f&hm=be0da362d43e3b6b019429599520a6dd00166a5892da3a49b9037041030aac28&" alt="صواني المناسبات والتخرج">
@@ -749,7 +824,7 @@
                 </div>
             </div>
 
-            <!-- المنتج 8: طباعة الشوكولاته المخصصة (رابط حقيقي) -->
+            <!-- المنتج 12: طباعة الشوكولاته المخصصة (رابط حقيقي) -->
             <div class="menu-card" id="card-printing">
                 <div class="image-crop-box">
                     <img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527853975041478747/IMG_5516.png?ex=6a5c2c65&is=6a5adae5&hm=9322c32e3da206a40b07f49f96fe55ab62a92ed6732d62879e1477cdd4dbc2f7&" alt="طباعة على الشوكولاتة">
@@ -795,23 +870,27 @@
         const productsDatabase = {
             belgian: { name: "كيلو الشوكولاته البلجيكي", price: 150, qty: 0 },
             mixed: { name: "صينية شوكولاته منوعة (150 حبة)", price: 250, qty: 0 },
-            bar: { name: "بار بستاشيو الكنافة الترند", price: 15, qty: 0, selectedSize: "وسط" },
+            bar_small: { name: "بار بستاشيو الكنافة (صغير)", price: 12, qty: 0 },
+            bar_medium: { name: "بار بستاشيو الكنافة (وسط)", price: 15, qty: 0 },
+            bar_large: { name: "بار بستاشيو الكنافة (كبير)", price: 20, qty: 0 },
             biscuit: { name: "بسكوت الكابتشينو الفاخر", price: 4, qty: 0 },
             newborn: { name: "توزيعات مواليد فخمة", price: 4, qty: 0 },
-            sugar: { name: "شرائط سكر للمشروبات", price: 5, qty: 0 },
+            sugar_drinks: { name: "شرائط سكر فاخرة للمشروبات (20 حبة)", price: 40, qty: 0 },
+            sugar_trays: { name: "شرائط سكر فاخرة للصواني", price: 10, qty: 0 },
+            circular_logo: { name: "لوقو دائري مخصص", price: 15, qty: 0, selectedSize: "مقاس 9-10" },
             event_trays: { name: "صواني المناسبات الكبرى", price: 0, qty: 0, isCustomPrice: true },
             printing: { name: "صواني طباعة الشوكولاته الفاخرة", price: 0, qty: 0, isCustomPrice: true }
         };
 
-        // تحديث سعر البار مباشرة بناءً على الحجم المحدد
-        function adjustBarSizePrice() {
-            const sizeSelector = document.getElementById('bar-size-select');
+        // تحديث سعر اللوقو الدائري بناءً على الحجم المحدد
+        function adjustLogoSizePrice() {
+            const sizeSelector = document.getElementById('logo-size-select');
             const price = parseInt(sizeSelector.value);
             const label = sizeSelector.options[sizeSelector.selectedIndex].getAttribute('data-label');
             
-            productsDatabase.bar.price = price;
-            productsDatabase.bar.selectedSize = label;
-            document.getElementById('bar-price-text').innerText = price + " ريال";
+            productsDatabase.circular_logo.price = price;
+            productsDatabase.circular_logo.selectedSize = label;
+            document.getElementById('logo-price-text').innerText = price + " ريال";
             
             recalculateCartSummary();
         }
@@ -822,7 +901,7 @@
             item.qty += delta;
             if (item.qty < 0) item.qty = 0;
             
-            document.getElementById('qty-' + productId).innerText = item.qty;
+            document.getElementById('qty-' + productId.replace('_', '-')).innerText = item.qty;
             recalculateCartSummary();
         }
 
@@ -882,15 +961,31 @@
                 message += `• ${productsDatabase.mixed.name}\n  الكمية: ${productsDatabase.mixed.qty} صينية\n  السعر: ${subTotal} ريال\n\n`;
             }
 
-            // 3. بار الكنافة بستاشيو
-            if (productsDatabase.bar.qty > 0) {
+            // 3. بار الكنافة بستاشيو - صغير
+            if (productsDatabase.bar_small.qty > 0) {
                 hasItems = true;
-                let subTotal = productsDatabase.bar.price * productsDatabase.bar.qty;
+                let subTotal = productsDatabase.bar_small.price * productsDatabase.bar_small.qty;
                 estimatedTotal += subTotal;
-                message += `• ${productsDatabase.bar.name} (${productsDatabase.bar.selectedSize})\n  الكمية: ${productsDatabase.bar.qty} حبة\n  السعر: ${subTotal} ريال\n\n`;
+                message += `• ${productsDatabase.bar_small.name}\n  الكمية: ${productsDatabase.bar_small.qty} حبة\n  السعر: ${subTotal} ريال\n\n`;
             }
 
-            // 4. بسكوت الكابتشينو
+            // 4. بار الكنافة بستاشيو - وسط
+            if (productsDatabase.bar_medium.qty > 0) {
+                hasItems = true;
+                let subTotal = productsDatabase.bar_medium.price * productsDatabase.bar_medium.qty;
+                estimatedTotal += subTotal;
+                message += `• ${productsDatabase.bar_medium.name}\n  الكمية: ${productsDatabase.bar_medium.qty} حبة\n  السعر: ${subTotal} ريال\n\n`;
+            }
+
+            // 5. بار الكنافة بستاشيو - كبير
+            if (productsDatabase.bar_large.qty > 0) {
+                hasItems = true;
+                let subTotal = productsDatabase.bar_large.price * productsDatabase.bar_large.qty;
+                estimatedTotal += subTotal;
+                message += `• ${productsDatabase.bar_large.name}\n  الكمية: ${productsDatabase.bar_large.qty} حبة\n  السعر: ${subTotal} ريال\n\n`;
+            }
+
+            // 6. بسكوت الكابتشينو
             if (productsDatabase.biscuit.qty > 0) {
                 hasItems = true;
                 let subTotal = productsDatabase.biscuit.price * productsDatabase.biscuit.qty;
@@ -898,7 +993,7 @@
                 message += `• ${productsDatabase.biscuit.name}\n  الكمية: ${productsDatabase.biscuit.qty} حبة\n  السعر: ${subTotal} ريال\n\n`;
             }
 
-            // 5. توزيعات مواليد
+            // 7. توزيعات مواليد
             if (productsDatabase.newborn.qty > 0) {
                 hasItems = true;
                 let subTotal = productsDatabase.newborn.price * productsDatabase.newborn.qty;
@@ -906,21 +1001,37 @@
                 message += `• ${productsDatabase.newborn.name}\n  الكمية: ${productsDatabase.newborn.qty} حبة\n  السعر: ${subTotal} ريال\n\n`;
             }
 
-            // 6. شرائط سكر للمشروبات
-            if (productsDatabase.sugar.qty > 0) {
+            // 8. شرائط سكر للمشروبات
+            if (productsDatabase.sugar_drinks.qty > 0) {
                 hasItems = true;
-                let subTotal = productsDatabase.sugar.price * productsDatabase.sugar.qty;
+                let subTotal = productsDatabase.sugar_drinks.price * productsDatabase.sugar_drinks.qty;
                 estimatedTotal += subTotal;
-                message += `• ${productsDatabase.sugar.name}\n  الكمية: ${productsDatabase.sugar.qty} شريط\n  السعر: ${subTotal} ريال\n\n`;
+                message += `• ${productsDatabase.sugar_drinks.name}\n  الكمية: ${productsDatabase.sugar_drinks.qty} علبة\n  السعر: ${subTotal} ريال\n\n`;
             }
 
-            // 7. صواني المناسبات الكبرى
+            // 9. شرائط سكر للصواني
+            if (productsDatabase.sugar_trays.qty > 0) {
+                hasItems = true;
+                let subTotal = productsDatabase.sugar_trays.price * productsDatabase.sugar_trays.qty;
+                estimatedTotal += subTotal;
+                message += `• ${productsDatabase.sugar_trays.name}\n  الكمية: ${productsDatabase.sugar_trays.qty} شريط\n  السعر: ${subTotal} ريال\n\n`;
+            }
+
+            // 10. لوقو دائري مخصص
+            if (productsDatabase.circular_logo.qty > 0) {
+                hasItems = true;
+                let subTotal = productsDatabase.circular_logo.price * productsDatabase.circular_logo.qty;
+                estimatedTotal += subTotal;
+                message += `• ${productsDatabase.circular_logo.name} (${productsDatabase.circular_logo.selectedSize})\n  الكمية: ${productsDatabase.circular_logo.qty} حبة\n  السعر: ${subTotal} ريال\n\n`;
+            }
+
+            // 11. صواني المناسبات الكبرى
             if (productsDatabase.event_trays.qty > 0) {
                 hasItems = true;
                 message += `• ${productsDatabase.event_trays.name}\n  العدد المطلوب: ${productsDatabase.event_trays.qty} صينية (للاتفاق وتحديد السعر)\n\n`;
             }
 
-            // 8. صواني الطباعة على الشوكولاتة
+            // 12. صواني الطباعة على الشوكولاتة
             if (productsDatabase.printing.qty > 0) {
                 hasItems = true;
                 message += `• ${productsDatabase.printing.name}\n  العدد المطلوب: ${productsDatabase.printing.qty} صينية (للاتفاق والتنسيق)\n\n`;
