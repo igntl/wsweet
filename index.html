@@ -1,121 +1,2013 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W sweet | متجر الشوكولاتة الفاخرة والضيافة</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-    
-    <style>
-        :root { --primary-gold: #d4af37; --dark-choco: #110702; --glass-bg: rgba(35, 17, 7, 0.75); --border-glow: rgba(212, 175, 55, 0.25); }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
-        body { background-color: var(--dark-choco); color: #f3e6dc; min-height: 100vh; }
-        .main-wrapper { max-width: 900px; margin: 20px auto; padding: 20px; }
-        .menu-card { background: var(--glass-bg); border: 1px solid var(--border-glow); border-radius: 16px; padding: 20px; margin-bottom: 20px; }
-        .card-price { color: var(--primary-gold); font-weight: 800; margin: 10px 0; }
-        select { width: 100%; background: #2a1a0f; color: white; border: 1px solid var(--primary-gold); padding: 8px; border-radius: 6px; margin-bottom: 15px; }
-        .qty-wrapper { display: flex; align-items: center; gap: 15px; }
-        .qty-action { background: var(--primary-gold); border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; }
-        #cartTray { position: fixed; bottom: 0; width: 100%; background: #231107; padding: 20px; border-top: 2px solid var(--primary-gold); display: none; justify-content: space-between; align-items: center; }
-    </style>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>W sweet | متجر الشوكولاتة الفاخرة والضيافة</title>
+
+<!-- مكتبة الأيقونات الفاخرة FontAwesome -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- مكتبة الخطوط العربية من جوجل -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
+<style>
+
+:root {
+
+--primary-gold: #d4af37;
+
+--light-gold: #f3e5ab;
+
+--dark-choco: #110702;
+
+--mid-choco: #231107;
+
+--light-choco: #3d1f11;
+
+--premium-cream: #fbf9f6;
+
+--glass-bg: rgba(35, 17, 7, 0.75);
+
+--border-glow: rgba(212, 175, 55, 0.25);
+
+}
+
+
+
+* {
+
+box-sizing: border-box;
+
+margin: 0;
+
+padding: 0;
+
+font-family: 'Cairo', sans-serif;
+
+}
+
+
+
+body {
+
+background-color: var(--dark-choco);
+
+color: #f3e6dc;
+
+min-height: 100vh;
+
+overflow-x: hidden;
+
+position: relative;
+
+}
+
+
+
+/* كانفاس الخلفية التفاعلية المتحركة لقطع الشوكولاتة ورقاقات الذهب */
+
+#interactive-bg {
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+width: 100vw;
+
+height: 100vh;
+
+z-index: -2;
+
+pointer-events: none;
+
+}
+
+
+
+/* طبقة تظليل مضافة لإعطاء تباين وعمق رائع للكتابة */
+
+.gradient-overlay {
+
+position: fixed;
+
+top: 0;
+
+left: 0;
+
+width: 100%;
+
+height: 100%;
+
+background: radial-gradient(circle at center, rgba(17, 7, 2, 0.4) 0%, rgba(11, 4, 1, 0.9) 100%);
+
+z-index: -1;
+
+pointer-events: none;
+
+}
+
+
+
+/* الهيدر وقسم الترحيب الفاخر */
+
+header {
+
+text-align: center;
+
+padding: 50px 20px 30px 20px;
+
+border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+
+background: rgba(17, 7, 2, 0.85);
+
+backdrop-filter: blur(12px);
+
+position: relative;
+
+}
+
+
+
+.logo-wrapper {
+
+position: relative;
+
+display: inline-block;
+
+margin-bottom: 15px;
+
+}
+
+
+
+.logo-wrapper img {
+
+width: 160px;
+
+height: 160px;
+
+border-radius: 50%;
+
+border: 3px solid var(--primary-gold);
+
+padding: 2px;
+
+object-fit: cover;
+
+background: var(--dark-choco);
+
+box-shadow: 0 0 35px rgba(212, 175, 55, 0.4);
+
+transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+
+
+
+.logo-wrapper img:hover {
+
+transform: scale(1.08) rotate(5deg);
+
+box-shadow: 0 0 45px rgba(212, 175, 55, 0.6);
+
+}
+
+
+
+.store-title {
+
+font-family: 'Playfair Display', 'Cairo', serif;
+
+font-size: 2.8rem;
+
+color: var(--primary-gold);
+
+font-weight: 700;
+
+letter-spacing: 2px;
+
+text-shadow: 0 3px 10px rgba(0,0,0,0.8);
+
+}
+
+
+
+.store-tagline {
+
+font-size: 0.95rem;
+
+color: var(--light-gold);
+
+letter-spacing: 4px;
+
+margin-top: 5px;
+
+font-weight: 600;
+
+opacity: 0.9;
+
+}
+
+
+
+/* أزرار حسابات التواصل الفاخرة المحدثة بروابطك */
+
+.social-container {
+
+display: flex;
+
+justify-content: center;
+
+gap: 18px;
+
+margin-top: 20px;
+
+}
+
+
+
+.social-link {
+
+color: var(--premium-cream);
+
+font-size: 1.3rem;
+
+width: 48px;
+
+height: 48px;
+
+border-radius: 50%;
+
+background: rgba(255, 255, 255, 0.05);
+
+border: 1px solid rgba(212, 175, 55, 0.2);
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+text-decoration: none;
+
+transition: all 0.3s ease;
+
+}
+
+
+
+.social-link:hover {
+
+background: var(--primary-gold);
+
+color: var(--dark-choco);
+
+transform: translateY(-4px);
+
+box-shadow: 0 8px 20px rgba(212, 175, 55, 0.45);
+
+}
+
+
+
+/* بنر التنبيه الفخم للمناسبات */
+
+.notice-banner {
+
+background: linear-gradient(135deg, rgba(160, 120, 60, 0.25) 0%, rgba(35, 17, 7, 0.8) 100%);
+
+border-right: 4px solid var(--primary-gold);
+
+border-left: 4px solid var(--primary-gold);
+
+padding: 16px 24px;
+
+margin: 35px auto;
+
+max-width: 950px;
+
+border-radius: 8px;
+
+text-align: center;
+
+font-size: 1.15rem;
+
+font-weight: 600;
+
+line-height: 1.7;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 15px;
+
+box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+
+border-top: 1px solid rgba(212, 175, 55, 0.15);
+
+border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+
+width: 90%;
+
+}
+
+
+
+.notice-banner i {
+
+color: var(--primary-gold);
+
+font-size: 1.5rem;
+
+animation: pulse-glow 2s infinite ease-in-out;
+
+}
+
+
+
+@keyframes pulse-glow {
+
+0%, 100% { opacity: 0.6; transform: scale(1); }
+
+50% { opacity: 1; transform: scale(1.15); }
+
+}
+
+
+
+/* حاوية الأقسام الرئيسية */
+
+.main-wrapper {
+
+max-width: 1100px;
+
+margin: 0 auto 120px auto;
+
+padding: 0 20px;
+
+}
+
+
+
+/* قسم الشهادات المعتمدة الفاخرة */
+
+.credentials-section {
+
+background: rgba(28, 14, 6, 0.65);
+
+border: 1px solid rgba(212, 175, 55, 0.15);
+
+border-radius: 16px;
+
+padding: 30px 20px;
+
+margin-bottom: 50px;
+
+backdrop-filter: blur(8px);
+
+box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.05);
+
+}
+
+
+
+.section-title {
+
+font-size: 1.6rem;
+
+color: var(--primary-gold);
+
+text-align: center;
+
+margin-bottom: 25px;
+
+position: relative;
+
+font-weight: 700;
+
+letter-spacing: 1px;
+
+}
+
+
+
+.section-title::after {
+
+content: '';
+
+display: block;
+
+width: 60px;
+
+height: 2px;
+
+background: var(--primary-gold);
+
+margin: 10px auto 0 auto;
+
+}
+
+
+
+.badges-grid {
+
+display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+gap: 25px;
+
+}
+
+
+
+.badge-card {
+
+background: rgba(17, 7, 2, 0.6);
+
+border: 1px solid rgba(212, 175, 55, 0.1);
+
+border-radius: 12px;
+
+padding: 20px;
+
+display: flex;
+
+align-items: center;
+
+gap: 15px;
+
+transition: all 0.3s;
+
+}
+
+
+
+.badge-card:hover {
+
+border-color: var(--primary-gold);
+
+background: rgba(17, 7, 2, 0.8);
+
+transform: translateY(-2px);
+
+}
+
+
+
+.badge-icon {
+
+font-size: 2.2rem;
+
+color: var(--primary-gold);
+
+background: rgba(212, 175, 55, 0.1);
+
+width: 65px;
+
+height: 65px;
+
+border-radius: 50%;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+flex-shrink: 0;
+
+border: 1px solid rgba(212, 175, 55, 0.2);
+
+}
+
+
+
+.badge-text h4 {
+
+color: #fff;
+
+font-size: 1.05rem;
+
+margin-bottom: 4px;
+
+font-weight: 700;
+
+}
+
+
+
+.badge-text p {
+
+color: #bfaea2;
+
+font-size: 0.85rem;
+
+line-height: 1.4;
+
+}
+
+
+
+/* شبكة المنتجات الفاخرة */
+
+.menu-grid {
+
+display: grid;
+
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+gap: 35px;
+
+}
+
+
+
+.menu-card {
+
+background: var(--glass-bg);
+
+border: 1px solid var(--border-glow);
+
+border-radius: 16px;
+
+overflow: hidden;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: space-between;
+
+box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+
+backdrop-filter: blur(10px);
+
+transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+}
+
+
+
+.menu-card:hover {
+
+transform: translateY(-8px);
+
+border-color: var(--primary-gold);
+
+box-shadow: 0 20px 45px rgba(212, 175, 55, 0.2);
+
+}
+
+
+
+/* تصميم حاوية الصور مع إخفاء نصوص السناب شات تلقائياً بكفاءة وعزلها */
+
+.image-crop-box {
+
+width: 100%;
+
+height: 250px;
+
+overflow: hidden;
+
+position: relative;
+
+background-color: var(--dark-choco);
+
+border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+
+}
+
+
+
+/* تكبير الصورة وإزاحتها لتجاوز شريط السناب شات بنقاء تام */
+
+.image-crop-box img {
+
+width: 100%;
+
+height: 100%;
+
+object-fit: cover;
+
+transform: scale(1.22);
+
+transform-origin: center;
+
+transition: transform 0.6s ease;
+
+}
+
+
+
+.menu-card:hover .image-crop-box img {
+
+transform: scale(1.28);
+
+}
+
+
+
+.card-details {
+
+padding: 24px;
+
+flex-grow: 1;
+
+display: flex;
+
+flex-direction: column;
+
+justify-content: space-between;
+
+}
+
+
+
+.card-title {
+
+font-size: 1.35rem;
+
+color: #fff;
+
+font-weight: 700;
+
+margin-bottom: 8px;
+
+}
+
+
+
+.card-price {
+
+font-size: 1.25rem;
+
+color: var(--primary-gold);
+
+font-weight: 800;
+
+margin-bottom: 15px;
+
+}
+
+
+
+/* الخيارات الإضافية للمنتجات */
+
+.option-panel {
+
+background: rgba(17, 7, 2, 0.5);
+
+border: 1px solid rgba(212, 175, 55, 0.1);
+
+border-radius: 8px;
+
+padding: 12px;
+
+margin-bottom: 15px;
+
+}
+
+
+
+.option-title {
+
+font-size: 0.85rem;
+
+color: var(--primary-gold);
+
+font-weight: 700;
+
+margin-bottom: 8px;
+
+display: flex;
+
+align-items: center;
+
+gap: 6px;
+
+}
+
+
+
+.fillings-grid {
+
+display: grid;
+
+grid-template-columns: 1fr 1fr;
+
+gap: 6px;
+
+max-height: 110px;
+
+overflow-y: auto;
+
+padding-right: 4px;
+
+}
+
+
+
+/* تخصيص السكرولر للحشوات */
+
+.fillings-grid::-webkit-scrollbar {
+
+width: 4px;
+
+}
+
+.fillings-grid::-webkit-scrollbar-thumb {
+
+background: var(--primary-gold);
+
+border-radius: 4px;
+
+}
+
+
+
+.filling-label {
+
+display: flex;
+
+align-items: center;
+
+gap: 6px;
+
+font-size: 0.8rem;
+
+cursor: pointer;
+
+color: #e3d2c4;
+
+user-select: none;
+
+}
+
+
+
+.filling-label input {
+
+accent-color: var(--primary-gold);
+
+}
+
+
+
+/* القوائم المنسدلة للأحجام */
+
+.premium-select {
+
+width: 100%;
+
+background: var(--dark-choco);
+
+color: #e3d2c4;
+
+border: 1px solid rgba(212, 175, 55, 0.3);
+
+padding: 8px 12px;
+
+border-radius: 6px;
+
+outline: none;
+
+font-size: 0.85rem;
+
+cursor: pointer;
+
+transition: border-color 0.3s;
+
+}
+
+
+
+.premium-select:focus {
+
+border-color: var(--primary-gold);
+
+}
+
+
+
+/* عداد الكميات التفاعلي */
+
+.qty-wrapper {
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+gap: 15px;
+
+margin-top: auto;
+
+padding-top: 10px;
+
+}
+
+
+
+.qty-action {
+
+background: rgba(212, 175, 55, 0.15);
+
+border: 1px solid var(--primary-gold);
+
+color: var(--primary-gold);
+
+width: 38px;
+
+height: 38px;
+
+border-radius: 50%;
+
+cursor: pointer;
+
+font-size: 1.2rem;
+
+font-weight: bold;
+
+display: flex;
+
+align-items: center;
+
+justify-content: center;
+
+transition: all 0.2s;
+
+}
+
+
+
+.qty-action:hover {
+
+background: var(--primary-gold);
+
+color: var(--dark-choco);
+
+box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+
+}
+
+
+
+.qty-number {
+
+font-size: 1.3rem;
+
+font-weight: 700;
+
+width: 35px;
+
+text-align: center;
+
+color: #fff;
+
+}
+
+
+
+/* السلة الذهبية الذكية العائمة بالأسفل */
+
+.bottom-cart-tray {
+
+position: fixed;
+
+bottom: 0;
+
+left: 50%;
+
+transform: translateX(-50%) translateY(120px);
+
+width: 90%;
+
+max-width: 800px;
+
+background: rgba(28, 14, 6, 0.95);
+
+border: 2px solid var(--primary-gold);
+
+border-bottom: none;
+
+border-radius: 20px 20px 0 0;
+
+padding: 18px 30px;
+
+display: flex;
+
+justify-content: space-between;
+
+align-items: center;
+
+z-index: 999;
+
+box-shadow: 0 -10px 40px rgba(0,0,0,0.8);
+
+backdrop-filter: blur(15px);
+
+transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.2);
+
+}
+
+
+
+.bottom-cart-tray.show {
+
+transform: translateX(-50%) translateY(0);
+
+}
+
+
+
+.cart-stats h5 {
+
+font-size: 1.3rem;
+
+color: #fff;
+
+font-weight: 700;
+
+}
+
+
+
+.cart-stats h5 span {
+
+color: var(--primary-gold);
+
+}
+
+
+
+.cart-stats p {
+
+font-size: 0.85rem;
+
+color: #b3a296;
+
+margin-top: 3px;
+
+}
+
+
+
+.cart-order-btn {
+
+background: #25D366;
+
+color: #fff;
+
+border: none;
+
+padding: 12px 30px;
+
+font-size: 1.1rem;
+
+font-weight: 700;
+
+border-radius: 30px;
+
+cursor: pointer;
+
+display: flex;
+
+align-items: center;
+
+gap: 10px;
+
+box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+
+transition: all 0.3s;
+
+}
+
+
+
+.cart-order-btn:hover {
+
+background: #20ba56;
+
+transform: translateY(-2px) scale(1.03);
+
+box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+
+}
+
+
+
+footer {
+
+text-align: center;
+
+padding: 40px 20px 140px 20px;
+
+color: #6d5a4e;
+
+font-size: 0.85rem;
+
+border-top: 1px solid rgba(212, 175, 55, 0.05);
+
+}
+
+
+
+/* استجابة شاشات الجوال */
+
+@media (max-width: 600px) {
+
+.bottom-cart-tray {
+
+width: 100%;
+
+border-radius: 0;
+
+flex-direction: column;
+
+gap: 15px;
+
+padding: 15px;
+
+text-align: center;
+
+}
+
+.cart-order-btn {
+
+width: 100%;
+
+justify-content: center;
+
+}
+
+.store-title {
+
+font-size: 2.1rem;
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
+
+
+<!-- الكانفاس الحركي لعناصر الشوكولاتة والبريق الذهبي المتساقط تفاعلياً -->
+
+<canvas id="interactive-bg"></canvas>
+
+<div class="gradient-overlay"></div>
+
+
+
+<header>
+
+<div class="logo-wrapper">
+
+<!-- اللوقو الخاص بـ W Sweet المحدث برابطك الحقيقي المباشر -->
+
+<img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527856701712105644/91596F9E-1D80-439E-8844-63161217CFE0.jpg?ex=6a5c2eef&is=6a5add6f&hm=c8c1a693a06b90d163f06233f1ffff1e8ffac16d74c2d072a2923e881ce8fb9f&" alt="شعار متجر W Sweet">
+
+</div>
+
+<h1 class="store-title">W sweet</h1>
+
+<p class="store-tagline">HANDMADE CHOCOLATE</p>
+
+
+
+<!-- حسابات السوشيال ميديا المحدثة بروابطك الفعلية المرسلة -->
+
+<div class="social-container">
+
+<a href="https://www.tiktok.com/@w.sweet6?_r=1&_t=ZS-987hSAb0l3B" target="_blank" class="social-link" title="تيك توك"><i class="fab fa-tiktok"></i></a>
+
+<a href="https://www.instagram.com/mini.pan97" target="_blank" class="social-link" title="انستغرام"><i class="fab fa-instagram"></i></a>
+
+<a href="https://wa.me/966505691474" target="_blank" class="social-link" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+
+</div>
+
+
+
+<!-- بنر التنبيه لطلب المناسبات قبلها بأسبوع -->
+
+<div class="notice-banner">
+
+<i class="fas fa-calendar-alt"></i>
+
+<div>
+
+تنويـه هـام للمناسبـات: لجميع طلبات المناسبات السعيدة (تخرج، مواليد، زواجات)، يرجى تقديم طلبكم قبل الموعد بـ <strong>أسبوع كامل</strong> لضمان أرقى تنسيق وتجهيز.
+
+</div>
+
+</div>
+
+</header>
+
+
+
 <div class="main-wrapper">
-    <!-- بار بستاشيو -->
-    <div class="menu-card" id="card-bar">
-        <h3>بار بستاشيو الكنافة</h3>
-        <div class="card-price" id="price-bar">15 ريال</div>
-        <select id="select-bar" onchange="updatePrice('bar')">
-            <option value="10">صغير - 10 ريال</option>
-            <option value="15" selected>وسط - 15 ريال</option>
-            <option value="20">كبير - 20 ريال</option>
-        </select>
-        <div class="qty-wrapper">
-            <button class="qty-action" onclick="changeQty('bar', -1)">-</button>
-            <span id="qty-bar">0</span>
-            <button class="qty-action" onclick="changeQty('bar', 1)">+</button>
-        </div>
-    </div>
 
-    <!-- لوقو دائري -->
-    <div class="menu-card" id="card-logo">
-        <h3>لوقو دائري</h3>
-        <div class="card-price" id="price-logo">15 ريال</div>
-        <select id="select-logo" onchange="updatePrice('logo')">
-            <option value="10">صغير - 10 ريال</option>
-            <option value="15" selected>وسط - 15 ريال</option>
-            <option value="20">كبير - 20 ريال</option>
-        </select>
-        <div class="qty-wrapper">
-            <button class="qty-action" onclick="changeQty('logo', -1)">-</button>
-            <span id="qty-logo">0</span>
-            <button class="qty-action" onclick="changeQty('logo', 1)">+</button>
-        </div>
-    </div>
 
-    <!-- شرائط سكر -->
-    <div class="menu-card" id="card-sugar">
-        <h3>شرائط سكر</h3>
-        <div class="card-price" id="price-sugar">15 ريال</div>
-        <select id="select-sugar" onchange="updatePrice('sugar')">
-            <option value="10">صغير - 10 ريال</option>
-            <option value="15" selected>وسط - 15 ريال</option>
-            <option value="20">كبير - 20 ريال</option>
-        </select>
-        <div class="qty-wrapper">
-            <button class="qty-action" onclick="changeQty('sugar', -1)">-</button>
-            <span id="qty-sugar">0</span>
-            <button class="qty-action" onclick="changeQty('sugar', 1)">+</button>
-        </div>
-    </div>
+
+<!-- قسم الشهادات والاعتمادات الموثقة -->
+
+<section class="credentials-section">
+
+<h3 class="section-title">اعتمادات وجدارات الشوكولاتة</h3>
+
+<div class="badges-grid">
+
+<div class="badge-card">
+
+<div class="badge-icon"><i class="fas fa-certificate"></i></div>
+
+<div class="badge-text">
+
+<h4>شهادة معتمدة في صنع الشوكولاتة</h4>
+
+<p>حاصلة على شهادة معتمدة دولياً ومحلياً في صياغة وصنع أفخم أنواع الشوكولاتة من الصفر (الحبة الخام).</p>
+
 </div>
 
-<div id="cartTray">
-    <strong>الإجمالي: <span id="total-val">0</span> ريال</strong>
-    <button onclick="sendWhatsApp()" style="padding:10px 20px; border-radius:20px; border:none; background:#25D366; color:white;">إرسال الطلب</button>
 </div>
+
+<div class="badge-card">
+
+<div class="badge-icon"><i class="fas fa-print"></i></div>
+
+<div class="badge-text">
+
+<h4>شهادة الطباعة على الشوكولاتة</h4>
+
+<p>شهادة متخصصة ومعتمدة في تقنيات الطباعة الدقيقة على أسطح الشوكولاتة بأحبار غذائية طبيعية ممتازة.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- شبكة المنتجات بالروابط الحقيقية الجديدة تماماً -->
+
+<section class="menu-grid">
+
+
+
+<!-- المنتج 1: شوكولاتة بلجيكي (رابط حقيقي) -->
+
+<div class="menu-card" id="card-belgian">
+
+<div class="image-crop-box">
+
+<img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527855210821845072/40D47FAE-B9E8-44C7-ADA0-2C24F24A7ADB.png?ex=6a5c2d8c&is=6a5adc0c&hm=0f982f00887af7f53903ccecabd789b4833fd10d2c96d15ad8f072c52a8d923b&" alt="شوكولاتة بلجيكي الكيلو">
+
+</div>
+
+<div class="card-details">
+
+<div>
+
+<h3 class="card-title">شوكولاته بلجيكي فاخر</h3>
+
+<div class="card-price">150 ريال <span style="font-size:0.8rem; color:#aaa;">/ للكيلو</span></div>
+
+<div class="option-panel">
+
+<div class="option-title"><i class="fas fa-cookie-bite"></i> اختر الحشوة المفضلة:</div>
+
+<div class="fillings-grid">
+
+<label class="filling-label"><input type="checkbox" value="توفي كراميل"> توفي كراميل</label>
+
+<label class="filling-label"><input type="checkbox" value="توفي قهوة"> توفي قهوة</label>
+
+<label class="filling-label"><input type="checkbox" value="بيكان مع القطع"> بيكان مع قطع</label>
+
+<label class="filling-label"><input type="checkbox" value="بيستاشيو كرانشي"> بستاشيو كرانشي</label>
+
+<label class="filling-label"><input type="checkbox" value="ليمون كرانشي"> ليمون كرانشي</label>
+
+<label class="filling-label"><input type="checkbox" value="توت كرانشي"> توت كرانشي</label>
+
+<label class="filling-label"><input type="checkbox" value="مستكة"> مستكة</label>
+
+<label class="filling-label"><input type="checkbox" value="تشيز توت"> تشيز توت</label>
+
+<label class="filling-label"><input type="checkbox" value="شوكولاته بالبندق"> شوكولاته بندق</label>
+
+<label class="filling-label"><input type="checkbox" value="كنافة مع الكندر"> كنافة كندر</label>
+
+<label class="filling-label"><input type="checkbox" value="كنافة مع البيستاشيو"> كنافة بستاشيو</label>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="qty-wrapper">
+
+<button class="qty-action" onclick="updateItemQty('belgian', -1)">-</button>
+
+<span class="qty-number" id="qty-belgian">0</span>
+
+<button class="qty-action" onclick="updateItemQty('belgian', 1)">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- المنتج 2: صينية شوكولاتة بحشوات مختلفة (رابط حقيقي) -->
+
+<div class="menu-card" id="card-mixed">
+
+<div class="image-crop-box">
+
+<img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527851799544070205/509797B9-8FC0-4EC4-98C1-DC6E08D63771.png?ex=6a5c2a5f&is=6a5ad8df&hm=5e233ad86cd9489ccd6307e8e7cf8500dcbe4113c1baee67cbefe7a527cc7587&" alt="صينية شوكولاتة منوعة 150 حبة">
+
+</div>
+
+<div class="card-details">
+
+<div>
+
+<h3 class="card-title">شوكولاته نص دائره بحشوات مختلفة</h3>
+
+<div class="card-price">250 ريال <span style="font-size:0.8rem; color:#aaa;">/ صينية 150 حبة</span></div>
+
+<p style="font-size: 0.85rem; color:#b09f92; line-height:1.5;">تشكيلة غنية وفخمة من الحبات الملونة والمرتبة بعناية لتناسب تقديماتكم الراقية ومناسبات الزواج والتخرج الفخم.</p>
+
+</div>
+
+<div class="qty-wrapper">
+
+<button class="qty-action" onclick="updateItemQty('mixed', -1)">-</button>
+
+<span class="qty-number" id="qty-mixed">0</span>
+
+<button class="qty-action" onclick="updateItemQty('mixed', 1)">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- المنتج 3: بار بستاشيو الكنافة الترند (رابط حقيقي) -->
+
+<div class="menu-card" id="card-bar">
+
+<div class="image-crop-box">
+
+<img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527854845896294470/23FDE1D7-871C-47AF-BD0E-845B44D10EB4.png?ex=6a5c2d35&is=6a5adbb5&hm=79d323f2cac94aa4595a5b19d8f976209f64108e8cf3df7ce185a614d5f5c6d4&" alt="بار شوكولاتة بستاشيو الكنافة">
+
+</div>
+
+<div class="card-details">
+
+<div>
+
+<h3 class="card-title">بار بستاشيو الكنافة</h3>
+
+<div class="card-price" id="bar-price-text">15 ريال</div>
+
+<div class="option-panel">
+
+<div class="option-title"><i class="fas fa-arrows-alt-v"></i> اختر المقاس المفضل:</div>
+
+<select class="premium-select" id="bar-size-select" onchange="adjustBarSizePrice()">
+
+<option value="12" data-label="صغير">صغير (ميني بار) - 12 ريال</option>
+
+<option value="15" data-label="وسط" selected>وسط (حجم قياسي) - 15 ريال</option>
+
+<option value="20" data-label="كبير">كبير (حجم عائلي) - 20 ريال</option>
+
+</select>
+
+</div>
+
+</div>
+
+<div class="qty-wrapper">
+
+<button class="qty-action" onclick="updateItemQty('bar', -1)">-</button>
+
+<span class="qty-number" id="qty-bar">0</span>
+
+<button class="qty-action" onclick="updateItemQty('bar', 1)">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- المنتج 4: بسكوت الكابتشينو الفاخر (رابط حقيقي) -->
+
+<div class="menu-card" id="card-biscuit">
+
+<div class="image-crop-box">
+
+<img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527851800101781674/CA5BCD78-A493-4BAA-80F0-0387DCD09C0A.png?ex=6a5c2a5f&is=6a5ad8df&hm=2ca2d83e80df6a7ea412d2f93df2cf1e5d116124dbc0838289e3e26b92110947&" alt="بسكوت الكابتشينو الفخم">
+
+</div>
+
+<div class="card-details">
+
+<div>
+
+<h3 class="card-title">بسكوت الكابتشينو الفاخر</h3>
+
+<div class="card-price">4 ريال <span style="font-size:0.8rem; color:#aaa;">/ للقطعة</span></div>
+
+<p style="font-size: 0.85rem; color:#b09f92; line-height:1.5;">بسكوت كرانشي مذهل بنكهة غنية مخصص للتقديم مع أكواب الكابتشينو والمشروبات الدافئة بطابع مميز جداً.</p>
+
+</div>
+
+<div class="qty-wrapper">
+
+<button class="qty-action" onclick="updateItemQty('biscuit', -1)">-</button>
+
+<span class="qty-number" id="qty-biscuit">0</span>
+
+<button class="qty-action" onclick="updateItemQty('biscuit', 1)">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- المنتج 5: توزيعات مواليد فخمة (رابط حقيقي) -->
+
+<div class="menu-card" id="card-newborn">
+
+<div class="image-crop-box">
+
+<img src="https://media.discordapp.net/attachments/1525890867452186795/1527852449984020550/E3A6674F-1F78-419D-859F-E7C8E1F92FD0.png?ex=6a5c2afa&is=6a5ad97a&hm=4c3bbe1e8e05a899e03e178c201fc36d6a938d21d137244d24e469e8adb7c4ba&=&format=webp&quality=lossless&width=1032&height=860" alt="توزيعات مواليد مميزة">
+
+</div>
+
+<div class="card-details">
+
+<div>
+
+<h3 class="card-title">توزيعات مواليد فخمة</h3>
+
+<div class="card-price">4 ريال <span style="font-size:0.8rem; color:#aaa;">/ للحبة</span></div>
+
+<p style="font-size: 0.85rem; color:#b09f92; line-height:1.5;">تصاميم حصرية ومميزة لاستقبال المواليد الجدد على حوامل شوكولاتة راقية، مطبوعة ومغلفة بشكل يسعد قلوبكم.</p>
+
+</div>
+
+<div class="qty-wrapper">
+
+<button class="qty-action" onclick="updateItemQty('newborn', -1)">-</button>
+
+<span class="qty-number" id="qty-newborn">0</span>
+
+<button class="qty-action" onclick="updateItemQty('newborn', 1)">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- المنتج 6: شرائط سكر فاخرة للمشروبات (رابط حقيقي) -->
+
+<div class="menu-card" id="card-sugar">
+
+<div class="image-crop-box">
+
+<img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527853975439802368/IMG_5514.png?ex=6a5c2c65&is=6a5adae5&hm=b6d543c57362fd81e9d2f9d9e2867ff93085695c60da44d1822c2e8c23687490&" alt="شرائط سكر للمشروبات">
+
+</div>
+
+<div class="card-details">
+
+<div>
+
+<h3 class="card-title">شرائط سكر فاخرة للمشروبات</h3>
+
+<div class="card-price">5 ريال <span style="font-size:0.8rem; color:#aaa;">/ للشريط</span></div>
+
+<p style="font-size: 0.85rem; color:#b09f92; line-height:1.5;">لمسة استثنائية لتقديم الشاي والقهوة والمشربات لضيوفكم، تذوب بنعومة ومطبوعة بعبارات ترحيب راقية.</p>
+
+</div>
+
+<div class="qty-wrapper">
+
+<button class="qty-action" onclick="updateItemQty('sugar', -1)">-</button>
+
+<span class="qty-number" id="qty-sugar">0</span>
+
+<button class="qty-action" onclick="updateItemQty('sugar', 1)">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- المنتج 7: صواني المناسبات للتنسيق (رابط حقيقي) -->
+
+<div class="menu-card" id="card-event-trays">
+
+<div class="image-crop-box">
+
+<img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527854419729846342/AC7C82B3-A1A5-43BB-921B-3A7A3A5FB7AD.png?ex=6a5c2ccf&is=6a5adb4f&hm=be0da362d43e3b6b019429599520a6dd00166a5892da3a49b9037041030aac28&" alt="صواني المناسبات والتخرج">
+
+</div>
+
+<div class="card-details">
+
+<div>
+
+<h3 class="card-title">صواني المناسبات الكبرى</h3>
+
+<div class="card-price">حسب المقاس والتنسيق</div>
+
+<p style="font-size: 0.85rem; color:#b09f92; line-height:1.5;">صواني ذهبية وتنسيقات مذهلة للأفراح، التخرج والمواليد السعيدة. السعر يعتمد على المقاس والتصميم المختار.</p>
+
+</div>
+
+<div class="qty-wrapper">
+
+<button class="qty-action" onclick="updateItemQty('event_trays', -1)">-</button>
+
+<span class="qty-number" id="qty-event_trays">0</span>
+
+<button class="qty-action" onclick="updateItemQty('event_trays', 1)">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- المنتج 8: طباعة الشوكولاته المخصصة (رابط حقيقي) -->
+
+<div class="menu-card" id="card-printing">
+
+<div class="image-crop-box">
+
+<img src="https://cdn.discordapp.com/attachments/1525890867452186795/1527853975041478747/IMG_5516.png?ex=6a5c2c65&is=6a5adae5&hm=9322c32e3da206a40b07f49f96fe55ab62a92ed6732d62879e1477cdd4dbc2f7&" alt="طباعة على الشوكولاتة">
+
+</div>
+
+<div class="card-details">
+
+<div>
+
+<h3 class="card-title">صواني طباعة الشوكولاته الفاخرة</h3>
+
+<div class="card-price">حسب التصميم والعدد</div>
+
+<p style="font-size: 0.85rem; color:#b09f92; line-height:1.5;">طباعة لوقوهات، أسماء، صور تخرج ومواليد مباشرة بدقة متناهية وأحبار غذائية معتمدة وصحية بالكامل.</p>
+
+</div>
+
+<div class="qty-wrapper">
+
+<button class="qty-action" onclick="updateItemQty('printing', -1)">-</button>
+
+<span class="qty-number" id="qty-printing">0</span>
+
+<button class="qty-action" onclick="updateItemQty('printing', 1)">+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+</section>
+
+</div>
+
+
+
+<!-- سلة المشتريات التفاعلية المرنة والمؤطرة بالذهب -->
+
+<div class="bottom-cart-tray" id="cartTray">
+
+<div class="cart-stats">
+
+<h5>الإجمالي المقدر: <span id="cartTotalPriceText">0</span> ريال</h5>
+
+<p id="cartItemsCountText">إجمالي العناصر المضافة: 0 أصناف</p>
+
+</div>
+
+<button class="cart-order-btn" onclick="buildAndSendWhatsAppOrder()">
+
+<i class="fab fa-whatsapp" style="font-size:1.5rem;"></i>
+
+إرسـال الطلـب عبـر الواتسـاب
+
+</button>
+
+</div>
+
+
+
+<footer>
+
+<p>جميع الحقوق محفوظة لمتجر W sweet الفاخر &copy; 2026</p>
+
+</footer>
+
+
 
 <script>
-    const products = {
-        bar: { name: "بار بستاشيو", price: 15, qty: 0, size: "وسط" },
-        logo: { name: "لوقو دائري", price: 15, qty: 0, size: "وسط" },
-        sugar: { name: "شرائط سكر", price: 15, qty: 0, size: "وسط" }
-    };
 
-    function updatePrice(id) {
-        const select = document.getElementById('select-' + id);
-        products[id].price = parseInt(select.value);
-        products[id].size = select.options[select.selectedIndex].text.split(' - ')[0];
-        document.getElementById('price-' + id).innerText = select.value + " ريال";
-        calc();
-    }
+// رقم الواتساب المباشر لمتجرك W sweet
 
-    function changeQty(id, val) {
-        products[id].qty = Math.max(0, products[id].qty + val);
-        document.getElementById('qty-' + id).innerText = products[id].qty;
-        calc();
-    }
+const WHATSAPP_STORE_PHONE = "966505691474";
 
-    function calc() {
-        let total = 0, show = false;
-        for(let k in products) {
-            total += products[k].qty * products[k].price;
-            if(products[k].qty > 0) show = true;
-        }
-        document.getElementById('total-val').innerText = total;
-        document.getElementById('cartTray').style.display = show ? 'flex' : 'none';
-    }
 
-    function sendWhatsApp() {
-        let msg = "طلب جديد من W sweet:\n";
-        for(let k in products) {
-            if(products[k].qty > 0) msg += `• ${products[k].name} (${products[k].size}) - الكمية: ${products[k].qty}\n`;
-        }
-        msg += "\nالإجمالي: " + document.getElementById('total-val').innerText + " ريال";
-        window.open(`https://wa.me/966505691474?text=${encodeURIComponent(msg)}`);
-    }
+
+// قاعدة بيانات المنتجات بالموقع
+
+const productsDatabase = {
+
+belgian: { name: "كيلو الشوكولاته البلجيكي", price: 150, qty: 0 },
+
+mixed: { name: "صينية شوكولاته منوعة (150 حبة)", price: 250, qty: 0 },
+
+bar: { name: "بار بستاشيو الكنافة الترند", price: 15, qty: 0, selectedSize: "وسط" },
+
+biscuit: { name: "بسكوت الكابتشينو الفاخر", price: 4, qty: 0 },
+
+newborn: { name: "توزيعات مواليد فخمة", price: 4, qty: 0 },
+
+sugar: { name: "شرائط سكر للمشروبات", price: 5, qty: 0 },
+
+event_trays: { name: "صواني المناسبات الكبرى", price: 0, qty: 0, isCustomPrice: true },
+
+printing: { name: "صواني طباعة الشوكولاته الفاخرة", price: 0, qty: 0, isCustomPrice: true }
+
+};
+
+
+
+// تحديث سعر البار مباشرة بناءً على الحجم المحدد
+
+function adjustBarSizePrice() {
+
+const sizeSelector = document.getElementById('bar-size-select');
+
+const price = parseInt(sizeSelector.value);
+
+const label = sizeSelector.options[sizeSelector.selectedIndex].getAttribute('data-label');
+
+productsDatabase.bar.price = price;
+
+productsDatabase.bar.selectedSize = label;
+
+document.getElementById('bar-price-text').innerText = price + " ريال";
+
+recalculateCartSummary();
+
+}
+
+
+
+// زيادة ونقصان الكميات
+
+function updateItemQty(productId, delta) {
+
+let item = productsDatabase[productId];
+
+item.qty += delta;
+
+if (item.qty < 0) item.qty = 0;
+
+document.getElementById('qty-' + productId).innerText = item.qty;
+
+recalculateCartSummary();
+
+}
+
+
+
+// حساب تكلفة وعناصر السلة وعرضها بشكل سلس بالأسفل
+
+function recalculateCartSummary() {
+
+let grandTotal = 0;
+
+let totalItems = 0;
+
+let showTray = false;
+
+
+
+for (const key in productsDatabase) {
+
+const item = productsDatabase[key];
+
+if (item.qty > 0) {
+
+showTray = true;
+
+totalItems += item.qty;
+
+if (!item.isCustomPrice) {
+
+grandTotal += item.price * item.qty;
+
+}
+
+}
+
+}
+
+
+
+// عرض الشريط السفلي في حال وجود أي منتج بالسلة
+
+const trayElement = document.getElementById('cartTray');
+
+if (showTray) {
+
+trayElement.classList.add('show');
+
+} else {
+
+trayElement.classList.remove('show');
+
+}
+
+
+
+document.getElementById('cartTotalPriceText').innerText = grandTotal;
+
+document.getElementById('cartItemsCountText').innerText = `إجمالي العناصر المضافة: ${totalItems} صنف`;
+
+}
+
+
+
+// تفاصيل وإرسال الطلب المختصر والنقي جداً بدون أي شرطات طويلة مزعجة
+
+function buildAndSendWhatsAppOrder() {
+
+let message = "تفاصيل طلب جديد من متجر W Sweet 🍫✨\n\n";
+
+let hasItems = false;
+
+let estimatedTotal = 0;
+
+
+
+// 1. كيلو البلجيكي
+
+if (productsDatabase.belgian.qty > 0) {
+
+hasItems = true;
+
+let selectedFillings = [];
+
+const checkboxes = document.querySelectorAll('#card-belgian .fillings-grid input:checked');
+
+checkboxes.forEach(cb => selectedFillings.push(cb.value));
+
+let fillingsText = selectedFillings.length > 0 ? selectedFillings.join(' - ') : "مشكل";
+
+let subTotal = productsDatabase.belgian.price * productsDatabase.belgian.qty;
+
+estimatedTotal += subTotal;
+
+message += `• ${productsDatabase.belgian.name}\n الكمية: ${productsDatabase.belgian.qty} كيلو\n الحشوة: ${fillingsText}\n السعر: ${subTotal} ريال\n\n`;
+
+}
+
+
+
+// 2. صينية منوعة 150 حبة
+
+if (productsDatabase.mixed.qty > 0) {
+
+hasItems = true;
+
+let subTotal = productsDatabase.mixed.price * productsDatabase.mixed.qty;
+
+estimatedTotal += subTotal;
+
+message += `• ${productsDatabase.mixed.name}\n الكمية: ${productsDatabase.mixed.qty} صينية\n السعر: ${subTotal} ريال\n\n`;
+
+}
+
+
+
+// 3. بار الكنافة بستاشيو
+
+if (productsDatabase.bar.qty > 0) {
+
+hasItems = true;
+
+let subTotal = productsDatabase.bar.price * productsDatabase.bar.qty;
+
+estimatedTotal += subTotal;
+
+message += `• ${productsDatabase.bar.name} (${productsDatabase.bar.selectedSize})\n الكمية: ${productsDatabase.bar.qty} حبة\n السعر: ${subTotal} ريال\n\n`;
+
+}
+
+
+
+// 4. بسكوت الكابتشينو
+
+if (productsDatabase.biscuit.qty > 0) {
+
+hasItems = true;
+
+let subTotal = productsDatabase.biscuit.price * productsDatabase.biscuit.qty;
+
+estimatedTotal += subTotal;
+
+message += `• ${productsDatabase.biscuit.name}\n الكمية: ${productsDatabase.biscuit.qty} حبة\n السعر: ${subTotal} ريال\n\n`;
+
+}
+
+
+
+// 5. توزيعات مواليد
+
+if (productsDatabase.newborn.qty > 0) {
+
+hasItems = true;
+
+let subTotal = productsDatabase.newborn.price * productsDatabase.newborn.qty;
+
+estimatedTotal += subTotal;
+
+message += `• ${productsDatabase.newborn.name}\n الكمية: ${productsDatabase.newborn.qty} حبة\n السعر: ${subTotal} ريال\n\n`;
+
+}
+
+
+
+// 6. شرائط سكر للمشروبات
+
+if (productsDatabase.sugar.qty > 0) {
+
+hasItems = true;
+
+let subTotal = productsDatabase.sugar.price * productsDatabase.sugar.qty;
+
+estimatedTotal += subTotal;
+
+message += `• ${productsDatabase.sugar.name}\n الكمية: ${productsDatabase.sugar.qty} شريط\n السعر: ${subTotal} ريال\n\n`;
+
+}
+
+
+
+// 7. صواني المناسبات الكبرى
+
+if (productsDatabase.event_trays.qty > 0) {
+
+hasItems = true;
+
+message += `• ${productsDatabase.event_trays.name}\n العدد المطلوب: ${productsDatabase.event_trays.qty} صينية (للاتفاق وتحديد السعر)\n\n`;
+
+}
+
+
+
+// 8. صواني الطباعة على الشوكولاتة
+
+if (productsDatabase.printing.qty > 0) {
+
+hasItems = true;
+
+message += `• ${productsDatabase.printing.name}\n العدد المطلوب: ${productsDatabase.printing.qty} صينية (للاتفاق والتنسيق)\n\n`;
+
+}
+
+
+
+if (!hasItems) {
+
+alert("الرجاء إضافة منتج واحد على الأقل للبدء بصياغة طلبكم الفخم.");
+
+return;
+
+}
+
+
+
+message += `💰 الإجمالي الكلي المقدر: ${estimatedTotal} ريال سعودي\n\n`;
+
+message += `📍 ملاحظة: تم تأكيد فهم شروط طلبات المناسبات قبل موعدها بأسبوع.`;
+
+
+
+// تشفير وتوجيه العميل مباشرة للواتساب للطلب
+
+const finalEncodedMessage = encodeURIComponent(message);
+
+const targetUrl = `https://wa.me/${WHATSAPP_STORE_PHONE}?text=${finalEncodedMessage}`;
+
+window.open(targetUrl, '_blank');
+
+}
+
+
+
+
+
+// --- كود الخلفية الحركية التفاعلية الفخمة للشوكولاتة المتساقطة (HTML5 Canvas Particles) ---
+
+const bgCanvas = document.getElementById('interactive-bg');
+
+const bgCtx = bgCanvas.getContext('2d');
+
+
+
+let particleElements = [];
+
+const chocoColors = ['#1a0c02', '#2f1606', '#3e1e0a', '#c5a880', '#e5c158', '#4d260f'];
+
+
+
+function adaptCanvasDimensions() {
+
+bgCanvas.width = window.innerWidth;
+
+bgCanvas.height = window.innerHeight;
+
+}
+
+window.addEventListener('resize', adaptCanvasDimensions);
+
+adaptCanvasDimensions();
+
+
+
+// كائن قطع الشوكولاتة والكاكاو والبريق الذهبي المتساقط
+
+class ElegantChocoParticle {
+
+constructor() {
+
+this.reset();
+
+this.y = Math.random() * bgCanvas.height; // توزيع عشوائي أولي
+
+}
+
+
+
+reset() {
+
+this.x = Math.random() * bgCanvas.width;
+
+this.y = -20;
+
+this.radius = Math.random() * 5 + 1.5;
+
+this.fallSpeed = Math.random() * 0.9 + 0.3;
+
+this.windDrift = Math.random() * 0.4 - 0.2;
+
+this.color = chocoColors[Math.floor(Math.random() * chocoColors.length)];
+
+this.transparency = Math.random() * 0.45 + 0.15;
+
+}
+
+
+
+updatePosition() {
+
+this.y += this.fallSpeed;
+
+this.x += this.windDrift;
+
+
+
+if (this.y > bgCanvas.height + 10) {
+
+this.reset();
+
+}
+
+}
+
+
+
+render() {
+
+bgCtx.beginPath();
+
+bgCtx.globalAlpha = this.transparency;
+
+bgCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+
+bgCtx.fillStyle = this.color;
+
+bgCtx.fill();
+
+}
+
+}
+
+
+
+// إنشاء المجموعة الأولية لقطع الشوكولاتة المتحركة
+
+function createChocoAtmosphere() {
+
+particleElements = [];
+
+for (let i = 0; i < 50; i++) {
+
+particleElements.push(new ElegantChocoParticle());
+
+}
+
+}
+
+createChocoAtmosphere();
+
+
+
+// محرك الأنيميشن لتحديث ورسم الخلفية تفاعلياً
+
+function drawAtmosphereFrame() {
+
+bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+
+for (let i = 0; i < particleElements.length; i++) {
+
+particleElements[i].updatePosition();
+
+particleElements[i].render();
+
+}
+
+requestAnimationFrame(drawAtmosphereFrame);
+
+}
+
+drawAtmosphereFrame();
+
 </script>
+
 </body>
+
 </html>
