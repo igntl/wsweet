@@ -1,51 +1,46 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>W Sweet | شوكولاتة فاخرة</title>
+
 <meta name="description"
-content="W Sweet - شوكولاتة فاخرة وتوزيعات مناسبات وطباعة على الشوكولاتة">
-
-<title>W Sweet | Luxury Chocolate</title>
-
-<!-- ================= FONTS ================= -->
+content="W Sweet - شوكولاتة فاخرة، توزيعات، صواني مناسبات، طباعة على الشوكولاتة وتنفيذ الطلبات حسب الطلب.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@300;400;500;600;700&display=swap"
-rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   VARIABLES
+   W SWEET
+   COMPLETE RESPONSIVE DESIGN
 ========================================================= */
 
 :root{
-
     --black:#07070a;
-    --black2:#0d0b0e;
+    --black2:#0e0b0d;
+    --black3:#151015;
 
-    --card:#121015;
-    --card2:#181319;
+    --brown:#6f4223;
+    --brown2:#9a6035;
 
-    --gold:#a86f3d;
-    --gold2:#d6a16a;
-    --gold3:#f0c48c;
+    --gold:#c58a55;
+    --gold2:#dca875;
+    --gold3:#f0c99f;
 
     --cream:#fff8ef;
-    --muted:#bca99a;
+    --muted:#b9a79a;
 
-    --line:rgba(214,161,106,.25);
-    --line-soft:rgba(214,161,106,.10);
+    --line:rgba(220,168,117,.28);
+    --line-soft:rgba(220,168,117,.12);
 
-    --green:#25d366;
-
+    --green:#25D366;
 }
 
 
@@ -54,30 +49,32 @@ rel="stylesheet">
 ========================================================= */
 
 *{
-    box-sizing:border-box;
     margin:0;
     padding:0;
+    box-sizing:border-box;
 }
-
 
 html{
     scroll-behavior:smooth;
+    overflow-x:hidden;
 }
 
-
 body{
-
-    background:var(--black);
-
-    color:var(--cream);
-
-    font-family:
-    "Noto Kufi Arabic",
-    Tahoma,
-    sans-serif;
+    width:100%;
+    min-height:100vh;
 
     overflow-x:hidden;
 
+    color:var(--cream);
+
+    background:#07070a;
+
+    font-family:
+        "Noto Kufi Arabic",
+        Tahoma,
+        sans-serif;
+
+    -webkit-font-smoothing:antialiased;
 }
 
 
@@ -86,93 +83,78 @@ body{
 ========================================================= */
 
 .background{
-
     position:fixed;
-
     inset:0;
 
-    z-index:-30;
+    z-index:-50;
 
     background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(172,103,52,.17),
+            transparent 27%
+        ),
 
-    radial-gradient(
-        circle at 15% 15%,
-        rgba(168,111,61,.18),
-        transparent 25%
-    ),
+        radial-gradient(
+            circle at 90% 75%,
+            rgba(109,55,27,.15),
+            transparent 30%
+        ),
 
-    radial-gradient(
-        circle at 85% 70%,
-        rgba(110,55,25,.15),
-        transparent 30%
-    ),
-
-    linear-gradient(
-        135deg,
-        #050508,
-        #0c0a0d 50%,
-        #070609
-    );
-
+        linear-gradient(
+            145deg,
+            #050507,
+            #100b0e 50%,
+            #060608
+        );
 }
 
-
 .background::before{
-
     content:"";
 
     position:absolute;
-
     inset:0;
 
-    opacity:.13;
+    opacity:.09;
 
     background-image:
-
-    radial-gradient(
-        circle,
-        rgba(255,255,255,.55) 1px,
-        transparent 1px
-    );
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.8) 1px,
+            transparent 1px
+        );
 
     background-size:90px 90px;
 
     animation:
-    stars 35s linear infinite;
-
+        stars 35s linear infinite;
 }
 
-
 .background::after{
-
     content:"";
 
     position:absolute;
 
-    inset:0;
+    inset:-20%;
 
     background:
+        radial-gradient(
+            circle at 25% 50%,
+            rgba(200,120,55,.08),
+            transparent 20%
+        ),
 
-    radial-gradient(
-        circle at 30% 60%,
-        rgba(190,110,48,.06),
-        transparent 20%
-    ),
-
-    radial-gradient(
-        circle at 70% 20%,
-        rgba(255,194,125,.05),
-        transparent 18%
-    );
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(255,193,126,.05),
+            transparent 18%
+        );
 
     animation:
-    lightMove 14s ease-in-out infinite alternate;
-
+        lightMove 15s ease-in-out infinite alternate;
 }
 
-
 @keyframes stars{
-
     from{
         transform:translateY(0);
     }
@@ -180,12 +162,9 @@ body{
     to{
         transform:translateY(90px);
     }
-
 }
 
-
 @keyframes lightMove{
-
     from{
         transform:translate(0,0) scale(1);
     }
@@ -193,67 +172,51 @@ body{
     to{
         transform:translate(30px,-25px) scale(1.08);
     }
-
 }
 
 
 .blob{
-
     position:fixed;
 
-    z-index:-20;
+    z-index:-40;
 
-    width:380px;
-    height:380px;
+    width:350px;
+    height:350px;
 
     border-radius:50%;
 
     background:
-    rgba(126,67,31,.12);
+        rgba(137,73,34,.10);
 
-    filter:blur(80px);
+    filter:blur(85px);
 
     pointer-events:none;
 
     animation:
-    float 18s ease-in-out infinite alternate;
-
+        floating 18s ease-in-out infinite alternate;
 }
-
 
 .blob.one{
-
-    left:-150px;
-
+    left:-190px;
     top:20%;
-
 }
-
 
 .blob.two{
-
-    right:-160px;
-
+    right:-190px;
     bottom:5%;
 
-    width:450px;
-    height:450px;
+    width:420px;
+    height:420px;
 
     animation-delay:-8s;
-
 }
 
-
-@keyframes float{
-
+@keyframes floating{
     to{
-
         transform:
-        translate(80px,-50px)
-        scale(1.2);
-
+            translate(80px,-50px)
+            scale(1.15);
     }
-
 }
 
 
@@ -262,35 +225,34 @@ body{
 ========================================================= */
 
 header{
-
     position:sticky;
 
     top:0;
 
     z-index:100;
 
-    background:
-    rgba(7,7,10,.80);
+    width:100%;
 
-    backdrop-filter:
-    blur(22px);
+    background:
+        rgba(7,7,10,.88);
 
     border-bottom:
-    1px solid var(--line-soft);
+        1px solid var(--line-soft);
 
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
 }
 
-
 .nav{
-
+    width:100%;
     max-width:1250px;
+
+    min-height:78px;
 
     margin:auto;
 
-    min-height:80px;
-
     padding:
-    8px 24px;
+        8px 24px;
 
     display:flex;
 
@@ -299,14 +261,13 @@ header{
     justify-content:space-between;
 
     gap:20px;
-
 }
 
 
+/* LOGO */
+
 .logo{
-
     width:125px;
-
     height:64px;
 
     object-fit:contain;
@@ -314,26 +275,25 @@ header{
     display:block;
 
     filter:
-    drop-shadow(
-        0 8px 20px
-        rgba(168,111,61,.18)
-    );
-
+        drop-shadow(
+            0 8px 25px
+            rgba(197,138,85,.18)
+        );
 }
 
 
-.navlinks{
+/* DESKTOP NAV */
 
+.navlinks{
     display:flex;
 
     align-items:center;
 
     gap:30px;
-
 }
 
-
 .navlinks a{
+    position:relative;
 
     color:#eadfd5;
 
@@ -343,64 +303,52 @@ header{
 
     padding:12px 0;
 
-    position:relative;
-
     transition:.25s;
-
 }
 
-
 .navlinks a::after{
-
     content:"";
 
     position:absolute;
 
     right:0;
-
     bottom:3px;
 
     width:0;
-
     height:1px;
 
     background:var(--gold2);
 
     transition:.25s;
-
 }
-
 
 .navlinks a:hover{
-
     color:var(--gold3);
-
 }
-
 
 .navlinks a:hover::after{
-
     width:100%;
-
 }
 
 
-.cart-btn{
+/* CART BUTTON */
 
+.cart-btn{
     border:
-    1px solid rgba(214,161,106,.45);
+        1px solid
+        rgba(220,168,117,.45);
 
     background:
-    linear-gradient(
-        135deg,
-        #bd814c,
-        #754622
-    );
+        linear-gradient(
+            135deg,
+            #c58a55,
+            #704322
+        );
 
     color:white;
 
     padding:
-    11px 18px;
+        11px 18px;
 
     border-radius:999px;
 
@@ -410,23 +358,26 @@ header{
 
     cursor:pointer;
 
-    box-shadow:
-    0 10px 35px
-    rgba(0,0,0,.2);
+    white-space:nowrap;
 
+    box-shadow:
+        0 10px 30px
+        rgba(110,65,32,.18);
+
+    transition:.25s;
 }
 
+.cart-btn:hover{
+    transform:translateY(-2px);
+}
 
 .badge{
-
     display:inline-flex;
 
     align-items:center;
-
     justify-content:center;
 
     width:22px;
-
     height:22px;
 
     margin-right:5px;
@@ -438,7 +389,6 @@ header{
     border-radius:50%;
 
     font-size:10px;
-
 }
 
 
@@ -447,56 +397,55 @@ header{
 ========================================================= */
 
 .hero{
-
+    width:100%;
     max-width:1250px;
+
+    min-height:720px;
 
     margin:auto;
 
-    min-height:760px;
-
     padding:
-    90px 24px;
+        80px 24px;
 
     display:grid;
 
     grid-template-columns:
-    1.05fr .95fr;
+        minmax(0,1.05fr)
+        minmax(0,.95fr);
 
     align-items:center;
 
-    gap:65px;
-
+    gap:55px;
 }
 
+.hero > div{
+    min-width:0;
+}
 
 .eyebrow{
-
     color:var(--gold2);
 
     font-family:
-    "Cormorant Garamond",
-    serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size:17px;
 
     letter-spacing:5px;
 
     text-transform:uppercase;
-
 }
 
-
 .hero h1{
-
     margin:
-    15px 0 25px;
+        15px 0 25px;
 
     font-family:
-    "Cormorant Garamond",
-    serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size:
-    clamp(75px,9vw,130px);
+        clamp(75px,9vw,130px);
 
     line-height:.8;
 
@@ -505,12 +454,9 @@ header{
     letter-spacing:-4px;
 
     color:var(--gold2);
-
 }
 
-
 .hero h1 span{
-
     display:block;
 
     margin-top:35px;
@@ -518,23 +464,20 @@ header{
     color:white;
 
     font-family:
-    "Noto Kufi Arabic",
-    sans-serif;
+        "Noto Kufi Arabic",
+        sans-serif;
 
     font-size:
-    clamp(18px,2vw,28px);
+        clamp(18px,2vw,28px);
 
     font-weight:400;
 
     line-height:1.9;
 
     letter-spacing:0;
-
 }
 
-
 .hero p{
-
     max-width:650px;
 
     color:var(--muted);
@@ -542,12 +485,9 @@ header{
     font-size:14px;
 
     line-height:2.3;
-
 }
 
-
 .hero-actions{
-
     display:flex;
 
     gap:12px;
@@ -555,16 +495,12 @@ header{
     flex-wrap:wrap;
 
     margin-top:30px;
-
 }
 
-
 .btn{
-
     display:inline-flex;
 
     align-items:center;
-
     justify-content:center;
 
     gap:8px;
@@ -572,7 +508,7 @@ header{
     min-width:160px;
 
     padding:
-    14px 22px;
+        14px 22px;
 
     border-radius:13px;
 
@@ -587,71 +523,38 @@ header{
     cursor:pointer;
 
     transition:.3s;
-
 }
 
-
 .btn-primary{
-
     color:white;
 
     background:
-    linear-gradient(
-        135deg,
-        #c38a54,
-        #754622
-    );
+        linear-gradient(
+            135deg,
+            #c58a55,
+            #754622
+        );
 
     box-shadow:
-    0 20px 50px
-    rgba(120,70,35,.25);
-
+        0 20px 50px
+        rgba(120,70,35,.25);
 }
-
-
-.btn-primary:hover{
-
-    transform:
-    translateY(-4px);
-
-    box-shadow:
-    0 25px 60px
-    rgba(120,70,35,.35);
-
-}
-
 
 .btn-outline{
-
     color:white;
 
     border:
-    1px solid var(--line);
+        1px solid var(--line);
 
     background:
-    rgba(255,255,255,.025);
-
+        rgba(255,255,255,.025);
 }
 
 
-.btn-outline:hover{
-
-    border-color:
-    var(--gold2);
-
-    color:
-    var(--gold3);
-
-}
-
-
-/* =========================================================
-   HERO LOGO
-========================================================= */
+/* HERO LOGO CARD */
 
 .hero-logo-card{
-
-    min-height:510px;
+    min-height:500px;
 
     position:relative;
 
@@ -664,38 +567,32 @@ header{
     overflow:hidden;
 
     border:
-    1px solid var(--line);
+        1px solid var(--line);
 
     border-radius:40px;
 
     background:
+        radial-gradient(
+            circle at center,
+            rgba(168,111,61,.08),
+            transparent 45%
+        ),
 
-    radial-gradient(
-        circle at center,
-        rgba(168,111,61,.08),
-        transparent 45%
-    ),
-
-    linear-gradient(
-        145deg,
-        rgba(255,255,255,.05),
-        rgba(255,255,255,.01)
-    );
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.05),
+            rgba(255,255,255,.01)
+        );
 
     box-shadow:
+        inset 0 0 100px
+        rgba(168,111,61,.035),
 
-    inset
-    0 0 100px
-    rgba(168,111,61,.035),
-
-    0 30px 90px
-    rgba(0,0,0,.25);
-
+        0 30px 90px
+        rgba(0,0,0,.25);
 }
 
-
 .hero-logo-card::before{
-
     content:"";
 
     position:absolute;
@@ -704,16 +601,13 @@ header{
     height:80%;
 
     border:
-    1px solid
-    rgba(214,161,106,.22);
+        1px solid
+        rgba(220,168,117,.22);
 
     border-radius:34px;
-
 }
 
-
 .hero-logo-card::after{
-
     content:"";
 
     position:absolute;
@@ -722,16 +616,15 @@ header{
     height:72%;
 
     border:
-    1px solid
-    rgba(214,161,106,.08);
+        1px solid
+        rgba(220,168,117,.08);
 
     border-radius:28px;
-
 }
 
 
+/* استخدام صورة الشوكولاتة كصورة لوقو احتياطية */
 .hero-logo{
-
     position:relative;
 
     z-index:3;
@@ -740,76 +633,65 @@ header{
 
     max-width:400px;
 
+    max-height:390px;
+
     object-fit:contain;
 
-    filter:
-    drop-shadow(
-        0 25px 35px
-        rgba(0,0,0,.4)
-    );
+    border-radius:20px;
 
+    filter:
+        drop-shadow(
+            0 25px 35px
+            rgba(0,0,0,.4)
+        );
 }
 
 
-.corner{
+/* CORNERS */
 
+.corner{
     position:absolute;
 
     z-index:4;
 
     width:32px;
-
     height:32px;
 
-    border-color:
-    var(--gold2);
+    border-color:var(--gold2);
 
     opacity:.7;
-
 }
-
 
 .corner.tl{
-
     top:28px;
     right:28px;
 
     border-top:1px solid;
     border-right:1px solid;
-
 }
-
 
 .corner.tr{
-
     top:28px;
     left:28px;
 
     border-top:1px solid;
     border-left:1px solid;
-
 }
 
-
 .corner.bl{
-
     bottom:28px;
     right:28px;
 
     border-bottom:1px solid;
     border-right:1px solid;
-
 }
 
-
 .corner.br{
-
     bottom:28px;
     left:28px;
 
     border-bottom:1px solid;
     border-left:1px solid;
-
 }
 
 
@@ -818,133 +700,113 @@ header{
 ========================================================= */
 
 .section{
-
+    width:100%;
     max-width:1250px;
 
     margin:auto;
 
     padding:
-    90px 24px;
-
+        90px 24px;
 }
 
 
-.section-title{
+/* SECTION TITLE */
 
+.section-title{
     position:relative;
 
+    width:100%;
     max-width:850px;
 
     margin:
-    0 auto 50px;
+        0 auto 50px;
 
     padding:30px;
 
     text-align:center;
 
     border:
-    1px solid var(--line);
+        1px solid var(--line);
 
     border-radius:24px;
 
     background:
-    linear-gradient(
-        145deg,
-        rgba(255,255,255,.035),
-        rgba(168,111,61,.025)
-    );
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.035),
+            rgba(168,111,61,.025)
+        );
 
+    box-shadow:
+        0 20px 70px
+        rgba(0,0,0,.12);
 }
-
 
 .section-title::before,
 .section-title::after{
-
     content:"";
 
     position:absolute;
 
     width:32px;
-
     height:32px;
 
-    border-color:
-    var(--gold2);
+    border-color:var(--gold2);
 
     opacity:.65;
-
 }
 
-
 .section-title::before{
-
     top:-1px;
-
     right:-1px;
 
     border-top:1px solid;
-
     border-right:1px solid;
 
     border-radius:
-    0 24px 0 0;
-
+        0 24px 0 0;
 }
 
-
 .section-title::after{
-
     bottom:-1px;
-
     left:-1px;
 
     border-bottom:1px solid;
-
     border-left:1px solid;
 
     border-radius:
-    0 0 0 24px;
-
+        0 0 0 24px;
 }
 
-
 .title-kicker{
-
     color:var(--gold2);
 
     font-family:
-    "Cormorant Garamond",
-    serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size:18px;
 
     letter-spacing:4px;
-
 }
 
-
 .section-title h2{
-
     margin:
-    7px 0 10px;
+        7px 0 10px;
 
     color:white;
 
     font-size:30px;
 
     font-weight:500;
-
 }
 
-
 .section-title p{
-
     color:var(--muted);
 
     font-size:12px;
 
     line-height:2;
-
 }
 
 
@@ -953,42 +815,57 @@ header{
 ========================================================= */
 
 .products{
+    width:100%;
 
     display:grid;
 
     grid-template-columns:
-    repeat(3,1fr);
+        repeat(3,minmax(0,1fr));
 
     gap:20px;
-
 }
 
 
+/* PRODUCT CARD */
+
 .product{
+    min-width:0;
 
     position:relative;
 
     overflow:hidden;
 
     border:
-    1px solid var(--line);
+        1px solid var(--line);
 
     border-radius:25px;
 
     background:
-    linear-gradient(
-        145deg,
-        rgba(25,20,26,.96),
-        rgba(10,9,12,.98)
-    );
+        linear-gradient(
+            145deg,
+            rgba(25,20,26,.96),
+            rgba(10,9,12,.98)
+        );
+
+    box-shadow:
+        0 18px 60px
+        rgba(0,0,0,.13);
 
     transition:.3s;
-
 }
 
+.product:hover{
+    transform:translateY(-5px);
+
+    border-color:
+        rgba(220,168,117,.45);
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.25);
+}
 
 .product::before{
-
     content:"";
 
     position:absolute;
@@ -996,38 +873,21 @@ header{
     inset:9px;
 
     border:
-    1px solid
-    rgba(214,161,106,.065);
+        1px solid
+        rgba(220,168,117,.065);
 
     border-radius:18px;
 
     pointer-events:none;
 
     z-index:2;
-
 }
 
 
-.product:hover{
-
-    transform:
-    translateY(-7px);
-
-    border-color:
-    rgba(214,161,106,.45);
-
-    box-shadow:
-    0 30px 65px
-    rgba(0,0,0,.3);
-
-}
-
-
-/* =========================================================
-   PRODUCT IMAGE
-========================================================= */
+/* PRODUCT IMAGE */
 
 .product-image{
+    width:100%;
 
     height:280px;
 
@@ -1042,26 +902,21 @@ header{
     overflow:hidden;
 
     background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(183,122,67,.20),
+            transparent 42%
+        ),
 
-    radial-gradient(
-        circle at 50% 35%,
-        rgba(183,122,67,.20),
-        transparent 42%
-    ),
-
-    linear-gradient(
-        135deg,
-        #24170f,
-        #100d12
-    );
-
+        linear-gradient(
+            135deg,
+            #24170f,
+            #100d12
+        );
 }
 
-
 .product-image img{
-
     width:100%;
-
     height:100%;
 
     object-fit:cover;
@@ -1071,86 +926,34 @@ header{
     cursor:zoom-in;
 
     transition:
-    transform .5s ease;
+        transform .5s ease;
+}
 
+.product:hover .product-image img{
+    transform:scale(1.06);
 }
 
 
-.product:hover
-.product-image img{
-
-    transform:
-    scale(1.06);
-
-}
-
-
-.placeholder{
-
-    font-family:
-    "Cormorant Garamond",
-    serif;
-
-    font-size:75px;
-
-    color:
-    rgba(224,173,115,.38);
-
-}
-
-
-.photo-note{
-
-    position:absolute;
-
-    bottom:13px;
-
-    padding:
-    5px 11px;
-
-    background:
-    rgba(0,0,0,.48);
-
-    border:
-    1px solid
-    rgba(255,255,255,.08);
-
-    backdrop-filter:
-    blur(10px);
-
-    color:#d7c7b8;
-
-    border-radius:999px;
-
-    font-size:8px;
-
-}
-
-
-/* =========================================================
-   PRODUCT BODY
-========================================================= */
+/* PRODUCT BODY */
 
 .product-body{
+    width:100%;
 
-    padding:21px;
-
+    padding:
+        21px;
 }
 
-
 .product h3{
-
     margin-bottom:9px;
 
     font-size:16px;
 
     font-weight:600;
 
+    line-height:1.8;
 }
 
-
 .desc{
-
     min-height:45px;
 
     color:var(--muted);
@@ -1158,43 +961,36 @@ header{
     font-size:11px;
 
     line-height:1.9;
-
 }
 
-
 .price{
-
-    margin:14px 0;
+    margin:
+        14px 0;
 
     color:var(--gold2);
 
     font-size:19px;
 
     font-weight:700;
-
 }
 
-
 .options{
-
     display:flex;
 
     gap:7px;
 
     flex-wrap:wrap;
 
-    margin:12px 0;
-
+    margin:
+        12px 0;
 }
 
-
 .opt{
-
     padding:
-    7px 10px;
+        7px 10px;
 
     border:
-    1px solid var(--line);
+        1px solid var(--line);
 
     border-radius:9px;
 
@@ -1207,41 +1003,24 @@ header{
     font-size:10px;
 
     cursor:pointer;
-
-    transition:.2s;
-
 }
-
-
-.opt:hover{
-
-    border-color:
-    var(--gold2);
-
-}
-
 
 .opt.active{
+    background:var(--gold);
 
-    background:
-    var(--gold);
-
-    border-color:
-    var(--gold);
+    border-color:var(--gold);
 
     color:white;
-
 }
 
-
 .add{
-
     width:100%;
 
-    padding:12px;
+    padding:
+        12px;
 
     border:
-    1px solid var(--line);
+        1px solid var(--line);
 
     border-radius:11px;
 
@@ -1256,18 +1035,12 @@ header{
     cursor:pointer;
 
     transition:.25s;
-
 }
 
-
 .add:hover{
+    background:var(--gold);
 
-    background:
-    var(--gold);
-
-    border-color:
-    var(--gold);
-
+    border-color:var(--gold);
 }
 
 
@@ -1276,74 +1049,38 @@ header{
 ========================================================= */
 
 .notice{
-
     position:relative;
 
+    width:100%;
     max-width:900px;
 
     margin:
-    32px auto 0;
+        32px auto 0;
 
     padding:
-    20px 45px;
+        20px 45px;
 
     text-align:center;
 
     border:
-    1px solid
-    rgba(214,161,106,.3);
+        1px solid
+        rgba(220,168,117,.3);
 
     border-radius:18px;
 
     background:
-
-    linear-gradient(
-        90deg,
-        rgba(168,111,61,.03),
-        rgba(168,111,61,.12),
-        rgba(168,111,61,.03)
-    );
+        linear-gradient(
+            90deg,
+            rgba(168,111,61,.03),
+            rgba(168,111,61,.12),
+            rgba(168,111,61,.03)
+        );
 
     color:#eadaca;
 
     font-size:12px;
 
     line-height:2.1;
-
-}
-
-
-.notice::before,
-.notice::after{
-
-    content:"✦";
-
-    position:absolute;
-
-    top:50%;
-
-    transform:
-    translateY(-50%);
-
-    color:
-    var(--gold2);
-
-    font-size:18px;
-
-}
-
-
-.notice::before{
-
-    right:18px;
-
-}
-
-
-.notice::after{
-
-    left:18px;
-
 }
 
 
@@ -1352,39 +1089,32 @@ header{
 ========================================================= */
 
 .features{
-
     display:grid;
 
     grid-template-columns:
-    repeat(3,1fr);
+        repeat(3,minmax(0,1fr));
 
     gap:18px;
-
 }
 
-
 .feature{
-
     position:relative;
 
     padding:
-    36px 25px;
+        36px 25px;
 
     text-align:center;
 
     border:
-    1px solid var(--line);
+        1px solid var(--line);
 
     border-radius:23px;
 
     background:
-    rgba(255,255,255,.022);
-
+        rgba(255,255,255,.022);
 }
 
-
 .feature::before{
-
     content:"";
 
     position:absolute;
@@ -1392,49 +1122,37 @@ header{
     inset:8px;
 
     border:
-    1px solid
-    rgba(214,161,106,.06);
+        1px solid
+        rgba(220,168,117,.06);
 
     border-radius:16px;
-
 }
 
-
 .feature .icon{
-
     position:relative;
 
     font-size:31px;
-
 }
 
-
 .feature h3{
-
     position:relative;
 
     margin:
-    14px 0;
+        14px 0;
 
-    color:
-    var(--gold2);
+    color:var(--gold2);
 
     font-size:16px;
-
 }
 
-
 .feature p{
-
     position:relative;
 
-    color:
-    var(--muted);
+    color:var(--muted);
 
     font-size:11px;
 
     line-height:2.1;
-
 }
 
 
@@ -1443,19 +1161,15 @@ header{
 ========================================================= */
 
 .certs{
-
     display:grid;
 
     grid-template-columns:
-    1fr 1fr;
+        repeat(2,minmax(0,1fr));
 
     gap:20px;
-
 }
 
-
 .cert{
-
     position:relative;
 
     min-height:200px;
@@ -1465,73 +1179,50 @@ header{
     overflow:hidden;
 
     border:
-    1px solid var(--line);
+        1px solid var(--line);
 
     border-radius:25px;
 
     background:
-
-    linear-gradient(
-        145deg,
-        rgba(183,122,67,.09),
-        rgba(255,255,255,.018)
-    );
-
+        linear-gradient(
+            145deg,
+            rgba(183,122,67,.09),
+            rgba(255,255,255,.018)
+        );
 }
 
-
-.cert::before{
-
-    content:"CERTIFIED";
+.cert::after{
+    content:"✦";
 
     position:absolute;
 
-    left:-35px;
+    left:25px;
+    bottom:18px;
 
-    bottom:20px;
-
-    transform:
-    rotate(-25deg);
-
-    font-family:
-    "Cormorant Garamond",
-    serif;
-
-    letter-spacing:4px;
+    color:
+        rgba(220,168,117,.18);
 
     font-size:55px;
-
-    color:
-    rgba(214,161,106,.035);
-
 }
 
-
 .cert h3{
-
     position:relative;
 
-    color:
-    var(--gold2);
+    color:var(--gold2);
 
     margin-bottom:14px;
 
     font-size:17px;
-
 }
 
-
 .cert p{
-
     position:relative;
 
-    color:
-    var(--muted);
+    color:var(--muted);
 
     font-size:12px;
 
     line-height:2.2;
-
 }
 
 
@@ -1540,7 +1231,6 @@ header{
 ========================================================= */
 
 .socials{
-
     display:flex;
 
     justify-content:center;
@@ -1548,13 +1238,10 @@ header{
     gap:14px;
 
     flex-wrap:wrap;
-
 }
 
-
 .social{
-
-    min-width:170px;
+    min-width:180px;
 
     display:flex;
 
@@ -1565,47 +1252,35 @@ header{
     gap:10px;
 
     padding:
-    14px 20px;
+        14px 20px;
 
     border:
-    1px solid var(--line);
+        1px solid var(--line);
 
     border-radius:14px;
 
     background:
-    rgba(255,255,255,.025);
+        rgba(255,255,255,.025);
 
     color:white;
 
     text-decoration:none;
 
-    transition:.3s;
-
+    transition:.25s;
 }
-
 
 .social:hover{
+    transform:translateY(-3px);
 
-    transform:
-    translateY(-4px);
-
-    color:
-    var(--gold3);
-
-    border-color:
-    var(--gold2);
-
+    background:
+        rgba(197,138,85,.10);
 }
 
-
 .social svg{
-
     width:20px;
-
     height:20px;
 
     fill:currentColor;
-
 }
 
 
@@ -1614,47 +1289,39 @@ header{
 ========================================================= */
 
 footer{
+    width:100%;
 
     border-top:
-    1px solid var(--line);
+        1px solid var(--line);
 
     padding:
-    50px 20px;
+        50px 20px;
 
     text-align:center;
 
-    color:
-    var(--muted);
+    color:var(--muted);
 
     background:
-    rgba(0,0,0,.15);
-
+        rgba(0,0,0,.15);
 }
 
-
 footer strong{
-
     font-family:
-    "Cormorant Garamond",
-    serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size:44px;
 
-    color:
-    var(--gold2);
-
+    color:var(--gold2);
 }
 
-
 footer p{
-
     margin:
-    8px 0;
+        8px 0;
 
     font-size:11px;
 
     line-height:2;
-
 }
 
 
@@ -1663,7 +1330,6 @@ footer p{
 ========================================================= */
 
 .drawer{
-
     position:fixed;
 
     inset:0;
@@ -1673,49 +1339,42 @@ footer p{
     display:none;
 
     background:
-    rgba(0,0,0,.78);
+        rgba(0,0,0,.78);
 
+    backdrop-filter:blur(5px);
 }
-
 
 .drawer.open{
-
     display:block;
-
 }
 
-
 .cart-panel{
-
     position:absolute;
 
     top:0;
-
     right:0;
 
     width:
-    min(510px,94vw);
+        min(510px,94vw);
 
     height:100%;
 
     overflow-y:auto;
 
-    padding:25px;
+    padding:
+        25px;
 
     background:#100d12;
 
     border-left:
-    1px solid var(--line);
+        1px solid var(--line);
 
     box-shadow:
-    -20px 0 70px
-    rgba(0,0,0,.3);
-
+        -20px 0 70px
+        rgba(0,0,0,.3);
 }
 
-
 .close{
-
     float:left;
 
     border:0;
@@ -1727,29 +1386,22 @@ footer p{
     font-size:30px;
 
     cursor:pointer;
-
 }
-
 
 .cart-panel h2{
-
     margin:
-    10px 0 25px;
+        10px 0 25px;
 
-    color:
-    var(--gold2);
+    color:var(--gold2);
 
     font-family:
-    "Cormorant Garamond",
-    serif;
+        "Cormorant Garamond",
+        serif;
 
     font-size:44px;
-
 }
 
-
 .cart-item{
-
     display:flex;
 
     align-items:center;
@@ -1759,24 +1411,25 @@ footer p{
     gap:15px;
 
     padding:
-    15px 0;
+        15px 0;
 
     border-bottom:
-    1px solid var(--line);
-
+        1px solid var(--line);
 }
 
+.cart-item b{
+    font-size:12px;
+
+    line-height:1.7;
+}
 
 .cart-item small{
+    color:var(--muted);
 
-    color:
-    var(--muted);
-
+    font-size:10px;
 }
 
-
 .qty{
-
     display:flex;
 
     align-items:center;
@@ -1784,18 +1437,14 @@ footer p{
     gap:7px;
 
     white-space:nowrap;
-
 }
 
-
 .qty button{
-
     width:29px;
-
     height:29px;
 
     border:
-    1px solid var(--line);
+        1px solid var(--line);
 
     border-radius:8px;
 
@@ -1804,73 +1453,59 @@ footer p{
     color:white;
 
     cursor:pointer;
-
 }
 
-
 .total{
-
     padding:
-    22px 0;
+        22px 0;
 
-    color:
-    var(--gold2);
+    color:var(--gold2);
 
     font-size:22px;
 
     font-weight:700;
-
 }
 
-
 .order-info{
+    padding:
+        18px;
 
-    padding:18px;
-
-    margin-bottom:14px;
+    margin-bottom:
+        14px;
 
     border:
-    1px solid var(--line);
+        1px solid var(--line);
 
     border-radius:17px;
 
     background:
-    rgba(255,255,255,.025);
-
+        rgba(255,255,255,.025);
 }
-
 
 .order-info b{
-
-    color:
-    var(--gold2);
-
+    color:var(--gold2);
 }
 
-
 .order-info label{
-
     display:block;
 
     margin:
-    13px 0 6px;
+        13px 0 6px;
 
     color:#d9c9ba;
 
     font-size:11px;
-
 }
-
 
 .order-info input,
 .order-info textarea{
-
     width:100%;
 
-    padding:11px;
+    padding:
+        11px;
 
     border:
-    1px solid var(--line);
+        1px solid var(--line);
 
     border-radius:10px;
 
@@ -1883,21 +1518,15 @@ footer p{
     font-family:inherit;
 
     font-size:11px;
-
 }
 
+.order-info textarea{
+    min-height:90px;
 
-.order-info input:focus,
-.order-info textarea:focus{
-
-    border-color:
-    var(--gold2);
-
+    resize:vertical;
 }
-
 
 .wa{
-
     display:flex;
 
     align-items:center;
@@ -1906,12 +1535,12 @@ footer p{
 
     gap:8px;
 
-    padding:14px;
+    padding:
+        14px;
 
     border-radius:13px;
 
-    background:
-    var(--green);
+    background:var(--green);
 
     color:white;
 
@@ -1921,44 +1550,43 @@ footer p{
 
     font-weight:700;
 
+    cursor:pointer;
+
+    border:0;
+
+    width:100%;
+
+    font-family:inherit;
 }
 
-
 .bank-note{
+    margin-top:
+        10px;
 
-    margin-top:10px;
-
-    color:
-    var(--muted);
+    color:var(--muted);
 
     text-align:center;
 
     font-size:10px;
 
     line-height:2;
-
 }
 
-
 .empty{
-
     padding:
-    35px 0;
+        35px 0;
 
     text-align:center;
 
-    color:
-    var(--muted);
-
+    color:var(--muted);
 }
 
 
 /* =========================================================
-   IMAGE LIGHTBOX
+   LIGHTBOX
 ========================================================= */
 
 .lightbox{
-
     position:fixed;
 
     inset:0;
@@ -1971,72 +1599,98 @@ footer p{
 
     justify-content:center;
 
-    padding:25px;
+    padding:15px;
 
     background:
-    rgba(0,0,0,.92);
+        rgba(0,0,0,.94);
 
-    backdrop-filter:
-    blur(15px);
-
+    backdrop-filter:blur(15px);
 }
-
 
 .lightbox.show{
-
     display:flex;
-
 }
 
-
 .lightbox img{
+    width:auto;
 
-    max-width:95vw;
+    max-width:94vw;
 
-    max-height:90vh;
+    max-height:86vh;
 
     object-fit:contain;
 
     border:
-    1px solid
-    rgba(214,161,106,.45);
+        1px solid
+        rgba(220,168,117,.45);
 
-    border-radius:20px;
+    border-radius:16px;
 
     box-shadow:
-    0 30px 100px
-    rgba(0,0,0,.6);
-
+        0 30px 100px
+        rgba(0,0,0,.6);
 }
 
-
 .lightbox-close{
-
     position:absolute;
 
-    top:20px;
+    top:15px;
+    left:15px;
 
-    left:25px;
-
-    width:45px;
-
-    height:45px;
+    width:43px;
+    height:43px;
 
     border:
-    1px solid
-    var(--line);
+        1px solid var(--line);
 
     border-radius:50%;
 
     background:
-    rgba(0,0,0,.5);
+        rgba(0,0,0,.65);
 
     color:white;
 
-    font-size:28px;
+    font-size:26px;
 
     cursor:pointer;
+}
 
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:900px){
+
+    .hero{
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+        min-height:auto;
+
+        padding:
+            65px 20px
+            75px;
+    }
+
+    .hero-logo-card{
+        min-height:420px;
+    }
+
+    .products{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .features{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .certs{
+        grid-template-columns:1fr;
+    }
 }
 
 
@@ -2044,145 +1698,770 @@ footer p{
    MOBILE
 ========================================================= */
 
-@media(max-width:900px){
+@media(max-width:600px){
 
-    .hero{
+    html,
+    body{
+        width:100%;
+        max-width:100%;
 
-        grid-template-columns:1fr;
-
-        padding-top:60px;
-
+        overflow-x:hidden;
     }
 
 
-    .hero-logo-card{
+    /* HEADER */
 
-        min-height:370px;
+    header{
+        width:100%;
 
+        position:sticky;
+
+        top:0;
     }
 
+    .nav{
+        width:100%;
 
-    .products{
+        min-height:66px;
+
+        padding:
+            5px 12px;
+
+        display:grid;
 
         grid-template-columns:
-        1fr 1fr;
+            1fr
+            auto
+            1fr;
 
+        gap:8px;
+    }
+
+    .nav > a{
+        justify-self:start;
+    }
+
+    .logo{
+        width:90px;
+        height:52px;
+    }
+
+    .navlinks{
+        display:none;
+    }
+
+    .cart-btn{
+        justify-self:end;
+
+        padding:
+            9px 13px;
+
+        font-size:10px;
+    }
+
+    .badge{
+        width:19px;
+        height:19px;
+
+        font-size:9px;
     }
 
 
-    .features,
-    .certs{
+    /* HERO */
+
+    .hero{
+        width:100%;
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:28px;
+
+        padding:
+            42px 15px
+            50px;
+
+        text-align:center;
+    }
+
+    .hero > div:first-child{
+        width:100%;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+    }
+
+    .eyebrow{
+        font-size:11px;
+
+        letter-spacing:2.5px;
+
+        white-space:nowrap;
+    }
+
+    .hero h1{
+        width:100%;
+
+        margin:
+            14px 0
+            18px;
+
+        font-size:
+            clamp(62px,19vw,88px);
+
+        line-height:.78;
+
+        letter-spacing:-2px;
+    }
+
+    .hero h1 span{
+        margin-top:25px;
+
+        font-size:17px;
+
+        line-height:2;
+    }
+
+    .hero p{
+        width:100%;
+
+        max-width:360px;
+
+        font-size:11px;
+
+        line-height:2.2;
+    }
+
+    .hero-actions{
+        width:100%;
+
+        display:grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:9px;
+
+        margin-top:23px;
+    }
+
+    .btn{
+        width:100%;
+
+        min-width:0;
+
+        padding:
+            12px 8px;
+
+        border-radius:11px;
+
+        font-size:10px;
+    }
+
+
+    /* HERO IMAGE */
+
+    .hero-logo-card{
+        width:100%;
+
+        min-height:300px;
+
+        height:300px;
+
+        border-radius:27px;
+    }
+
+    .hero-logo-card::before{
+        width:84%;
+
+        height:80%;
+
+        border-radius:23px;
+    }
+
+    .hero-logo-card::after{
+        width:76%;
+
+        height:71%;
+
+        border-radius:20px;
+    }
+
+    .hero-logo{
+        width:68%;
+
+        max-width:250px;
+
+        max-height:230px;
+    }
+
+    .corner{
+        width:22px;
+        height:22px;
+    }
+
+    .corner.tl,
+    .corner.tr{
+        top:17px;
+    }
+
+    .corner.bl,
+    .corner.br{
+        bottom:17px;
+    }
+
+    .corner.tl,
+    .corner.bl{
+        right:17px;
+    }
+
+    .corner.tr,
+    .corner.br{
+        left:17px;
+    }
+
+
+    /* SECTIONS */
+
+    .section{
+        width:100%;
+
+        padding:
+            58px 13px;
+    }
+
+    .section-title{
+        width:100%;
+
+        margin:
+            0 auto 28px;
+
+        padding:
+            22px 15px;
+
+        border-radius:19px;
+    }
+
+    .section-title::before,
+    .section-title::after{
+        width:23px;
+        height:23px;
+    }
+
+    .section-title h2{
+        font-size:23px;
+
+        line-height:1.8;
+    }
+
+    .title-kicker{
+        font-size:14px;
+
+        letter-spacing:2px;
+    }
+
+    .section-title p{
+        font-size:10px;
+
+        line-height:2;
+    }
+
+
+    /* PRODUCTS */
+
+    .products{
+        width:100%;
+
+        display:grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:10px;
+    }
+
+    .product{
+        width:100%;
+
+        min-width:0;
+
+        border-radius:17px;
+    }
+
+    .product::before{
+        inset:5px;
+
+        border-radius:13px;
+    }
+
+    .product-image{
+        width:100%;
+
+        height:170px;
+    }
+
+    .product-image img{
+        width:100%;
+        height:100%;
+
+        object-fit:cover;
+    }
+
+    .product-body{
+        width:100%;
+
+        padding:
+            13px 10px
+            14px;
+    }
+
+    .product h3{
+        margin-bottom:5px;
+
+        font-size:12px;
+
+        line-height:1.7;
+
+        min-height:41px;
+    }
+
+    .desc{
+        min-height:auto;
+
+        margin-bottom:7px;
+
+        font-size:9px;
+
+        line-height:1.8;
+
+        display:-webkit-box;
+
+        -webkit-line-clamp:3;
+
+        -webkit-box-orient:vertical;
+
+        overflow:hidden;
+    }
+
+    .price{
+        margin:
+            8px 0;
+
+        font-size:14px;
+
+        line-height:1.6;
+    }
+
+    .options{
+        gap:4px;
+
+        margin:
+            7px 0;
+    }
+
+    .opt{
+        padding:
+            6px 7px;
+
+        border-radius:7px;
+
+        font-size:8px;
+
+        line-height:1.5;
+    }
+
+    .add{
+        width:100%;
+
+        padding:
+            10px 5px;
+
+        border-radius:9px;
+
+        font-size:9px;
+
+        white-space:nowrap;
+    }
+
+
+    /* NOTICE */
+
+    .notice{
+        width:100%;
+
+        margin:
+            20px auto 0;
+
+        padding:
+            16px 28px;
+
+        border-radius:14px;
+
+        font-size:9px;
+
+        line-height:2.1;
+    }
+
+
+    /* FEATURES */
+
+    .features{
+        width:100%;
+
+        display:grid;
 
         grid-template-columns:1fr;
 
+        gap:10px;
+    }
+
+    .feature{
+        width:100%;
+
+        padding:
+            24px 18px;
+
+        border-radius:17px;
+    }
+
+    .feature::before{
+        inset:5px;
+
+        border-radius:13px;
+    }
+
+    .feature .icon{
+        font-size:27px;
+    }
+
+    .feature h3{
+        margin:
+            9px 0;
+
+        font-size:14px;
+    }
+
+    .feature p{
+        font-size:10px;
+
+        line-height:2;
     }
 
 
-    .navlinks{
+    /* CERTIFICATES */
 
-        display:none;
+    .certs{
+        width:100%;
 
+        display:grid;
+
+        grid-template-columns:1fr;
+
+        gap:10px;
+    }
+
+    .cert{
+        width:100%;
+
+        min-height:auto;
+
+        padding:
+            25px 18px;
+
+        border-radius:17px;
+    }
+
+    .cert h3{
+        font-size:14px;
+
+        margin-bottom:10px;
+    }
+
+    .cert p{
+        font-size:10px;
+
+        line-height:2.1;
+    }
+
+
+    /* SOCIAL */
+
+    .socials{
+        width:100%;
+
+        display:grid;
+
+        grid-template-columns:1fr;
+
+        gap:9px;
+    }
+
+    .social{
+        width:100%;
+
+        min-width:0;
+
+        padding:
+            13px;
+
+        border-radius:11px;
+
+        font-size:11px;
+    }
+
+
+    /* FOOTER */
+
+    footer{
+        width:100%;
+
+        padding:
+            40px 15px;
+    }
+
+    footer strong{
+        font-size:40px;
+    }
+
+    footer p{
+        font-size:9px;
+
+        line-height:2;
+    }
+
+
+    /* CART */
+
+    .drawer{
+        width:100%;
+
+        height:100%;
+
+        overflow:hidden;
+    }
+
+    .cart-panel{
+        width:100%;
+
+        max-width:none;
+
+        height:100%;
+
+        padding:
+            18px 15px
+            25px;
+
+        border-left:0;
+
+        border-top:
+            1px solid var(--line);
+    }
+
+    .close{
+        width:40px;
+
+        height:40px;
+
+        font-size:28px;
+    }
+
+    .cart-panel h2{
+        margin:
+            7px 0
+            20px;
+
+        font-size:37px;
+
+        text-align:center;
+    }
+
+    .cart-item{
+        width:100%;
+
+        gap:8px;
+
+        padding:
+            13px 0;
+    }
+
+    .cart-item b{
+        font-size:10px;
+    }
+
+    .cart-item small{
+        font-size:8px;
+    }
+
+    .qty{
+        gap:5px;
+
+        font-size:10px;
+    }
+
+    .qty button{
+        width:27px;
+        height:27px;
+    }
+
+    .total{
+        padding:
+            18px 0;
+
+        font-size:18px;
+
+        text-align:center;
+    }
+
+    .order-info{
+        width:100%;
+
+        padding:
+            15px;
+
+        border-radius:14px;
+    }
+
+    .order-info label{
+        margin:
+            11px 0 5px;
+
+        font-size:9px;
+    }
+
+    .order-info input,
+    .order-info textarea{
+        width:100%;
+
+        padding:
+            10px;
+
+        font-size:10px;
+
+        border-radius:8px;
+    }
+
+    .wa{
+        width:100%;
+
+        padding:
+            13px;
+
+        border-radius:11px;
+
+        font-size:11px;
+    }
+
+    .bank-note{
+        font-size:8px;
+
+        line-height:2;
+    }
+
+
+    /* LIGHTBOX */
+
+    .lightbox{
+        padding:10px;
+    }
+
+    .lightbox img{
+        max-width:96vw;
+
+        max-height:80vh;
+
+        border-radius:13px;
     }
 
 }
 
 
-@media(max-width:560px){
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media(max-width:380px){
 
     .nav{
-
-        padding:
-        8px 14px;
-
+        padding-left:9px;
+        padding-right:9px;
     }
-
 
     .logo{
-
-        width:105px;
-
-        height:55px;
-
+        width:82px;
+        height:48px;
     }
 
+    .cart-btn{
+        padding:
+            8px 10px;
+
+        font-size:9px;
+    }
 
     .hero{
-
         padding:
-        50px 16px 65px;
-
+            35px 11px
+            45px;
     }
-
 
     .hero h1{
-
-        font-size:74px;
-
+        font-size:60px;
     }
 
+    .hero h1 span{
+        font-size:15px;
+    }
 
     .hero-logo-card{
+        height:270px;
 
-        min-height:310px;
-
+        min-height:270px;
     }
-
-
-    .hero-logo{
-
-        width:73%;
-
-    }
-
 
     .section{
-
-        padding:
-        65px 15px;
-
+        padding-left:10px;
+        padding-right:10px;
     }
-
-
-    .section-title{
-
-        padding:
-        25px 17px;
-
-    }
-
-
-    .section-title h2{
-
-        font-size:24px;
-
-    }
-
 
     .products{
-
-        grid-template-columns:1fr;
-
+        gap:8px;
     }
 
-
-    .social{
-
-        width:100%;
-
+    .product-image{
+        height:150px;
     }
 
+    .product-body{
+        padding:
+            11px 8px
+            12px;
+    }
 
-    .notice{
+    .product h3{
+        font-size:11px;
+    }
+
+    .desc{
+        font-size:8px;
+    }
+
+    .price{
+        font-size:13px;
+    }
+
+    .add{
+        font-size:8px;
 
         padding:
-        20px 35px;
-
+            9px 3px;
     }
-
 }
 
 </style>
-
 </head>
 
 
@@ -2196,7 +2475,6 @@ footer p{
 <div class="background"></div>
 
 <div class="blob one"></div>
-
 <div class="blob two"></div>
 
 
@@ -2208,55 +2486,47 @@ footer p{
 
 <nav class="nav">
 
+    <!-- شعار المتجر -->
+    <a href="#home">
 
-<a href="#top">
+        <!-- صورة الشعار الاحتياطية -->
+        <img
+            class="logo"
+            src="https://i.postimg.cc/LXN5HGt1/Whats-App-Image-2026-08-11-at-3-29-38-AM-(3).jpg"
+            alt="W Sweet"
+        >
 
-<img
-class="logo"
-src="logo.png"
-alt="W Sweet Logo"
->
-
-</a>
-
-
-<div class="navlinks">
-
-<a href="#menu">
-المنيو
-</a>
-
-<a href="#about">
-عن W Sweet
-</a>
-
-<a href="#certificates">
-الشهادات
-</a>
-
-<a href="#contact">
-التواصل
-</a>
-
-</div>
+    </a>
 
 
-<button
-class="cart-btn"
-onclick="openCart()"
->
+    <div class="navlinks">
 
-السلة
+        <a href="#home">الرئيسية</a>
 
-<span
-class="badge"
-id="cartCount"
->
-0
-</span>
+        <a href="#products">المنيو</a>
 
-</button>
+        <a href="#about">عن W Sweet</a>
 
+        <a href="#certificates">الشهادات</a>
+
+        <a href="#contact">تواصل معنا</a>
+
+    </div>
+
+
+    <button
+        class="cart-btn"
+        onclick="openCart()"
+    >
+
+        السلة
+
+        <span
+            class="badge"
+            id="cartCount"
+        >0</span>
+
+    </button>
 
 </nav>
 
@@ -2264,174 +2534,141 @@ id="cartCount"
 
 
 
-<main id="top">
-
-
 <!-- =====================================================
      HERO
 ===================================================== -->
 
+<main id="home">
+
 <section class="hero">
 
 
-<div>
+    <div>
+
+        <div class="eyebrow">
+            PREMIUM CHOCOLATE
+        </div>
 
 
-<div class="eyebrow">
+        <h1>
 
-W SWEET · CHOCOLATE · EVENTS
+            W Sweet
 
-</div>
+            <span>
+                حيث تتحول الشوكولاتة إلى تفاصيل لا تُنسى
+            </span>
 
-
-<h1>
-
-W Sweet
-
-<span>
-
-لذّة تُصنع بإتقان،
-وتُقدّم بفخامة.
-
-</span>
-
-</h1>
+        </h1>
 
 
-<p>
+        <p>
 
-شوكولاتة فاخرة، توزيعات مناسبات،
-صواني، تابلت حسب الطلب وطباعة
-مخصصة على الشوكولاتة.
+            شوكولاتة فاخرة وتوزيعات وصواني مناسبات
+            وطباعة مميزة على الشوكولاتة، بتنفيذ أنيق
+            يناسب مناسباتكم وطلباتكم الخاصة.
 
-<br>
-
-كل تفصيلة مصممة لتجعل مناسبتك أجمل.
-
-</p>
+        </p>
 
 
-<div class="hero-actions">
+        <div class="hero-actions">
+
+            <a
+                class="btn btn-primary"
+                href="#products"
+            >
+                اكتشفي المنيو
+            </a>
 
 
-<a
-class="btn btn-primary"
-href="#menu"
->
+            <a
+                class="btn btn-outline"
+                href="https://wa.me/966505691474"
+                target="_blank"
+            >
+                تواصلي معنا واتساب
+            </a>
 
-استعرضي المنيو ✦
+        </div>
 
-</a>
-
-
-<a
-class="btn btn-outline"
-href="https://wa.me/966505691474"
-target="_blank"
->
-
-تواصلي معنا
-
-</a>
-
-
-</div>
-
-
-</div>
+    </div>
 
 
 
-<div class="hero-logo-card">
+    <div class="hero-logo-card">
+
+        <span class="corner tl"></span>
+        <span class="corner tr"></span>
+        <span class="corner bl"></span>
+        <span class="corner br"></span>
 
 
-<span class="corner tl"></span>
+        <!--
+            ضعي شعار W Sweet الحقيقي هنا
+            باستبدال رابط الصورة
+        -->
 
-<span class="corner tr"></span>
+        <img
+            class="hero-logo"
+            src="https://i.postimg.cc/LXN5HGt1/Whats-App-Image-2026-08-11-at-3-29-38-AM-(3).jpg"
+            alt="W Sweet Chocolate"
+        >
 
-<span class="corner bl"></span>
-
-<span class="corner br"></span>
-
-
-<img
-class="hero-logo"
-src="logo.png"
-alt="W Sweet Logo"
->
-
-
-</div>
-
+    </div>
 
 </section>
 
 
 
 <!-- =====================================================
-     MENU
+     PRODUCTS
 ===================================================== -->
 
 <section
-class="section"
-id="menu"
+    class="section"
+    id="products"
 >
 
 
-<div class="section-title">
+    <div class="section-title">
 
+        <div class="title-kicker">
+            W SWEET
+        </div>
 
-<div class="title-kicker">
+        <h2>
+            المنيو
+        </h2>
 
-OUR COLLECTION
+        <p>
+            اختاري منتجاتك وأضيفي الكمية إلى السلة،
+            ثم أرسلي الطلب مباشرة عبر الواتساب.
+        </p>
 
-</div>
-
-
-<h2>
-
-المنيو الفاخر
-
-</h2>
-
-
-<p>
-
-اختاري المنتج والمقاس والكمية،
-ثم أرسلي طلبك مباشرة عبر الواتساب.
-
-</p>
-
-
-</div>
-
-
-<div
-class="products"
-id="products"
-></div>
+    </div>
 
 
 
-<div class="notice">
+    <div
+        class="products"
+        id="productList"
+    ></div>
 
-🎀
 
-<b>
-طلبات المناسبات:
-</b>
 
-يرجى تقديم الطلب قبل المناسبة بـ
+    <div class="notice">
 
-<b>
-أسبوع على الأقل
-</b>
+        ✦
+        <strong>
+            تنبيه للمناسبات:
+        </strong>
 
-لضمان تجهيز الطلب بالشكل
-الذي يليق بمناسبتك.
+        نرجو تأكيد طلبات المناسبات قبل موعد المناسبة
+        بـ <strong>أسبوع على الأقل</strong>
+        لضمان تجهيز الطلب بالشكل المطلوب.
 
-</div>
+        ✦
 
+    </div>
 
 </section>
 
@@ -2442,106 +2679,88 @@ id="products"
 ===================================================== -->
 
 <section
-class="section"
-id="about"
+    class="section"
+    id="about"
 >
 
 
-<div class="section-title">
+    <div class="section-title">
+
+        <div class="title-kicker">
+            ABOUT US
+        </div>
+
+        <h2>
+            عن W Sweet
+        </h2>
+
+        <p>
+            شغفنا بالتفاصيل هو اللي يميز كل قطعة نقدمها.
+        </p>
+
+    </div>
 
 
-<div class="title-kicker">
-
-THE W SWEET EXPERIENCE
-
-</div>
+    <div class="features">
 
 
-<h2>
+        <div class="feature">
 
-تفاصيل تصنع الفرق
+            <div class="icon">
+                🍫
+            </div>
 
-</h2>
+            <h3>
+                شوكولاتة فاخرة
+            </h3>
 
+            <p>
+                نختار أجود أنواع الشوكولاتة
+                لتقديم تجربة مميزة في كل طلب.
+            </p>
 
-<p>
-
-كل قطعة تُجهز بعناية،
-من الاختيار إلى التغليف والتفاصيل النهائية.
-
-</p>
-
-
-</div>
-
-
-
-<div class="features">
-
-
-<div class="feature">
-
-<div class="icon">
-🍫
-</div>
-
-<h3>
-شوكولاتة فاخرة
-</h3>
-
-<p>
-
-اختيارات من الشوكولاتة والحشوات
-حسب الطلب مع اهتمام بأدق التفاصيل.
-
-</p>
-
-</div>
+        </div>
 
 
 
-<div class="feature">
+        <div class="feature">
 
-<div class="icon">
-🎁
-</div>
+            <div class="icon">
+                🎁
+            </div>
 
-<h3>
-مناسباتك الخاصة
-</h3>
+            <h3>
+                للمناسبات
+            </h3>
 
-<p>
+            <p>
+                توزيعات وصواني وهدايا مصممة
+                لتناسب مختلف المناسبات.
+            </p>
 
-توزيعات وصواني وتنسيقات خاصة
-للمواليد والمناسبات المختلفة.
-
-</p>
-
-</div>
+        </div>
 
 
 
-<div class="feature">
+        <div class="feature">
 
-<div class="icon">
-✦
-</div>
+            <div class="icon">
+                ✨
+            </div>
 
-<h3>
-طباعة مخصصة
-</h3>
+            <h3>
+                حسب الطلب
+            </h3>
 
-<p>
+            <p>
+                يمكن تنفيذ تفاصيل خاصة
+                حسب المناسبة والكمية والتصميم.
+            </p>
 
-طباعة على الشوكولاتة حسب التصميم
-والهوية والمناسبة.
-
-</p>
-
-</div>
+        </div>
 
 
-</div>
+    </div>
 
 </section>
 
@@ -2552,193 +2771,158 @@ THE W SWEET EXPERIENCE
 ===================================================== -->
 
 <section
-class="section"
-id="certificates"
+    class="section"
+    id="certificates"
 >
 
 
-<div class="section-title">
+    <div class="section-title">
+
+        <div class="title-kicker">
+            W SWEET
+        </div>
+
+        <h2>
+            خبرتنا وشهاداتنا
+        </h2>
+
+        <p>
+            شغف، تعلم، ودقة في صناعة التفاصيل.
+        </p>
+
+    </div>
 
 
-<div class="title-kicker">
-
-EXPERIENCE & CERTIFICATES
-
-</div>
+    <div class="certs">
 
 
-<h2>
+        <div class="cert">
 
-الشهادات والخبرة
+            <h3>
+                🏅 شهادة في فنون الطهي
+            </h3>
 
-</h2>
+            <p>
+                حاصلة على شهادات من فنون الطهي
+                في مجال صناعة الشوكولاتة،
+                مع اهتمام كبير بالجودة والتفاصيل.
+            </p>
 
-
-<p>
-
-خبرة وشهادات في صناعة الشوكولاتة
-والطباعة عليها.
-
-</p>
-
-
-</div>
-
-
-
-<div class="certs">
-
-
-<div class="cert">
-
-<h3>
-
-🏅 شهادات فنون الطهي
-
-</h3>
-
-
-<p>
-
-حاصلة على شهادات من فنون الطهي
-في <b>صناعة الشوكولاتة</b>،
-مع اهتمام بالجودة والتفاصيل في كل قطعة.
-
-</p>
-
-</div>
+        </div>
 
 
 
-<div class="cert">
+        <div class="cert">
 
-<h3>
+            <h3>
+                🏅 شهادة في الطباعة على الشوكولاتة
+            </h3>
 
-🏅 الطباعة على الشوكولاتة
+            <p>
+                خبرة وشهادة في مجال الطباعة
+                والتخصيص على الشوكولاتة
+                لتقديم قطع تحمل طابع مناسبتكم.
+            </p>
 
-</h3>
-
-
-<p>
-
-حاصلة على شهادات في
-<b>الطباعة على الشوكولاتة</b>
-وتنفيذ التصاميم والهويات المخصصة
-للمناسبات.
-
-</p>
-
-</div>
+        </div>
 
 
-</div>
+    </div>
 
 </section>
 
 
 
 <!-- =====================================================
-     CONTACT
+     SOCIAL
 ===================================================== -->
 
 <section
-class="section"
-id="contact"
+    class="section"
+    id="contact"
 >
 
 
-<div class="section-title">
+    <div class="section-title">
 
+        <div class="title-kicker">
+            CONTACT
+        </div>
 
-<div class="title-kicker">
+        <h2>
+            تواصلي معنا
+        </h2>
 
-CONTACT W SWEET
+        <p>
+            للطلبات الخاصة والكميات والمناسبات
+            يمكنكم التواصل معنا مباشرة.
+        </p>
 
-</div>
-
-
-<h2>
-
-تواصلي معنا
-
-</h2>
-
-
-<p>
-
-للطلبات الخاصة والحشوات والتصاميم
-والمناسبات، يسعدنا استقبال تفاصيلك.
-
-</p>
-
-
-</div>
+    </div>
 
 
 
-<div class="socials">
+    <div class="socials">
 
 
-<!-- WHATSAPP -->
+        <!-- WHATSAPP -->
 
-<a
-class="social"
-href="https://wa.me/966505691474"
-target="_blank"
->
+        <a
+            class="social"
+            href="https://wa.me/966505691474"
+            target="_blank"
+        >
 
-<svg viewBox="0 0 24 24">
+            <svg viewBox="0 0 24 24">
+                <path d="M20.5 3.5A11.8 11.8 0 0 0 12.08 0C5.55 0 .24 5.31.24 11.84c0 2.09.55 4.13 1.6 5.92L.14 24l6.38-1.67a11.83 11.83 0 0 0 5.56 1.41h.01c6.52 0 11.83-5.31 11.83-11.84 0-3.17-1.23-6.14-3.42-8.4ZM12.09 21.75h-.01a9.84 9.84 0 0 1-5.01-1.37l-.36-.21-3.79.99 1.01-3.69-.23-.38a9.85 9.85 0 0 1-1.51-5.25C2.19 6.4 6.62 1.97 12.09 1.97c2.65 0 5.14 1.03 7.01 2.9a9.86 9.86 0 0 1 2.9 7.03c0 5.47-4.43 9.9-9.91 9.9Zm5.43-7.42c-.3-.15-1.77-.87-2.05-.97-.28-.1-.49-.15-.7.15-.2.3-.8.97-.98 1.17-.18.2-.36.23-.66.08-.3-.15-1.27-.47-2.42-1.5-.89-.79-1.5-1.77-1.67-2.07-.17-.3-.02-.46.13-.61.14-.14.3-.36.45-.54.15-.18.2-.3.3-.5.1-.2.05-.38-.02-.53-.08-.15-.7-1.69-.96-2.31-.25-.6-.51-.52-.7-.53h-.6c-.2 0-.53.08-.8.38-.28.3-1.06 1.04-1.06 2.54s1.09 2.95 1.24 3.15c.15.2 2.15 3.28 5.21 4.6.73.32 1.3.51 1.74.65.73.23 1.39.2 1.91.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
+            </svg>
 
-<path d="M20.5 3.5A11.7 11.7 0 0 0 12.2 0C5.7 0 .5 5.3.5 11.8c0 2.1.6 4.1 1.7 5.9L.4 24l6.5-1.7a11.8 11.8 0 0 0 5.3 1.3h.1c6.5 0 11.7-5.3 11.7-11.8 0-3.1-1.2-6.1-3.5-8.3ZM12.3 21.6h-.1c-1.7 0-3.4-.5-4.8-1.4l-.3-.2-3.9 1 1-3.8-.2-.3a9.7 9.7 0 0 1-1.5-5.1c0-5.4 4.4-9.8 9.8-9.8 2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.8-9.8 9.8Zm5.4-7.3c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.6-.8-2.7-1.5-3.8-3.3-.3-.5.3-.4.9-1.4.1-.2.1-.4 0-.6-.1-.2-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.8s1.2 3.3 1.4 3.5c.2.2 2.3 3.5 5.5 4.9 2 .9 2.7 1 3.7.8.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3Z"/>
+            واتساب
 
-</svg>
-
-واتساب
-
-</a>
-
-
-
-<!-- INSTAGRAM -->
-
-<a
-class="social"
-href="https://www.instagram.com/mini.pan97"
-target="_blank"
->
-
-<svg viewBox="0 0 24 24">
-
-<path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5ZM17.3 6.2a1.1 1.1 0 1 1-1.1 1.1 1.1 0 0 1 1.1-1.1Z"/>
-
-</svg>
-
-Instagram
-
-</a>
+        </a>
 
 
 
-<!-- TIKTOK -->
+        <!-- INSTAGRAM -->
 
-<a
-class="social"
-href="https://www.tiktok.com/@w.sweet6?_r=1&_t=ZS-987hSAb0l3B"
-target="_blank"
->
+        <a
+            class="social"
+            href="https://www.instagram.com/mini.pan97"
+            target="_blank"
+        >
 
-<svg viewBox="0 0 24 24">
+            <svg viewBox="0 0 24 24">
 
-<path d="M16.6 2h3.1c.2 1.5 1 2.8 2.3 3.7v3.2a8.6 8.6 0 0 1-5.4-1.8v7.6a6.3 6.3 0 1 1-5.4-6.2v3.3a3.1 3.1 0 1 0 2.2 3V2h3.2Z"/>
+                <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2Zm0 2A3.75 3.75 0 0 0 4 7.75v8.5A3.75 3.75 0 0 0 7.75 20h8.5A3.75 3.75 0 0 0 20 16.25v-8.5A3.75 3.75 0 0 0 16.25 4h-8.5ZM17.5 6.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/>
 
-</svg>
+            </svg>
 
-TikTok
+            إنستغرام
 
-</a>
+        </a>
 
 
-</div>
+
+        <!-- TIKTOK -->
+
+        <a
+            class="social"
+            href="https://www.tiktok.com/@w.sweet6"
+            target="_blank"
+        >
+
+            <svg viewBox="0 0 24 24">
+
+                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.24V2h-3.54v13.67a2.9 2.9 0 1 1-2-2.76V9.32a6.43 6.43 0 1 0 5.54 6.35V8.74a8.27 8.27 0 0 0 4.84 1.56V6.77c-.37 0-.72-.03-1.07-.08Z"/>
+
+            </svg>
+
+            تيك توك
+
+        </a>
+
+
+    </div>
 
 </section>
 
@@ -2753,21 +2937,17 @@ TikTok
 
 <footer>
 
-<strong>
-W Sweet
-</strong>
+    <strong>
+        W Sweet
+    </strong>
 
-<p>
+    <p>
+        شوكولاتة فاخرة بتفاصيل تصنع الفرق.
+    </p>
 
-شوكولاتة فاخرة · توزيعات · مناسبات · طباعة مخصصة
-
-</p>
-
-<div>
-
-© 2026 W Sweet — جميع الحقوق محفوظة
-
-</div>
+    <p>
+        جميع الحقوق محفوظة © W Sweet
+    </p>
 
 </footer>
 
@@ -2778,124 +2958,122 @@ W Sweet
 ===================================================== -->
 
 <div
-class="drawer"
-id="drawer"
-onclick="if(event.target===this)closeCart()"
+    class="drawer"
+    id="drawer"
+    onclick="outsideCart(event)"
 >
 
 
-<aside class="cart-panel">
+    <div
+        class="cart-panel"
+        onclick="event.stopPropagation()"
+    >
+
+        <button
+            class="close"
+            onclick="closeCart()"
+        >
+            ×
+        </button>
 
 
-<button
-class="close"
-onclick="closeCart()"
->
-×
-</button>
+        <h2>
+            سلة الطلب
+        </h2>
 
 
-<h2>
-سلة الطلب
-</h2>
+        <div id="cartItems"></div>
 
 
-<div id="cartItems"></div>
+        <div
+            class="total"
+            id="cartTotal"
+        >
+            الإجمالي: 0 ريال
+        </div>
 
 
-<div class="total">
+        <div class="order-info">
 
-الإجمالي:
-
-<span id="total">
-0
-</span>
-
-ريال
-
-</div>
+            <b>
+                بيانات الطلب
+            </b>
 
 
+            <label>
+                الاسم
+            </label>
 
-<div class="order-info">
-
-
-<b>
-بيانات الطلب
-</b>
-
-
-<label>
-الاسم
-</label>
-
-<input
-id="customerName"
-placeholder="اكتبي الاسم"
->
+            <input
+                id="customerName"
+                type="text"
+                placeholder="اكتبي الاسم"
+            >
 
 
-<label>
-رقم الجوال
-</label>
+            <label>
+                رقم الجوال
+            </label>
 
-<input
-id="customerPhone"
-placeholder="05xxxxxxxx"
->
-
-
-<label>
-موعد المناسبة
-</label>
-
-<input
-id="eventDate"
-type="date"
->
+            <input
+                id="customerPhone"
+                type="tel"
+                placeholder="05xxxxxxxx"
+            >
 
 
-<label>
-تفاصيل إضافية
-</label>
+            <label>
+                تاريخ المناسبة / الاستلام
+            </label>
 
-<textarea
-id="notes"
-rows="4"
-placeholder="الحشوات، الألوان، التصميم، أي ملاحظات..."
-></textarea>
-
-
-</div>
+            <input
+                id="orderDate"
+                type="date"
+            >
 
 
+            <label>
+                ملاحظات الطلب
+            </label>
 
-<a
-class="wa"
-id="whatsappOrder"
-target="_blank"
-href="https://wa.me/966505691474"
->
+            <textarea
+                id="customerNotes"
+                placeholder="مثلاً: نوع الحشوة، الألوان، اسم المناسبة، تفاصيل خاصة..."
+            ></textarea>
 
-إرسال الطلب عبر واتساب
-
-</a>
-
-
-<div class="bank-note">
-
-💳 الدفع <b>تحويل بنكي فقط</b>.
-
-<br>
-
-بعد إرسال الطلب عبر الواتساب،
-سيتم تزويدك ببيانات الحساب البنكي
-وتعليمات التحويل.
-
-</div>
+        </div>
 
 
-</aside>
+        <button
+            class="wa"
+            onclick="sendOrderToWhatsApp()"
+        >
+
+            <span>
+                إرسال الطلب عبر واتساب
+            </span>
+
+        </button>
+
+
+        <div class="bank-note">
+
+            💳 الدفع لا يتم من الموقع.
+
+            <br>
+
+            بعد إرسال الطلب سيتم التواصل معك عبر الواتساب
+            بخصوص تفاصيل التحويل البنكي.
+
+            <br><br>
+
+            <strong>
+                طلبات المناسبات يرجى تقديمها قبل الموعد بأسبوع.
+            </strong>
+
+        </div>
+
+    </div>
 
 </div>
 
@@ -2906,27 +3084,23 @@ href="https://wa.me/966505691474"
 ===================================================== -->
 
 <div
-class="lightbox"
-id="lightbox"
-onclick="closeLightbox()"
+    class="lightbox"
+    id="lightbox"
+    onclick="closeLightbox()"
 >
 
+    <button
+        class="lightbox-close"
+        onclick="closeLightbox()"
+    >
+        ×
+    </button>
 
-<button
-class="lightbox-close"
-onclick="closeLightbox()"
->
-×
-</button>
-
-
-<img
-id="lightboxImage"
-src=""
-alt="W Sweet"
-onclick="event.stopPropagation()"
->
-
+    <img
+        id="lightboxImage"
+        src=""
+        alt=""
+    >
 
 </div>
 
@@ -2934,265 +3108,218 @@ onclick="event.stopPropagation()"
 
 <script>
 
-
 /* =========================================================
-   SETTINGS
-========================================================= */
-
-const WHATSAPP_NUMBER =
-"966505691474";
-
-
-/* =========================================================
-   PRODUCTS + IMAGES
+   W SWEET PRODUCTS
 ========================================================= */
 
 const products = [
 
+    {
+        id:1,
 
-/* 1 */
+        name:"شرايط للصواني",
 
-{
-    id:1,
+        desc:"شرايط أنيقة لتنسيق وتزيين صواني المناسبات.",
 
-    name:"شرايط للصواني",
+        price:10,
 
-    desc:
-    "شرايط أنيقة لتنسيق صواني المناسبات.",
+        unit:"للقطعة",
 
-    price:10,
+        image:"https://i.postimg.cc/SRxXCmSK/Screenshot-55.png"
+    },
 
-    unit:"للوحدة",
 
-    image:
-    "https://i.postimg.cc/SRxXCmSK/Screenshot-55.png"
+    {
+        id:2,
 
-},
+        name:"شرايط للمشروبات",
 
+        desc:"شرايط مخصصة للمشروبات، الكمية 20 حبة.",
 
+        price:40,
 
-/* 2 */
+        unit:"20 حبة",
 
-{
-    id:2,
+        image:"https://i.postimg.cc/htzd249x/Whats-App-Image-2026-08-11-at-3-29-39-AM-(1).jpg"
+    },
 
-    name:"شرايط للمشروبات",
 
-    desc:
-    "20 حبة لتنسيق وتزيين المشروبات.",
+    {
+        id:3,
 
-    price:40,
+        name:"شوكولاتة بلجيكي",
 
-    unit:"20 حبة",
+        desc:"شوكولاتة بلجيكية فاخرة مناسبة للطلبات والتوزيعات.",
 
-    image:
-    "https://i.postimg.cc/htzd249x/Whats-App-Image-2026-08-11-at-3-29-39-AM-(1).jpg"
+        price:150,
 
-},
+        unit:"للكيلو",
 
+        image:"https://i.postimg.cc/LXN5HGt1/Whats-App-Image-2026-08-11-at-3-29-38-AM-(3).jpg"
+    },
 
 
-/* 3 */
+    {
+        id:4,
 
-{
-    id:3,
+        name:"توزيعات مواليد",
 
-    name:"شوكولاته بلجيكي",
+        desc:"توزيعات مواليد أنيقة، مناسبة للهدايا والمناسبات.",
 
-    desc:
-    "شوكولاتة بلجيكية فاخرة.",
+        price:4,
 
-    price:150,
+        unit:"للحبة",
 
-    unit:"للكيلو",
+        image:"https://i.postimg.cc/dQ5ZvZ66/Whats-App-Image-2026-08-11-at-3-29-39-AM-(2).jpg"
+    },
 
-    image:
-    "https://i.postimg.cc/LXN5HGt1/Whats-App-Image-2026-08-11-at-3-29-38-AM-(3).jpg"
 
-},
+    {
+        id:5,
 
+        name:"شوكولاتة بار",
 
+        desc:"اختاري المقاس المناسب، ويمكن إضافة أكثر من مقاس لنفس الطلب.",
 
-/* 4 */
+        price:10,
 
-{
-    id:4,
+        unit:"حسب المقاس",
 
-    name:"توزيعات مواليد",
+        image:"https://i.postimg.cc/cCx3hQmd/Whats-App-Image-2026-08-11-at-3-29-38-AM-(4).jpg",
 
-    desc:
-    "توزيعات مواليد أنيقة حسب المناسبة.",
+        options:[
 
-    price:4,
+            {
+                name:"صغير",
+                price:10
+            },
 
-    unit:"للحبة",
+            {
+                name:"وسط",
+                price:15
+            },
 
-    image:
-    "https://i.postimg.cc/dQ5ZvZ66/Whats-App-Image-2026-08-11-at-3-29-39-AM-(2).jpg"
+            {
+                name:"كبير",
+                price:20
+            }
 
-},
+        ]
+    },
 
 
+    {
+        id:6,
 
-/* 5 */
+        name:"شوكولاتة نص كورة",
 
-{
-    id:5,
+        desc:"150 حبة بسعر 255 ريال، والحشوات حسب طلب العميل.",
 
-    name:"شوكولاته بار",
+        price:255,
 
-    desc:
-    "يمكن اختيار أكثر من مقاس، وكل مقاس يحسب بشكل مستقل داخل السلة.",
+        unit:"150 حبة",
 
-    options:[
+        image:"https://i.postimg.cc/RZDT0bTn/Whats-App-Image-2026-08-11-at-3-29-38-AM-(1).jpg",
 
-        ["صغير",10],
+        custom:true
+    },
 
-        ["وسط",15],
 
-        ["كبير",20]
+    {
+        id:7,
 
-    ],
+        name:"لوقو دائري",
 
-    image:
-    "https://i.postimg.cc/cCx3hQmd/Whats-App-Image-2026-08-11-at-3-29-38-AM-(4).jpg"
+        desc:"تنفيذ اللوقو الدائري بالمقاس المطلوب.",
 
-},
+        price:15,
 
+        unit:"حسب المقاس",
 
+        image:"https://i.postimg.cc/LXN5HGt1/Whats-App-Image-2026-08-11-at-3-29-38-AM-(3).jpg",
 
-/* 6 */
+        options:[
 
-{
-    id:6,
+            {
+                name:"10 × 9",
+                price:15
+            },
 
-    name:"شوكولاته نص كوره",
+            {
+                name:"13 × 14 × 15",
+                price:20
+            }
 
-    desc:
-    "150 حبة بسعر 255 ريال، والحشوات حسب طلب العميل.",
+        ]
+    },
 
-    options:[
 
-        ["حشوة حسب الطلب",255]
+    {
+        id:8,
 
-    ],
+        name:"شوكولاتة تابلت",
 
-    image:
-    "https://i.postimg.cc/RZDT0bTn/Whats-App-Image-2026-08-11-at-3-29-38-AM-(1).jpg"
+        desc:"شوكولاتة تابلت حسب الطلب والتصميم.",
 
-},
+        price:null,
 
+        unit:"حسب الطلب",
 
+        image:"https://i.postimg.cc/C57Gpv1v/Whats-App-Image-2026-08-11-at-3-29-38-AM-(2).jpg",
 
-/* 7 */
+        custom:true
+    },
 
-{
-    id:7,
 
-    name:"لوقو دائري",
+    {
+        id:9,
 
-    desc:
-    "لوقو دائري للمناسبات. يمكن اختيار المقاس المناسب.",
+        name:"بسكوت الكابتشينو",
 
-    options:[
+        desc:"بسكوت كابتشينو بطعم مميز مناسب للضيافة والتوزيعات.",
 
-        ["مقاس 10–9",15],
+        price:4,
 
-        ["مقاس 13–14–15",20]
+        unit:"للحبة",
 
-    ],
+        image:"https://i.postimg.cc/mZpkKfZn/Whats-App-Image-2026-08-11-at-3-29-39-AM-(5).jpg"
+    },
 
-    /*
-      استخدمنا شعار المتجر مؤقتاً كصورة.
-      عند حصولك على صورة المنتج الحقيقية
-      غيري الرابط إلى رابط الصورة الجديدة.
-    */
 
-    image:
-    "logo.png"
+    {
+        id:10,
 
-},
+        name:"صواني المناسبات",
 
+        desc:"صواني مناسبات يتم تجهيزها حسب المناسبة والكمية والتنسيق.",
 
+        price:null,
 
-/* 8 */
+        unit:"حسب الطلب",
 
-{
-    id:8,
+        image:"https://i.postimg.cc/qqNJpqBh/Whats-App-Image-2026-08-11-at-3-29-39-AM-(6).jpg",
 
-    name:"شوكولاته تابلت حسب الطلب",
+        custom:true
+    },
 
-    desc:
-    "شوكولاتة تابلت مخصصة حسب التصميم والطلب.",
 
-    custom:true,
+    {
+        id:11,
 
-    image:
-    "https://i.postimg.cc/C57Gpv1v/Whats-App-Image-2026-08-11-at-3-29-38-AM-(2).jpg"
+        name:"الطباعة على الشوكولاتة",
 
-},
+        desc:"طباعة مخصصة على الشوكولاتة حسب التصميم والمناسبة.",
 
+        price:null,
 
+        unit:"حسب الطلب",
 
-/* 9 */
+        image:"https://i.postimg.cc/MZ5VTF6T/Whats-App-Image-2026-08-11-at-3-29-38-AM-(5).jpg",
 
-{
-    id:9,
-
-    name:"بسكوت الكابتشينو",
-
-    desc:
-    "بسكوت الكابتشينو.",
-
-    price:4,
-
-    unit:"للحبة",
-
-    image:
-    "https://i.postimg.cc/mZpkKfZn/Whats-App-Image-2026-08-11-at-3-29-39-AM-(5).jpg"
-
-},
-
-
-
-/* 10 */
-
-{
-    id:10,
-
-    name:"صواني المناسبات",
-
-    desc:
-    "صواني مناسبات بتنسيق مخصص.",
-
-    custom:true,
-
-    image:
-    "https://i.postimg.cc/qqNJpqBh/Whats-App-Image-2026-08-11-at-3-29-39-AM-(6).jpg"
-
-},
-
-
-
-/* 11 */
-
-{
-    id:11,
-
-    name:"الطباعة على الشوكولاته",
-
-    desc:
-    "طباعة مخصصة على الشوكولاتة حسب الهوية والمناسبة.",
-
-    custom:true,
-
-    image:
-    "https://i.postimg.cc/MZ5VTF6T/Whats-App-Image-2026-08-11-at-3-29-38-AM-(5).jpg"
-
-}
+        custom:true
+    }
 
 ];
-
 
 
 /* =========================================================
@@ -3202,7 +3329,6 @@ const products = [
 let cart = [];
 
 
-
 /* =========================================================
    RENDER PRODUCTS
 ========================================================= */
@@ -3210,188 +3336,159 @@ let cart = [];
 function renderProducts(){
 
     const container =
-    document.getElementById("products");
+        document.getElementById("productList");
+
+    container.innerHTML = "";
 
 
-    container.innerHTML =
-    products.map(product => `
+    products.forEach(product => {
 
+        let optionsHTML = "";
 
-        <article class="product">
+        if(product.options){
 
+            optionsHTML = `
 
-            <div class="product-image">
+                <div class="options">
 
+                    ${product.options.map((option,index)=>`
 
-                <img
+                        <button
+                            class="opt ${index === 0 ? "active" : ""}"
+                            data-product="${product.id}"
+                            data-option="${index}"
+                            onclick="selectOption(this)"
+                        >
 
-                    src="${product.image}"
+                            ${option.name}
 
-                    alt="${product.name}"
+                            —
+                            ${option.price} ريال
 
-                    loading="lazy"
+                        </button>
 
-                    onclick="openLightbox('${product.image}')"
-
-                    onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
-
-                >
-
-
-                <span
-                    class="placeholder"
-                    style="display:none"
-                >
-                    ${product.id}
-                </span>
-
-
-                <span class="photo-note">
-
-                    اضغطي على الصورة للتكبير
-
-                </span>
-
-
-            </div>
-
-
-
-            <div class="product-body">
-
-
-                <h3>
-
-                    ${product.name}
-
-                </h3>
-
-
-
-                <div class="desc">
-
-                    ${product.desc}
+                    `).join("")}
 
                 </div>
 
+            `;
+
+        }
 
 
-                ${
-                    product.options
-                    ?
-                    `
-
-                    <div class="options">
-
-                        ${
-                            product.options.map(
-                                (option,index)=>`
-
-                                <button
-
-                                    class="opt ${index===0 ? 'active' : ''}"
-
-                                    data-product="${product.id}"
-
-                                    data-option="${index}"
-
-                                    onclick="selectOption(this)"
-
-                                >
-
-                                    ${option[0]}
-                                    ·
-                                    ${option[1]}
-                                    ريال
-
-                                </button>
-
-                                `
-                            ).join("")
-                        }
-
-                    </div>
-
-                    `
-                    :
-                    ""
-                }
+        let priceHTML = "";
 
 
+        if(product.price !== null){
+
+            priceHTML = `
 
                 <div class="price">
 
+                    ${product.price}
+                    ريال
 
-                    ${
-                        product.price
+                    <small>
+                        ${product.unit}
+                    </small>
 
-                        ?
+                </div>
 
-                        `${product.price} ريال ${product.unit || ""}`
+            `;
 
-                        :
+        }else{
 
-                        product.options
+            priceHTML = `
 
-                        ?
+                <div class="price">
 
-                        "اختاري المقاس"
+                    حسب الطلب
 
-                        :
+                </div>
 
-                        "حسب الطلب"
+            `;
 
-                    }
+        }
 
+
+        container.innerHTML += `
+
+            <article
+                class="product"
+                data-id="${product.id}"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                        loading="lazy"
+                        onclick="openLightbox('${product.image}')"
+                    >
 
                 </div>
 
 
+                <div class="product-body">
 
-                <button
-
-                    class="add"
-
-                    onclick="addToCart(${product.id})"
-
-                >
-
-                    ＋ إضافة للسلة
-
-                </button>
+                    <h3>
+                        ${product.name}
+                    </h3>
 
 
-            </div>
+                    <div class="desc">
+                        ${product.desc}
+                    </div>
 
 
-        </article>
+                    ${priceHTML}
 
 
-    `).join("");
+                    ${optionsHTML}
+
+
+                    <button
+                        class="add"
+                        onclick="addToCart(${product.id})"
+                    >
+
+                        ${product.custom
+                            ? "إضافة للطلب"
+                            : "إضافة للسلة"
+                        }
+
+                    </button>
+
+                </div>
+
+            </article>
+
+        `;
+
+    });
 
 }
 
 
-
 /* =========================================================
-   OPTION
+   SELECT OPTION
 ========================================================= */
 
 function selectOption(button){
 
-    const id =
-    button.dataset.product;
-
+    const productId =
+        Number(button.dataset.product);
 
     document
-    .querySelectorAll(
-        `[data-product="${id}"]`
-    )
-    .forEach(item=>{
+        .querySelectorAll(
+            `.opt[data-product="${productId}"]`
+        )
+        .forEach(btn => {
 
-        item.classList.remove("active");
+            btn.classList.remove("active");
 
-    });
+        });
 
 
     button.classList.add("active");
@@ -3399,111 +3496,126 @@ function selectOption(button){
 }
 
 
+/* =========================================================
+   GET SELECTED OPTION
+========================================================= */
+
+function getSelectedOption(productId){
+
+    const button =
+        document.querySelector(
+            `.opt[data-product="${productId}"].active`
+        );
+
+
+    if(!button){
+        return null;
+    }
+
+
+    const product =
+        products.find(
+            p => p.id === productId
+        );
+
+
+    const index =
+        Number(button.dataset.option);
+
+
+    return product.options[index];
+}
+
 
 /* =========================================================
    ADD TO CART
 ========================================================= */
 
-function addToCart(id){
+function addToCart(productId){
 
     const product =
-    products.find(
-        p=>p.id===id
-    );
+        products.find(
+            p => p.id === productId
+        );
 
 
-    let option = null;
+    if(!product){
+        return;
+    }
 
-    let price =
-    product.price || 0;
 
+    let selectedOption = null;
 
 
     if(product.options){
 
-        const active =
-        document.querySelector(
-            `[data-product="${id}"].active`
-        );
-
-
-        const index =
-        active
-
-        ?
-
-        Number(
-            active.dataset.option
-        )
-
-        :
-
-        0;
-
-
-        option =
-        product.options[index][0];
-
-
-        price =
-        product.options[index][1];
+        selectedOption =
+            getSelectedOption(productId);
 
     }
 
 
+    let itemPrice =
+        product.price;
+
+
+    let itemName =
+        product.name;
+
+
+    let optionText = "";
+
+
+    if(selectedOption){
+
+        itemPrice =
+            selectedOption.price;
+
+        optionText =
+            selectedOption.name;
+
+        itemName =
+            `${product.name} - ${selectedOption.name}`;
+
+    }
+
 
     /*
-       المفتاح يحتوي على المقاس.
-
-       لذلك:
-
-       بار صغير × 2
-
-       و
-
-       بار وسط × 3
-
-       يكونان سطرين منفصلين في السلة.
+        المنتجات حسب الطلب:
+        نضيفها للسلة بقيمة 0
+        والسعر النهائي يتم تحديده عبر الواتساب.
     */
 
-    const key =
-    id + "|" + (option || "");
-
-
-
     const existing =
-    cart.find(
-        item=>item.key===key
-    );
-
+        cart.find(item =>
+            item.productId === productId &&
+            item.optionText === optionText
+        );
 
 
     if(existing){
 
-        existing.qty++;
+        existing.quantity++;
 
-    }
-
-    else{
+    }else{
 
         cart.push({
 
-            key:key,
+            productId:productId,
 
-            id:id,
+            name:itemName,
 
-            name:product.name,
+            optionText:optionText,
 
-            option:option,
+            price:itemPrice || 0,
 
-            price:price,
+            quantity:1,
 
-            qty:1
+            custom:product.custom || false
 
         });
 
     }
-
 
 
     updateCart();
@@ -3513,17 +3625,165 @@ function addToCart(id){
 }
 
 
-
 /* =========================================================
-   QUANTITY
+   UPDATE CART
 ========================================================= */
 
-function changeQty(index,change){
+function updateCart(){
 
-    cart[index].qty += change;
+    const items =
+        document.getElementById("cartItems");
+
+    const count =
+        document.getElementById("cartCount");
+
+    const total =
+        document.getElementById("cartTotal");
 
 
-    if(cart[index].qty <= 0){
+    let totalQuantity = 0;
+
+    let totalPrice = 0;
+
+
+    cart.forEach(item => {
+
+        totalQuantity += item.quantity;
+
+        totalPrice +=
+            item.price *
+            item.quantity;
+
+    });
+
+
+    count.textContent =
+        totalQuantity;
+
+
+    if(cart.length === 0){
+
+        items.innerHTML = `
+
+            <div class="empty">
+
+                🛍️
+
+                <br><br>
+
+                السلة فارغة
+
+                <br>
+
+                اختاري منتجاتك من المنيو.
+
+            </div>
+
+        `;
+
+    }else{
+
+        items.innerHTML =
+            cart.map((item,index)=>`
+
+                <div class="cart-item">
+
+                    <div>
+
+                        <b>
+                            ${item.name}
+                        </b>
+
+                        <br>
+
+                        <small>
+
+                            ${
+                                item.custom
+                                ? "السعر يحدد حسب الطلب"
+                                : item.price + " ريال"
+                            }
+
+                        </small>
+
+                    </div>
+
+
+                    <div class="qty">
+
+                        <button
+                            onclick="changeQuantity(${index},-1)"
+                        >
+                            −
+                        </button>
+
+
+                        <span>
+                            ${item.quantity}
+                        </span>
+
+
+                        <button
+                            onclick="changeQuantity(${index},1)"
+                        >
+                            +
+                        </button>
+
+
+                        <button
+                            onclick="removeItem(${index})"
+                            title="حذف"
+                        >
+                            ×
+                        </button>
+
+                    </div>
+
+                </div>
+
+            `).join("");
+
+    }
+
+
+    total.innerHTML = `
+
+        الإجمالي:
+
+        <strong>
+
+            ${totalPrice.toLocaleString("ar-SA")}
+
+            ريال
+
+            ${
+                cart.some(item=>item.custom)
+                ? " + منتجات حسب الطلب"
+                : ""
+            }
+
+        </strong>
+
+    `;
+
+}
+
+
+/* =========================================================
+   CHANGE QUANTITY
+========================================================= */
+
+function changeQuantity(index,change){
+
+    if(!cart[index]){
+        return;
+    }
+
+
+    cart[index].quantity += change;
+
+
+    if(cart[index].quantity <= 0){
 
         cart.splice(index,1);
 
@@ -3535,272 +3795,17 @@ function changeQty(index,change){
 }
 
 
-
 /* =========================================================
-   UPDATE CART
+   REMOVE
 ========================================================= */
 
-function updateCart(){
+function removeItem(index){
 
-    const count =
-    cart.reduce(
-        (sum,item)=>
-        sum + item.qty,
-        0
-    );
+    cart.splice(index,1);
 
-
-    document
-    .getElementById("cartCount")
-    .textContent = count;
-
-
-
-    const box =
-    document.getElementById("cartItems");
-
-
-
-    if(!cart.length){
-
-        box.innerHTML = `
-
-            <div class="empty">
-
-                السلة فارغة 🤎
-
-                <br><br>
-
-                اختاري من المنيو ما تحبين.
-
-            </div>
-
-        `;
-
-    }
-
-    else{
-
-        box.innerHTML =
-
-        cart.map(
-            (item,index)=>`
-
-            <div class="cart-item">
-
-
-                <div>
-
-                    <b>
-
-                        ${item.name}
-
-                    </b>
-
-                    <br>
-
-
-                    <small>
-
-                        ${item.option || "حسب الطلب"}
-
-                        ${
-                            item.price
-
-                            ?
-
-                            ` · ${item.price} ريال`
-
-                            :
-
-                            ""
-                        }
-
-                    </small>
-
-                </div>
-
-
-
-                <div class="qty">
-
-
-                    <button
-                        onclick="changeQty(${index},-1)"
-                    >
-                        −
-                    </button>
-
-
-                    ${item.qty}
-
-
-                    <button
-                        onclick="changeQty(${index},1)"
-                    >
-                        ＋
-                    </button>
-
-
-                </div>
-
-
-            </div>
-
-        `
-        ).join("");
-
-    }
-
-
-
-    const total =
-    cart.reduce(
-        (sum,item)=>
-        sum + (
-            item.price *
-            item.qty
-        ),
-        0
-    );
-
-
-    document
-    .getElementById("total")
-    .textContent = total;
-
-
-    buildWhatsAppMessage(total);
+    updateCart();
 
 }
-
-
-
-/* =========================================================
-   WHATSAPP MESSAGE
-========================================================= */
-
-function buildWhatsAppMessage(total){
-
-    const name =
-    document
-    .getElementById("customerName")
-    .value;
-
-
-    const phone =
-    document
-    .getElementById("customerPhone")
-    .value;
-
-
-    const date =
-    document
-    .getElementById("eventDate")
-    .value;
-
-
-    const notes =
-    document
-    .getElementById("notes")
-    .value;
-
-
-
-    const lines =
-
-    cart.length
-
-    ?
-
-    cart.map(item =>
-
-        `• ${item.name}`
-
-        +
-
-        (
-            item.option
-            ?
-            ` — ${item.option}`
-            :
-            ""
-        )
-
-        +
-
-        ` × ${item.qty}`
-
-        +
-
-        (
-            item.price
-
-            ?
-
-            ` = ${item.price * item.qty} ريال`
-
-            :
-
-            ` = حسب الطلب`
-        )
-
-    ).join("\n")
-
-    :
-
-    "لا توجد منتجات";
-
-
-
-    const message = `
-
-السلام عليكم W Sweet 🤎
-
-أرغب في طلب:
-
-${lines}
-
-━━━━━━━━━━━━━━
-
-الإجمالي:
-${total} ريال
-
-━━━━━━━━━━━━━━
-
-بيانات العميل:
-
-الاسم:
-${name || "لم يحدد"}
-
-رقم الجوال:
-${phone || "لم يحدد"}
-
-موعد المناسبة:
-${date || "غير محدد"}
-
-التفاصيل الإضافية:
-${notes || "لا توجد"}
-
-━━━━━━━━━━━━━━
-
-أرغب باستلام بيانات الحساب البنكي
-لإتمام التحويل.
-
-شكراً W Sweet 🤎
-
-`.trim();
-
-
-
-    document
-    .getElementById("whatsappOrder")
-    .href =
-
-    `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-
-}
-
 
 
 /* =========================================================
@@ -3810,14 +3815,13 @@ ${notes || "لا توجد"}
 function openCart(){
 
     document
-    .getElementById("drawer")
-    .classList.add("open");
+        .getElementById("drawer")
+        .classList.add("open");
 
-
-    updateCart();
+    document.body.style.overflow =
+        "hidden";
 
 }
-
 
 
 /* =========================================================
@@ -3827,27 +3831,255 @@ function openCart(){
 function closeCart(){
 
     document
-    .getElementById("drawer")
-    .classList.remove("open");
+        .getElementById("drawer")
+        .classList.remove("open");
+
+    document.body.style.overflow =
+        "";
 
 }
 
+
+/* =========================================================
+   OUTSIDE CART
+========================================================= */
+
+function outsideCart(event){
+
+    if(
+        event.target.id === "drawer"
+    ){
+
+        closeCart();
+
+    }
+
+}
+
+
+/* =========================================================
+   WHATSAPP ORDER
+========================================================= */
+
+function sendOrderToWhatsApp(){
+
+    if(cart.length === 0){
+
+        alert(
+            "السلة فارغة، أضيفي المنتجات أولاً."
+        );
+
+        return;
+
+    }
+
+
+    const name =
+        document
+            .getElementById("customerName")
+            .value
+            .trim();
+
+
+    const phone =
+        document
+            .getElementById("customerPhone")
+            .value
+            .trim();
+
+
+    const date =
+        document
+            .getElementById("orderDate")
+            .value;
+
+
+    const notes =
+        document
+            .getElementById("customerNotes")
+            .value
+            .trim();
+
+
+    if(!name){
+
+        alert(
+            "فضلاً اكتبي الاسم."
+        );
+
+        document
+            .getElementById("customerName")
+            .focus();
+
+        return;
+
+    }
+
+
+    if(!phone){
+
+        alert(
+            "فضلاً اكتبي رقم الجوال."
+        );
+
+        document
+            .getElementById("customerPhone")
+            .focus();
+
+        return;
+
+    }
+
+
+    let total = 0;
+
+
+    let message =
+        "السلام عليكم، أرغب بطلب من W Sweet 🍫✨\n\n";
+
+
+    message +=
+        "━━━━━━━━━━━━━━\n";
+
+    message +=
+        "🛍️ تفاصيل الطلب\n";
+
+    message +=
+        "━━━━━━━━━━━━━━\n\n";
+
+
+    cart.forEach((item,index)=>{
+
+        const itemTotal =
+            item.price *
+            item.quantity;
+
+
+        total += itemTotal;
+
+
+        message +=
+            `${index + 1}. ${item.name}\n`;
+
+        message +=
+            `الكمية: ${item.quantity}\n`;
+
+
+        if(item.custom){
+
+            message +=
+                `السعر: حسب الطلب\n`;
+
+        }else{
+
+            message +=
+                `السعر: ${item.price} ريال\n`;
+
+            message +=
+                `الإجمالي: ${itemTotal} ريال\n`;
+
+        }
+
+
+        message +=
+            "\n";
+
+    });
+
+
+    message +=
+        "━━━━━━━━━━━━━━\n";
+
+
+    message +=
+        `الإجمالي المبدئي: ${total} ريال\n`;
+
+
+    message +=
+        "━━━━━━━━━━━━━━\n\n";
+
+
+    message +=
+        "👤 بيانات العميل\n";
+
+
+    message +=
+        `الاسم: ${name}\n`;
+
+    message +=
+        `الجوال: ${phone}\n`;
+
+
+    if(date){
+
+        message +=
+            `تاريخ المناسبة/الاستلام: ${date}\n`;
+
+    }
+
+
+    if(notes){
+
+        message +=
+            `ملاحظات: ${notes}\n`;
+
+    }
+
+
+    message +=
+        "\n";
+
+
+    message +=
+        "💳 الدفع: تحويل بنكي فقط، وسيتم إرسال تفاصيل التحويل والتنسيق عبر الواتساب.\n\n";
+
+
+    message +=
+        "📅 تنبيه: طلبات المناسبات يرجى تأكيدها قبل الموعد بأسبوع على الأقل.\n\n";
+
+
+    message +=
+        "شكراً لاختياركم W Sweet 🤎";
+
+
+    const whatsappNumber =
+        "966505691474";
+
+
+    const url =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+}
 
 
 /* =========================================================
    LIGHTBOX
 ========================================================= */
 
-function openLightbox(src){
+function openLightbox(image){
 
-    document
-    .getElementById("lightboxImage")
-    .src = src;
+    const box =
+        document.getElementById("lightbox");
+
+    const img =
+        document.getElementById("lightboxImage");
 
 
-    document
-    .getElementById("lightbox")
-    .classList.add("show");
+    img.src = image;
+
+    box.classList.add("show");
+
+    document.body.style.overflow =
+        "hidden";
 
 }
 
@@ -3855,69 +4087,28 @@ function openLightbox(src){
 function closeLightbox(){
 
     document
-    .getElementById("lightbox")
-    .classList.remove("show");
+        .getElementById("lightbox")
+        .classList.remove("show");
+
+    document.body.style.overflow =
+        "";
 
 }
 
 
-
 /* =========================================================
-   LIVE WHATSAPP UPDATE
-========================================================= */
-
-[
-    "customerName",
-
-    "customerPhone",
-
-    "eventDate",
-
-    "notes"
-
-].forEach(id=>{
-
-
-    document
-    .getElementById(id)
-    .addEventListener(
-        "input",
-        ()=>{
-
-            const total =
-            cart.reduce(
-                (sum,item)=>
-                sum +
-                (
-                    item.price *
-                    item.qty
-                ),
-                0
-            );
-
-
-            buildWhatsAppMessage(total);
-
-        }
-    );
-
-});
-
-
-
-/* =========================================================
-   ESC KEY
+   ESCAPE KEY
 ========================================================= */
 
 document.addEventListener(
     "keydown",
-    event=>{
+    function(event){
 
-        if(event.key==="Escape"){
-
-            closeCart();
+        if(event.key === "Escape"){
 
             closeLightbox();
+
+            closeCart();
 
         }
 
@@ -3925,9 +4116,8 @@ document.addEventListener(
 );
 
 
-
 /* =========================================================
-   START
+   INITIALIZE
 ========================================================= */
 
 renderProducts();
@@ -3935,7 +4125,6 @@ renderProducts();
 updateCart();
 
 </script>
-
 
 </body>
 </html>
