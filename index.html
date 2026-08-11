@@ -1,62 +1,2511 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root { --gold: #c5a059; --dark: #121212; }
-        body { background: var(--dark); color: #fff; font-family: 'Segoe UI', sans-serif; margin: 0; }
-        .hero { text-align: center; padding: 50px; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('chocolate-bg.jpg'); background-size: cover; }
-        .logo-img { width: 150px; border-radius: 50%; border: 3px solid var(--gold); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
-        .card { border: 1px solid var(--gold); padding: 20px; text-align: center; background: #1a1a1a; border-radius: 15px; }
-        .btn { background: var(--gold); color: black; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; font-weight: bold; }
-        .cart-icon { position: fixed; top: 20px; right: 20px; font-size: 30px; cursor: pointer; color: var(--gold); }
-        .social-icons a { font-size: 30px; color: var(--gold); margin: 0 15px; text-decoration: none; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="W Sweet - شوكولاتة فاخرة، توزيعات مناسبات، صواني وطباعة مخصصة على الشوكولاتة">
+
+<title>W Sweet | شوكولاتة فاخرة</title>
+
+<style>
+:root{
+    --bg:#08070b;
+    --surface:#121015;
+    --surface2:#19141a;
+    --gold:#b77a43;
+    --gold2:#e0ad73;
+    --cream:#fff5e9;
+    --muted:#bcae9f;
+    --line:rgba(224,173,115,.18);
+    --green:#25d366;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--cream);
+    font-family:"Tahoma","Arial",sans-serif;
+    overflow-x:hidden;
+}
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.bg{
+    position:fixed;
+    inset:0;
+    z-index:-5;
+
+    background:
+        radial-gradient(
+            circle at 18% 15%,
+            rgba(183,122,67,.15),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(121,66,32,.13),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #08070b,
+            #0d0a0d 45%,
+            #08070b
+        );
+}
+
+.choco{
+    position:fixed;
+    z-index:-2;
+
+    width:330px;
+    height:330px;
+
+    border-radius:48% 52% 45% 55%;
+
+    background:rgba(110,55,24,.12);
+
+    filter:blur(25px);
+
+    animation:
+        drift 18s infinite alternate ease-in-out;
+
+    pointer-events:none;
+}
+
+.c1{
+    top:8%;
+    left:-100px;
+}
+
+.c2{
+    right:-100px;
+    bottom:10%;
+
+    animation-delay:-8s;
+
+    width:430px;
+    height:430px;
+}
+
+@keyframes drift{
+    to{
+        transform:
+            translate(100px,55px)
+            rotate(18deg)
+            scale(1.15);
+    }
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    background:rgba(8,7,11,.78);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid var(--line);
+}
+
+.nav{
+    max-width:1220px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:12px 22px;
+}
+
+.logo{
+    height:60px;
+    width:125px;
+
+    object-fit:contain;
+}
+
+.navlinks{
+    display:flex;
+    gap:25px;
+}
+
+.navlinks a{
+    color:var(--cream);
+    text-decoration:none;
+    font-size:14px;
+
+    transition:.2s;
+}
+
+.navlinks a:hover{
+    color:var(--gold2);
+}
+
+.cart-btn{
+    border:1px solid rgba(224,173,115,.35);
+
+    background:
+        linear-gradient(
+            135deg,
+            #bd8049,
+            #80502c
+        );
+
+    color:#fff;
+
+    padding:12px 18px;
+
+    border-radius:999px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+}
+
+.badge{
+    display:inline-flex;
+
+    min-width:22px;
+    height:22px;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#fff;
+
+    color:#6d4427;
+
+    border-radius:50%;
+
+    margin-right:5px;
+
+    font-size:12px;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    max-width:1220px;
+    margin:auto;
+
+    min-height:680px;
+
+    padding:95px 22px 80px;
+
+    display:grid;
+
+    grid-template-columns:
+        1.05fr
+        .95fr;
+
+    align-items:center;
+
+    gap:60px;
+}
+
+.tag{
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    color:var(--gold2);
+}
+
+h1{
+    font-family:Georgia,serif;
+
+    font-size:
+        clamp(
+            55px,
+            8vw,
+            105px
+        );
+
+    line-height:.92;
+
+    margin:
+        18px 0
+        24px;
+
+    color:var(--gold2);
+}
+
+h1 span{
+    display:block;
+
+    color:#fff;
+
+    font-size:.45em;
+
+    line-height:1.3;
+
+    margin-top:22px;
+
+    letter-spacing:1px;
+}
+
+.hero p{
+    font-size:18px;
+
+    line-height:2;
+
+    color:var(--muted);
+
+    max-width:680px;
+}
+
+.hero-actions{
+    display:flex;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+
+    margin-top:28px;
+}
+
+.btn{
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border:0;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    border-radius:14px;
+
+    padding:14px 24px;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.btn-primary{
+    color:#fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c88a52,
+            #81512d
+        );
+
+    box-shadow:
+        0 15px 35px
+        rgba(183,122,67,.2);
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    color:var(--cream);
+
+    border:1px solid var(--line);
+
+    background:
+        rgba(255,255,255,.03);
+}
+
+/* HERO LOGO */
+
+.hero-art{
+    min-height:470px;
+
+    border:1px solid var(--line);
+
+    border-radius:40px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.015)
+        );
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:
+        inset 0 0 80px
+        rgba(183,122,67,.035);
+}
+
+.hero-art:before{
+    content:"W";
+
+    position:absolute;
+
+    font-family:Georgia,serif;
+
+    font-size:440px;
+
+    line-height:1;
+
+    color:
+        rgba(183,122,67,.07);
+}
+
+.seal{
+    position:relative;
+
+    text-align:center;
+}
+
+.seal strong{
+    display:block;
+
+    font:
+        130px
+        Georgia,serif;
+
+    color:var(--gold2);
+}
+
+.seal small{
+    font-size:14px;
+
+    letter-spacing:9px;
+}
+
+.seal i{
+    display:block;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    letter-spacing:3px;
+
+    font-style:normal;
+
+    margin-top:14px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+    max-width:1220px;
+
+    margin:auto;
+
+    padding:85px 22px;
+}
+
+.section-head{
+    text-align:center;
+
+    margin-bottom:38px;
+}
+
+.section-head .mini{
+    color:var(--gold2);
+
+    font-size:12px;
+
+    letter-spacing:3px;
+}
+
+.section-head h2{
+    font:
+        46px
+        Georgia,serif;
+
+    color:var(--gold2);
+
+    margin:10px 0;
+}
+
+.section-head p{
+    color:var(--muted);
+
+    line-height:1.8;
+}
+
+/* =========================
+   PRODUCTS
+========================= */
+
+.products{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:20px;
+}
+
+.product{
+    background:
+        linear-gradient(
+            145deg,
+            rgba(25,20,26,.96),
+            rgba(14,12,17,.96)
+        );
+
+    border:1px solid var(--line);
+
+    border-radius:25px;
+
+    overflow:hidden;
+
+    transition:.25s;
+}
+
+.product:hover{
+    transform:translateY(-5px);
+
+    border-color:
+        rgba(224,173,115,.4);
+}
+
+/* PRODUCT IMAGE */
+
+.product-image{
+    height:240px;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(183,122,67,.16),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #21160f,
+            #100d12
+        );
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/*
+ضع صورة المنتج هنا لاحقًا
+*/
+
+.product-image img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    display:none;
+}
+
+.placeholder{
+    font:
+        56px
+        Georgia,serif;
+
+    color:
+        rgba(224,173,115,.48);
+}
+
+.photo-note{
+    position:absolute;
+
+    bottom:12px;
+
+    background:
+        rgba(0,0,0,.48);
+
+    padding:6px 10px;
+
+    border-radius:999px;
+
+    font-size:10px;
+
+    color:#d9c9ba;
+}
+
+.product-body{
+    padding:19px;
+}
+
+.product h3{
+    margin:
+        0 0 8px;
+
+    font-size:18px;
+}
+
+.desc{
+    min-height:43px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.8;
+}
+
+.price{
+    font-size:20px;
+
+    font-weight:800;
+
+    color:var(--gold2);
+
+    margin:14px 0;
+}
+
+.options{
+    display:flex;
+
+    gap:7px;
+
+    flex-wrap:wrap;
+
+    margin:10px 0;
+}
+
+.opt{
+    border:1px solid var(--line);
+
+    background:#171319;
+
+    color:#ddd;
+
+    padding:8px 10px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+}
+
+.opt.active{
+    background:var(--gold);
+
+    border-color:var(--gold);
+
+    color:#fff;
+}
+
+.add{
+    width:100%;
+
+    border:1px solid var(--line);
+
+    background:#171319;
+
+    color:#fff;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.add:hover{
+    background:var(--gold);
+}
+
+/* =========================
+   NOTICE
+========================= */
+
+.note{
+    max-width:850px;
+
+    margin:
+        28px auto 0;
+
+    text-align:center;
+
+    padding:18px 20px;
+
+    border:
+        1px solid
+        rgba(224,173,115,.3);
+
+    background:
+        rgba(183,122,67,.07);
+
+    border-radius:16px;
+
+    color:#e9dac9;
+
+    line-height:1.9;
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+.feature{
+    border:1px solid var(--line);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    text-align:center;
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+.feature .icon{
+    font-size:30px;
+
+    margin-bottom:10px;
+}
+
+.feature h3{
+    color:var(--gold2);
+
+    margin:8px;
+}
+
+.feature p{
+    color:var(--muted);
+
+    line-height:1.8;
+
+    font-size:14px;
+}
+
+/* =========================
+   CERTIFICATES
+========================= */
+
+.certs{
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:20px;
+}
+
+.cert{
+    border:1px solid var(--line);
+
+    border-radius:25px;
+
+    padding:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(183,122,67,.09),
+            rgba(255,255,255,.02)
+        );
+}
+
+.cert h3{
+    color:var(--gold2);
+}
+
+.cert p{
+    color:var(--muted);
+
+    line-height:2;
+}
+
+/* =========================
+   SOCIAL
+========================= */
+
+.socials{
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    flex-wrap:wrap;
+}
+
+.social{
+    color:#fff;
+
+    text-decoration:none;
+
+    padding:12px 20px;
+
+    border:1px solid var(--line);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.025);
+}
+
+.social:hover{
+    border-color:var(--gold2);
+
+    color:var(--gold2);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:1px solid var(--line);
+
+    padding:48px 20px;
+
+    text-align:center;
+
+    color:var(--muted);
+}
+
+footer strong{
+    font:
+        30px
+        Georgia,serif;
+
+    color:var(--gold2);
+}
+
+/* =========================
+   CART
+========================= */
+
+.drawer{
+    position:fixed;
+
+    inset:0;
+
+    z-index:200;
+
+    background:
+        rgba(0,0,0,.7);
+
+    display:none;
+}
+
+.drawer.open{
+    display:block;
+}
+
+.cart-panel{
+    position:absolute;
+
+    right:0;
+    top:0;
+
+    height:100%;
+
+    width:min(500px,94vw);
+
+    overflow-y:auto;
+
+    background:#100d12;
+
+    border-left:1px solid var(--line);
+
+    padding:24px;
+}
+
+.close{
+    float:left;
+
+    background:none;
+
+    border:0;
+
+    color:#fff;
+
+    font-size:28px;
+
+    cursor:pointer;
+}
+
+.cart-panel h2{
+    color:var(--gold2);
+
+    font:
+        34px
+        Georgia,serif;
+}
+
+.cart-item{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:12px;
+
+    padding:15px 0;
+
+    border-bottom:
+        1px solid
+        var(--line);
+}
+
+.cart-item small{
+    color:var(--muted);
+}
+
+.qty{
+    white-space:nowrap;
+}
+
+.qty button{
+    width:29px;
+    height:29px;
+
+    border:
+        1px solid
+        var(--line);
+
+    background:#211a20;
+
+    color:#fff;
+
+    border-radius:8px;
+
+    cursor:pointer;
+}
+
+.total{
+    font-size:23px;
+
+    font-weight:bold;
+
+    color:var(--gold2);
+
+    padding:22px 0;
+}
+
+/* CUSTOMER DATA */
+
+.order-info{
+    border:
+        1px solid
+        var(--line);
+
+    padding:18px;
+
+    border-radius:16px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    margin-bottom:12px;
+}
+
+.order-info label{
+    display:block;
+
+    color:#d9c9ba;
+
+    font-size:13px;
+
+    margin:
+        12px 0 6px;
+}
+
+.order-info input,
+.order-info textarea{
+    width:100%;
+
+    background:#171319;
+
+    border:
+        1px solid
+        var(--line);
+
+    color:#fff;
+
+    border-radius:10px;
+
+    padding:11px;
+
+    font-family:inherit;
+}
+
+.wa{
+    display:block;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    background:var(--green);
+
+    padding:14px;
+
+    border-radius:13px;
+
+    font-weight:bold;
+}
+
+.bank-note{
+    font-size:12px;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin-top:10px;
+
+    text-align:center;
+}
+
+.empty{
+    color:var(--muted);
+
+    padding:30px 0;
+
+    text-align:center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+    .hero{
+        grid-template-columns:1fr;
+
+        padding-top:55px;
+    }
+
+    .hero-art{
+        min-height:330px;
+    }
+
+    .products{
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .features,
+    .certs{
+        grid-template-columns:1fr;
+    }
+
+    .navlinks{
+        display:none;
+    }
+}
+
+@media(max-width:560px){
+
+    section{
+        padding:
+            60px 15px;
+    }
+
+    .products{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        padding-left:16px;
+        padding-right:16px;
+    }
+
+    .hero-art{
+        min-height:280px;
+    }
+
+    .seal strong{
+        font-size:100px;
+    }
+}
+</style>
 </head>
+
 <body>
 
-<!-- أيقونة السلة -->
-<div class="cart-icon" onclick="showCart()"><i class="fas fa-shopping-basket"></i></div>
+<!-- BACKGROUND -->
 
-<div class="hero">
-    <img src="logo.png" class="logo-img" alt="W Sweet">
-    <h1>W Sweet</h1>
-    <p>شهادات معتمدة في فنون الطهي والطباعة على الشوكولاتة</p>
+<div class="bg"></div>
+
+<div class="choco c1"></div>
+<div class="choco c2"></div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<nav class="nav">
+
+<a href="#top">
+<img
+    class="logo"
+    src="logo.png"
+    alt="W Sweet">
+</a>
+
+<div class="navlinks">
+
+<a href="#menu">
+المنيو
+</a>
+
+<a href="#about">
+عن W Sweet
+</a>
+
+<a href="#certificates">
+الشهادات
+</a>
+
+<a href="#contact">
+التواصل
+</a>
+
 </div>
 
-<div class="grid" id="product-list"></div>
+<button
+    class="cart-btn"
+    onclick="openCart()">
 
-<div class="social-icons" style="text-align: center; padding: 40px;">
-    <a href="https://wa.me/966..." target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="https://instagram.com/..." target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="https://tiktok.com/..." target="_blank"><i class="fab fa-tiktok"></i></a>
+السلة
+
+<span
+    class="badge"
+    id="cartCount">
+0
+</span>
+
+</button>
+
+</nav>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main id="top">
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div>
+
+<div class="tag">
+W SWEET · CHOCOLATE · EVENTS
 </div>
+
+<h1>
+
+W Sweet
+
+<span>
+لذة تُصنع بإتقان، وتُقدّم بفخامة.
+</span>
+
+</h1>
+
+<p>
+
+شوكولاتة فاخرة، توزيعات مناسبات، صواني،
+تابلت حسب الطلب وطباعة مخصصة على الشوكولاتة
+— بتفاصيل مصممة لتليق بكل مناسبة.
+
+</p>
+
+<div class="hero-actions">
+
+<a
+    class="btn btn-primary"
+    href="#menu">
+
+استعرضي المنيو
+
+</a>
+
+<a
+    class="btn btn-outline"
+    href="https://wa.me/966505691474"
+    target="_blank">
+
+تواصلي معنا
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-art">
+
+<div class="seal">
+
+<strong>
+W
+</strong>
+
+<small>
+SWEET
+</small>
+
+<i>
+CHOCOLATE · EVENTS · CUSTOM
+</i>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section id="menu">
+
+<div class="section-head">
+
+<div class="mini">
+OUR COLLECTION
+</div>
+
+<h2>
+المنيو
+</h2>
+
+<p>
+اختاري المنتجات والمقاسات والكميات،
+ثم أرسلي الطلب مباشرة عبر الواتساب.
+</p>
+
+</div>
+
+
+<div
+    class="products"
+    id="products">
+</div>
+
+
+<div class="note">
+
+🎀
+
+<b>
+للمناسبات:
+</b>
+
+يرجى تقديم الطلب قبل المناسبة بـ
+
+<b>
+أسبوع على الأقل
+</b>
+
+لضمان جودة التنفيذ وتجهيز التفاصيل.
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+<div class="section-head">
+
+<div class="mini">
+WHY W SWEET
+</div>
+
+<h2>
+تفاصيل تصنع الفرق
+</h2>
+
+</div>
+
+
+<div class="features">
+
+
+<div class="feature">
+
+<div class="icon">
+🍫
+</div>
+
+<h3>
+شوكولاتة فاخرة
+</h3>
+
+<p>
+اختيارات شوكولاتة وحشوات حسب الطلب،
+مع اهتمام بالتفاصيل.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="icon">
+🎁
+</div>
+
+<h3>
+مناسباتك
+</h3>
+
+<p>
+توزيعات وصواني وتنسيقات خاصة
+للمواليد والمناسبات المختلفة.
+</p>
+
+</div>
+
+
+<div class="feature">
+
+<div class="icon">
+✨
+</div>
+
+<h3>
+طباعة مخصصة
+</h3>
+
+<p>
+طباعة على الشوكولاتة حسب التصميم
+والهوية والمناسبة.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CERTIFICATES
+========================= -->
+
+<section id="certificates">
+
+<div class="section-head">
+
+<div class="mini">
+EXPERIENCE & CERTIFICATES
+</div>
+
+<h2>
+شهادات وخبرة
+</h2>
+
+<p>
+خبرة وشهادات في مجالات صناعة الشوكولاتة
+والطباعة عليها.
+</p>
+
+</div>
+
+
+<div class="certs">
+
+
+<div class="cert">
+
+<h3>
+🏅 فنون الطهي
+</h3>
+
+<p>
+
+حاصلة على شهادات من فنون الطهي في
+
+<b>
+صناعة الشوكولاتة
+</b>
+
+.
+
+</p>
+
+</div>
+
+
+<div class="cert">
+
+<h3>
+🏅 الطباعة على الشوكولاتة
+</h3>
+
+<p>
+
+حاصلة على شهادات في
+
+<b>
+الطباعة على الشوكولاتة
+</b>
+
+وتنفيذ التصاميم المخصصة.
+
+</p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+<div class="section-head">
+
+<div class="mini">
+CONTACT W SWEET
+</div>
+
+<h2>
+تواصلي معنا
+</h2>
+
+<p>
+
+للطلبات الخاصة، الحشوات، التصاميم،
+والمناسبات، يسعدنا استقبال تفاصيلك عبر الواتساب.
+
+</p>
+
+</div>
+
+
+<div class="socials">
+
+
+<a
+    class="social"
+    href="https://wa.me/966505691474"
+    target="_blank">
+
+💬 واتساب
+
+</a>
+
+
+<a
+    class="social"
+    href="https://www.instagram.com/mini.pan97"
+    target="_blank">
+
+◎ Instagram
+
+</a>
+
+
+<a
+    class="social"
+    href="https://www.tiktok.com/@w.sweet6?_r=1&_t=ZS-987hSAb0l3B"
+    target="_blank">
+
+♪ TikTok
+
+</a>
+
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+<strong>
+W Sweet
+</strong>
+
+<p>
+شوكولاتة فاخرة · توزيعات · مناسبات · طباعة مخصصة
+</p>
+
+<div>
+© 2026 W Sweet — جميع الحقوق محفوظة
+</div>
+
+</footer>
+
+
+<!-- =========================
+     CART
+========================= -->
+
+<div
+    class="drawer"
+    id="drawer"
+    onclick="if(event.target===this)closeCart()">
+
+
+<aside class="cart-panel">
+
+
+<button
+    class="close"
+    onclick="closeCart()">
+
+×
+
+</button>
+
+
+<h2>
+سلة الطلب
+</h2>
+
+
+<div id="cartItems">
+</div>
+
+
+<div class="total">
+
+الإجمالي:
+
+<span id="total">
+0
+</span>
+
+ريال
+
+</div>
+
+
+<!-- CUSTOMER INFORMATION -->
+
+<div class="order-info">
+
+<b style="color:var(--gold2)">
+بيانات الطلب
+</b>
+
+
+<label>
+الاسم
+</label>
+
+<input
+    id="customerName"
+    placeholder="اكتبي الاسم">
+
+
+<label>
+رقم الجوال
+</label>
+
+<input
+    id="customerPhone"
+    placeholder="05xxxxxxxx">
+
+
+<label>
+موعد المناسبة
+</label>
+
+<input
+    id="eventDate"
+    type="date">
+
+
+<label>
+تفاصيل إضافية
+</label>
+
+<textarea
+    id="notes"
+    rows="4"
+    placeholder="الحشوات، الألوان، التصميم، أي ملاحظات...">
+</textarea>
+
+</div>
+
+
+<a
+    class="wa"
+    id="whatsappOrder"
+    target="_blank"
+    href="https://wa.me/966505691474">
+
+إرسال الطلب عبر واتساب
+
+</a>
+
+
+<div class="bank-note">
+
+💳
+
+الدفع في الموقع
+
+<b>
+تحويل بنكي فقط
+</b>
+
+<br>
+
+بعد إرسال الطلب عبر الواتساب
+سيتم تزويدك ببيانات الحساب البنكي
+وتعليمات التحويل.
+
+</div>
+
+
+</aside>
+
+</div>
+
 
 <script>
-    // --- لوحة تحكمك البسيطة ---
-    const products = [
-        {name: "شرايط للصواني", price: 10, img: "img1.jpg"},
-        {name: "شوكولاتة بلجيكي", price: 150, img: "img2.jpg"},
-        // أضف بقية المنتجات هنا بنفس الطريقة
-    ];
 
-    function renderProducts() {
-        const container = document.getElementById('product-list');
-        products.forEach(p => {
-            container.innerHTML += `
-                <div class="card">
-                    <img src="${p.img}" style="width:100%; height:150px; object-fit:cover;">
-                    <h3>${p.name}</h3>
-                    <p>${p.price} ريال</p>
-                    <button class="btn" onclick="addToCart('${p.name}', ${p.price})">إضافة للسلة</button>
-                </div>`;
-        });
+/* =====================================================
+   W SWEET SETTINGS
+===================================================== */
+
+const WHATSAPP_NUMBER = "966505691474";
+
+
+/* =====================================================
+   PRODUCTS
+===================================================== */
+
+const products = [
+
+    {
+        id:1,
+
+        name:"شرايط للصواني",
+
+        desc:
+        "شرايط أنيقة لتنسيق صواني المناسبات.",
+
+        price:10,
+
+        unit:"للوحدة"
+    },
+
+
+    {
+        id:2,
+
+        name:"شرايط للمشروبات",
+
+        desc:
+        "20 حبة لتنسيق وتزيين المشروبات.",
+
+        price:40,
+
+        unit:"20 حبة"
+    },
+
+
+    {
+        id:3,
+
+        name:"شوكولاته بلجيكي",
+
+        desc:
+        "شوكولاتة بلجيكية فاخرة.",
+
+        price:150,
+
+        unit:"للكيلو"
+    },
+
+
+    {
+        id:4,
+
+        name:"توزيعات مواليد",
+
+        desc:
+        "توزيعات مواليد أنيقة حسب المناسبة.",
+
+        price:4,
+
+        unit:"للحبة"
+    },
+
+
+    {
+        id:5,
+
+        name:"شوكولاته بار",
+
+        desc:
+        "يمكن طلب أكثر من مقاس في نفس السلة.",
+
+        options:[
+
+            [
+                "صغير",
+                10
+            ],
+
+            [
+                "وسط",
+                15
+            ],
+
+            [
+                "كبير",
+                20
+            ]
+
+        ]
+    },
+
+
+    {
+        id:6,
+
+        name:"شوكولاته نص كوره",
+
+        desc:
+        "150 حبة بسعر 255 ريال، والحشوات حسب طلب العميل.",
+
+        options:[
+
+            [
+                "حشوة حسب الطلب",
+                255
+            ]
+
+        ]
+    },
+
+
+    {
+        id:7,
+
+        name:"لوقو دائري",
+
+        desc:
+        "اختاري المقاس المناسب للوقو الدائري.",
+
+        options:[
+
+            [
+                "10–9",
+                15
+            ],
+
+            [
+                "13–14–15",
+                20
+            ]
+
+        ]
+    },
+
+
+    {
+        id:8,
+
+        name:"شوكولاته تابلت حسب الطلب",
+
+        desc:
+        "تابلت مخصص حسب التصميم والطلب.",
+
+        custom:true
+    },
+
+
+    {
+        id:9,
+
+        name:"بسكوت الكابتشينو",
+
+        desc:
+        "بسكوت الكابتشينو.",
+
+        price:4,
+
+        unit:"للحبة"
+    },
+
+
+    {
+        id:10,
+
+        name:"صواني المناسبات",
+
+        desc:
+        "صواني مناسبات بتنسيق مخصص.",
+
+        custom:true
+    },
+
+
+    {
+        id:11,
+
+        name:"الطباعة على الشوكولاته",
+
+        desc:
+        "طباعة مخصصة على الشوكولاتة حسب الهوية والمناسبة.",
+
+        custom:true
     }
-    
-    // أضف منطق السلة هنا...
-    renderProducts();
+
+];
+
+
+/* =====================================================
+   CART
+===================================================== */
+
+let cart = [];
+
+
+/* =====================================================
+   RENDER PRODUCTS
+===================================================== */
+
+function renderProducts(){
+
+    const container =
+        document.getElementById("products");
+
+
+    container.innerHTML =
+        products.map(product => `
+
+        <article class="product">
+
+            <div class="product-image">
+
+                <!--
+                هنا تضيفين صورة المنتج لاحقًا.
+
+                مثال:
+
+                <img
+                    src="images/product-1.jpg"
+                    alt="شرايط للصواني"
+                    style="display:block"
+                >
+                -->
+
+                <span class="placeholder">
+                    ${product.id}
+                </span>
+
+                <span class="photo-note">
+                    الصورة الخاصة بالمنتج تُضاف هنا
+                </span>
+
+            </div>
+
+
+            <div class="product-body">
+
+                <h3>
+                    ${product.name}
+                </h3>
+
+
+                <div class="desc">
+                    ${product.desc}
+                </div>
+
+
+                ${
+                    product.options
+                    ?
+
+                    `
+
+                    <div class="options">
+
+                        ${
+
+                            product.options
+                            .map(
+                                (option,index) => `
+
+                                <button
+
+                                    class="
+                                        opt
+                                        ${index === 0 ? "active" : ""}
+                                    "
+
+                                    data-product="${product.id}"
+
+                                    data-option="${index}"
+
+                                    onclick="selectOption(this)"
+
+                                >
+
+                                    ${option[0]}
+
+                                    ·
+
+                                    ${option[1]}
+
+                                    ريال
+
+                                </button>
+
+                                `
+                            )
+                            .join("")
+
+                        }
+
+                    </div>
+
+                    `
+
+                    :
+
+                    ""
+                }
+
+
+                <div class="price">
+
+                    ${
+                        product.price
+
+                        ?
+
+                        `${product.price}
+                        ريال
+                        ${product.unit || ""}`
+
+                        :
+
+                        product.options
+
+                        ?
+
+                        "اختاري المقاس"
+
+                        :
+
+                        "حسب الطلب"
+                    }
+
+                </div>
+
+
+                <button
+
+                    class="add"
+
+                    onclick="addToCart(${product.id})"
+
+                >
+
+                    ＋ إضافة للسلة
+
+                </button>
+
+            </div>
+
+        </article>
+
+        `
+        )
+        .join("");
+
+}
+
+
+/* =====================================================
+   SELECT PRODUCT OPTION
+===================================================== */
+
+function selectOption(button){
+
+    const productId =
+        button.dataset.product;
+
+
+    document
+        .querySelectorAll(
+            `[data-product="${productId}"]`
+        )
+        .forEach(
+            element => {
+
+                element.classList.remove(
+                    "active"
+                );
+
+            }
+        );
+
+
+    button.classList.add(
+        "active"
+    );
+
+}
+
+
+/* =====================================================
+   ADD TO CART
+===================================================== */
+
+function addToCart(id){
+
+    const product =
+        products.find(
+            product =>
+                product.id === id
+        );
+
+
+    let option = null;
+
+    let price =
+        product.price || 0;
+
+
+    /*
+        إذا المنتج عنده مقاسات
+    */
+
+    if(product.options){
+
+        const activeOption =
+            document.querySelector(
+                `[data-product="${id}"].active`
+            );
+
+
+        const index =
+            activeOption
+            ?
+
+            Number(
+                activeOption.dataset.option
+            )
+
+            :
+
+            0;
+
+
+        option =
+            product.options[index][0];
+
+
+        price =
+            product.options[index][1];
+
+    }
+
+
+    const key =
+        id +
+        "|" +
+        (option || "");
+
+
+    const existing =
+        cart.find(
+            item =>
+                item.key === key
+        );
+
+
+    if(existing){
+
+        existing.qty++;
+
+    }
+
+    else{
+
+        cart.push({
+
+            key:key,
+
+            id:id,
+
+            name:product.name,
+
+            option:option,
+
+            price:price,
+
+            qty:1,
+
+            custom:!!product.custom
+
+        });
+
+    }
+
+
+    updateCart();
+
+    openCart();
+
+}
+
+
+/* =====================================================
+   CHANGE QUANTITY
+===================================================== */
+
+function changeQty(index,change){
+
+    cart[index].qty += change;
+
+
+    if(cart[index].qty <= 0){
+
+        cart.splice(
+            index,
+            1
+        );
+
+    }
+
+
+    updateCart();
+
+}
+
+
+/* =====================================================
+   UPDATE CART
+===================================================== */
+
+function updateCart(){
+
+    const count =
+        cart.reduce(
+            (sum,item) =>
+                sum + item.qty,
+            0
+        );
+
+
+    document
+        .getElementById("cartCount")
+        .textContent = count;
+
+
+    const box =
+        document.getElementById(
+            "cartItems"
+        );
+
+
+    if(!cart.length){
+
+        box.innerHTML = `
+
+            <div class="empty">
+
+                السلة فارغة
+
+                <br><br>
+
+                اختاري من المنيو ما تحبين 🤎
+
+            </div>
+
+        `;
+
+    }
+
+    else{
+
+        box.innerHTML =
+
+            cart
+            .map(
+                (item,index) => `
+
+                <div class="cart-item">
+
+                    <div>
+
+                        <b>
+                            ${item.name}
+                        </b>
+
+                        <br>
+
+                        <small>
+
+                            ${
+                                item.option ||
+                                "حسب الطلب"
+                            }
+
+                            ${
+                                item.price
+                                ?
+
+                                " · " +
+                                item.price +
+                                " ريال"
+
+                                :
+
+                                ""
+                            }
+
+                        </small>
+
+                    </div>
+
+
+                    <div class="qty">
+
+                        <button
+                            onclick="changeQty(${index},-1)"
+                        >
+                            −
+                        </button>
+
+
+                        ${item.qty}
+
+
+                        <button
+                            onclick="changeQty(${index},1)"
+                        >
+                            ＋
+                        </button>
+
+                    </div>
+
+                </div>
+
+                `
+            )
+            .join("");
+
+    }
+
+
+    const total =
+        cart.reduce(
+            (sum,item) =>
+                sum +
+                (
+                    item.price *
+                    item.qty
+                ),
+            0
+        );
+
+
+    document
+        .getElementById("total")
+        .textContent =
+            total;
+
+
+    buildWhatsAppMessage(
+        total
+    );
+
+}
+
+
+/* =====================================================
+   BUILD WHATSAPP MESSAGE
+===================================================== */
+
+function buildWhatsAppMessage(total){
+
+    const name =
+        document
+            .getElementById(
+                "customerName"
+            )
+            .value;
+
+
+    const phone =
+        document
+            .getElementById(
+                "customerPhone"
+            )
+            .value;
+
+
+    const eventDate =
+        document
+            .getElementById(
+                "eventDate"
+            )
+            .value;
+
+
+    const notes =
+        document
+            .getElementById(
+                "notes"
+            )
+            .value;
+
+
+    let productLines = "";
+
+
+    if(cart.length){
+
+        productLines =
+            cart
+            .map(
+                item =>
+
+                `• ${item.name}` +
+
+                (
+                    item.option
+                    ?
+
+                    ` — ${item.option}`
+
+                    :
+
+                    ""
+                )
+
+                +
+
+                ` × ${item.qty}`
+
+                +
+
+                (
+                    item.price
+                    ?
+
+                    ` = ${item.price * item.qty} ريال`
+
+                    :
+
+                    " = حسب الطلب"
+                )
+
+            )
+            .join("\n");
+
+    }
+
+    else{
+
+        productLines =
+            "لا توجد منتجات";
+
+    }
+
+
+    const message =
+
+`السلام عليكم W Sweet 🤎
+
+أرغب في طلب:
+
+${productLines}
+
+الإجمالي:
+${total} ريال
+
+بيانات العميل:
+
+الاسم:
+${name || "لم يحدد"}
+
+الجوال:
+${phone || "لم يحدد"}
+
+موعد المناسبة:
+${eventDate || "غير محدد"}
+
+التفاصيل الإضافية:
+${notes || "لا توجد"}
+
+أرغب باستلام بيانات الحساب البنكي لإتمام التحويل.`;
+
+
+    const encoded =
+        encodeURIComponent(
+            message
+        );
+
+
+    document
+        .getElementById(
+            "whatsappOrder"
+        )
+        .href =
+            `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+
+}
+
+
+/* =====================================================
+   CART OPEN / CLOSE
+===================================================== */
+
+function openCart(){
+
+    document
+        .getElementById("drawer")
+        .classList.add("open");
+
+    updateCart();
+
+}
+
+
+function closeCart(){
+
+    document
+        .getElementById("drawer")
+        .classList.remove("open");
+
+}
+
+
+/* =====================================================
+   UPDATE WHATSAPP WHEN USER TYPES
+===================================================== */
+
+[
+    "customerName",
+    "customerPhone",
+    "eventDate",
+    "notes"
+
+].forEach(
+    id => {
+
+        document
+            .getElementById(id)
+            .addEventListener(
+                "input",
+                () => {
+
+                    const total =
+                        cart.reduce(
+                            (sum,item) =>
+                                sum +
+                                (
+                                    item.price *
+                                    item.qty
+                                ),
+                            0
+                        );
+
+
+                    buildWhatsAppMessage(
+                        total
+                    );
+
+                }
+            );
+
+    }
+);
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+renderProducts();
+
+updateCart();
+
 </script>
+
 </body>
 </html>
